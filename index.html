@@ -5,19 +5,15 @@ preview: "/preview.png"
 description: "Cross disciplinary designer"
 ---
 
-{% include intro-2.html %}
+<div class='page'>
 
-<div class='wrap-screen screen-100vh bg-white top-border' id='2'>
+{% include nav-t.html %}
+{% include nav-b.html %}
 
-    <div class='top-nav gap-bott-1 gap-top-1'>
-		<a href='#2' class='smooth'>Maksim Karalevich</a>&nbsp;&nbsp;&nbsp;&nbsp;
-		<span class='grey'><a href='/about'>About</a></span>
-    </div>
-    
-    {% include project-list.html %} 
-
-    <div class='bottom-nav'>
-		{% include bottom-nav.html %}
+{% for post in site.posts %}
+	<div class='wrapper-screen'>
+		{{ post.content }}
 	</div>
+{% endfor %}
 
 </div>
