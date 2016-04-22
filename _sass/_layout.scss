@@ -9,14 +9,6 @@
 
 /* TEXT STYLES */
 
-.grey {
-	color: #BFBFBF!important;
-}
-
-.white {
-	color: #fff;
-}
-
 .text-center {
 	min-width: 610px;
 	max-width: 770px;
@@ -48,13 +40,11 @@
 
 /* SLICK */
 
-/* ARROWS */
-
 .slick-prev {
     position: absolute;
     top: 0;
     left: 0;
-    width: 30%;
+    width: 25%;
     height: 90%;
     display: block;
     padding: 0;
@@ -97,7 +87,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 30%;
+    width: 25%;
     height: 90%;
     display: block;
     padding: 0;
