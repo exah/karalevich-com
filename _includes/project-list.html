@@ -1,0 +1,21 @@
+<div class='wrap-1280 overflow-visible'>
+    <ul class='project-list'>
+      {% for post in site.posts %}
+        {% if page.url == post.url %}
+      	<li class='project-list-item '>
+        	<a class='project-list-link' href='{{ post.url | prepend: site.baseurl }}'>—
+        		<img class="project-list-link-preview" src='{{ post.preview }}'>
+        		<span class=''>{{ post.title }}</span>
+        	</a>
+      	</li>
+        {% else %}
+        <li class='project-list-item'>
+          <a class='project-list-link' href='{{ post.url | prepend: site.baseurl }}'>
+            <img class="project-list-link-preview" src='{{ post.preview }}'>
+            <span class=''>{{ post.title }}</span>
+          </a>
+        </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+</div>
