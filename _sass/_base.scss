@@ -35,10 +35,10 @@ body {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 
-    animation: fadein 2s;
-    -moz-animation: fadein 2s;
-    -webkit-animation: fadein 2s;
-    -o-animation: fadein 2s;
+    animation: fadein .5s;
+    -moz-animation: fadein .5s;
+    -webkit-animation: fadein .5s;
+    -o-animation: fadein .5s;
 
         @keyframes fadein {
         from {
@@ -145,6 +145,14 @@ a:hover {
     height: 100%;
     max-width: 2200px;
     margin: 120px;
+
+    @media (max-width: 1080px) {
+        margin: 40px;
+    }
+
+    @media (max-width: 640px) {
+        margin: 0px;
+    }
 }
 
 .parent-center {
