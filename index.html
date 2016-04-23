@@ -12,8 +12,11 @@ description: "Cross disciplinary designer"
 
 {% for post in site.posts %}
 	<div class='wrapper-screen'>
-		<div class='wrapper'>
+		<div class='wrapper lazy'>
+			<div>
 			{{ post.content }}
+			<div class='nav-ch-c gap-t-1'>{{ post.title }}</div>
+			</div>
 		</div>
 	</div>
 {% endfor %}

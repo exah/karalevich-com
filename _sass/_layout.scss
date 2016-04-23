@@ -12,11 +12,10 @@
 .text-center {
 	min-width: 610px;
 	max-width: 770px;
+	text-align: center;
 
 		@media (max-width: 640px) {
 			min-width: 100%;
-			margin: 0;
-			float: left;
 		}
 }
 
@@ -35,6 +34,10 @@
 	display: block;
 }
 
+.gap-t-1 {
+	padding-top: 10px;
+}
+
 
 
 
@@ -44,7 +47,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 25%;
+    width: 46%;
     height: 90%;
     display: block;
     padding: 0;
@@ -66,7 +69,6 @@
 }
 
 .slick-prev:hover {
-	/*background: url("/left.svg") no-repeat;*/
 	background-size: 18px 25px;
 	background-repeat: no-repeat;
 	background-position: 5% 48.7%;
@@ -87,7 +89,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 25%;
+    width: 46%;
     height: 90%;
     display: block;
     padding: 0;
@@ -109,7 +111,6 @@
 }
 
 .slick-next:hover {
-	/*background: url("/right.svg") no-repeat;*/
 	background-size: 18px 25px;
 	background-repeat: no-repeat;
 	background-position: 95% 48.7%;
