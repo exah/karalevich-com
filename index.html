@@ -11,8 +11,8 @@ description: "Cross disciplinary designer"
 {% include nav-b.html %}
 
 {% for post in site.posts %}
-	<div class='wrapper-screen'>
-		<div class='wrapper lazy'>
+	<div class='wrapper-screen {{ post.permalink }}'>
+		<div class='wrapper'>
 			<div>
 			{{ post.content }}
 			<div class='nav-ch-c gap-t-1'>{{ post.title }}</div>
