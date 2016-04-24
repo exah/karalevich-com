@@ -1,0 +1,7 @@
+To fix:
+
+- project images in list
+- lazy load for project blocks
+- dynamic 1/9 counter
+- revert to slide 1 when clicking on another slider
+- flexbox issue with links-b in about and list (on window resize)

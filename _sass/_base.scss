@@ -168,6 +168,21 @@ a:hover {
     height: 100vh;
 }
 
+.wrapper-screen-popup {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+
+    @media (max-height: 600px) {
+        height: 100%;
+        align-items: flex-end;
+    }
+}
+
 .wrapper {
     display: flex;
     justify-content: center;
@@ -249,6 +264,11 @@ a:hover {
     overflow: visible;
 }
 
+.grow {
+    flex-grow: 1;
+}
+
+
 
 
 /* NAVIGATION */
@@ -261,6 +281,10 @@ a:hover {
     transform: translateX(-50%);
     width: 100%;
     padding: 20px;
+
+    @media (max-width: 640px) {
+        padding: 20px 10px;
+    }
 }
 
 .nav-b {
@@ -271,6 +295,20 @@ a:hover {
     transform: translateX(-50%);
     width: 100%;
     padding: 20px;
+
+    @media (max-width: 640px) {
+    padding: 20px 10px;
+    }
+}
+
+.links-b {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+
+    @media (max-width: 640px) {
+    flex-direction: column;
+    }
 }
 
 .nav-content-between {
@@ -285,7 +323,6 @@ a:hover {
 
 .nav-ch-l {
     text-align: left;
-    width: 20%;
 }
 
 .nav-ch-c {
@@ -294,7 +331,28 @@ a:hover {
 
 .nav-ch-r {
     text-align: right;
-    width: 20%;
+}
+
+.less-640 {
+    display: none;
+
+    @media (max-width: 640px) {
+        width: 30px;
+        display: block;
+    }
+}
+
+.more-640 {
+    display: block;
+    width: 100px;
+
+    @media (max-width: 640px) {
+        display: none;
+    }
+}
+
+.open-list, .open-about, .close-popup {
+    cursor: pointer;
 }
 
 
@@ -315,6 +373,10 @@ a:hover {
     flex-wrap: wrap;
     justify-content: space-between;
 
+    @media (max-width: 640px) {
+        padding: 0 10px;
+    }
+
     &-link {
         display: block;
 
@@ -328,7 +390,7 @@ a:hover {
         position: relative;
         width: 100%;
         padding-top: 3px;
-        line-height: 44px;
+        line-height: 38px;
         margin-top: -2px;
         border-top: 2px solid;
         border-bottom: 2px solid;
