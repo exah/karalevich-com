@@ -1,25 +1,30 @@
-<div class='popup'>
+<div id='list' class='popup bg-white-alpha hidden fade-in'>
 
-  <div class='wrapper overflow-visible'>
+  <div class='wrapper-screen'>
+
+    <div class='nav-t'>
+      <div class='nav-content-between'>
+        <div class='nav-ch-l'><a class='close-popup'>– List</a></div>
+        <div class='nav-ch-c'>&nbsp;</div>
+        <div class='nav-ch-r'>&nbsp;</div>
+      </div>
+    </div>
+
+    <div class='wrapper overflow-visible'>
+
       <ul class='project-list'>
         {% for post in site.posts %}
-          {% if page.url == post.url %}
-        	<li class='project-list-item '>
-          	<a class='project-list-link' href='{{ post.url | prepend: site.baseurl }}'>—
-          		<img class="project-list-link-preview" src='{{ post.preview }}'>
-          		<span class=''>{{ post.title }}</span>
-          	</a>
-        	</li>
-          {% else %}
-          <li class='project-list-item'>
+          <li class='project-list-item '>
             <a class='project-list-link' href='{{ post.url | prepend: site.baseurl }}'>
               <img class="project-list-link-preview" src='{{ post.preview }}'>
               <span class=''>{{ post.title }}</span>
             </a>
           </li>
-          {% endif %}
         {% endfor %}
       </ul>
+
+    </div>
+
   </div>
 
 </div>

@@ -11,7 +11,7 @@
 
 .text-center {
 	min-width: 610px;
-	max-width: 770px;
+	max-width: 720px;
 	text-align: center;
 
 		@media (max-width: 640px) {
@@ -25,22 +25,6 @@
 	hyphens: none;
 }
 
-
-
-
-/* BLOCKS */
-
-.fluid-video {
-	display: block;
-}
-
-.gap-t-1 {
-	padding-top: 10px;
-}
-
-.hidden {
-	display: none;
-}
 
 
 

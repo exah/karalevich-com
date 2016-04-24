@@ -7,18 +7,21 @@ description: "Cross disciplinary designer"
 
 <div class='page'>
 
-{% include nav-t.html %}
-{% include nav-b.html %}
+	{% include nav-t.html %}
+	{% include nav-b.html %}
 
-{% for post in site.posts %}
-	<div class='wrapper-screen {{ post.permalink }}'>
-		<div class='wrapper'>
-			<div>
-			{{ post.content }}
-			<div class='nav-ch-c gap-t-1'>{{ post.title }}</div>
+	{% for post in site.posts %}
+		<div id='{{ post.permalink }}' class='wrapper-screen'>
+			<div class='wrapper'>
+				<div class='gap-t-2'>
+				{{ post.content }}
+				<div class='nav-ch-c gap-t-1'>{{ post.title }}</div>
+				</div>
 			</div>
 		</div>
-	</div>
-{% endfor %}
+	{% endfor %}
+
+	{% include about.html %}
+	{% include list.html %}
 
 </div>
