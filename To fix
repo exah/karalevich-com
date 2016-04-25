@@ -1,11 +1,19 @@
 To fix:
 
+- make blocks resizible by height
+- clickable description text in project slides
 - flexbox issue with links-b in about and list (on window resize)
 - images appearing when not hovering in project list
 
 To add:
 
+- show hidden block when idle
+- welcome screen
+- change loader (Wait)
 - revert to slide 1 when clicking on another slider
-- dynamic 1/9 counter
-- show text block when idle
-- loading welcome screen
+- dynamic 1/9 counter ?
+
+Project cases:
+
+- change all video covers to hi-res
+	- polytech

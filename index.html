@@ -8,7 +8,6 @@ description: "Cross disciplinary designer"
 <div id='page' class='page fade-in hidden'>
 
 	{% include nav-t.html %}
-	{% include nav-b.html %}
 
 	{% for post in site.posts %}
 		<div id='{{ post.permalink }}' class='wrapper-screen reveal'>
@@ -23,5 +22,6 @@ description: "Cross disciplinary designer"
 
 	{% include about.html %}
 	{% include list.html %}
+	{% include end.html %}
 
 </div>
