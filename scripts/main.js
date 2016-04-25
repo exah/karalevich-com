@@ -65,8 +65,8 @@ $(window).on('load', function() {
       }
     
       $img.css({
-        left: coordX - offsetX+60,
-        top: coordY - offsetY-150,
+        left: coordX - offsetX+200,
+        top: coordY - offsetY-1200,
       });
     } else {
       if ($img.is(':visible')) {

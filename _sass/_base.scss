@@ -308,6 +308,8 @@ a:hover {
 .links-b {
     display: flex;
     justify-content: center;
+    align-items: center;
+    max-width: 100%;
     padding-bottom: 20px;
 
     @media (max-width: 640px) {
@@ -370,6 +372,7 @@ a:hover {
 
 .project-list {
     list-style: none;
+    width: 600px;
     padding: 0;
     margin-top: 2px;
     position: relative;
@@ -385,7 +388,7 @@ a:hover {
         display: block;
 
         &-preview {
-        	z-index: 1;
+        	z-index: -1;
         }
     }
 
@@ -410,7 +413,7 @@ a:hover {
             width: auto;
             max-height: 200px;
             max-width: 200px;
-            z-index: 2;
+            /*z-index: 2;*/
 
             @media (max-width: 640px) {
                 display: none!important;
