@@ -141,23 +141,23 @@ a:hover {
     top: 0;
     left: 0;
     z-index: 2;
-    color: #cccccc;
 }
 
 .bg-black-alpha {
     background-color: rgba(0, 0, 0, .96);
-}
-
-.bg-white-alpha {
-    background-color: rgba(255, 255, 255, .98);
-}
-
-.bg-black-alpha a {
     color: #cccccc;
 }
 
-.bg-black-alpha a:hover {
-    color: #fff;
+    .bg-black-alpha a {
+        color: #cccccc;
+    }
+
+    .bg-black-alpha a:hover {
+        color: #fff;
+    }
+
+.bg-white-alpha {
+    background-color: rgba(255, 255, 255, .98);
 }
 
 .wrapper-screen {
@@ -201,6 +201,10 @@ a:hover {
         margin: 0px;
     }
 }
+
+    .wrapper-child {
+        width: 100%;
+    }
 
 .parent-center {
     position: relative;
@@ -390,18 +394,22 @@ a:hover {
         position: relative;
         width: 100%;
         padding-top: 3px;
-        line-height: 38px;
-        margin-top: -2px;
-        border-top: 2px solid;
-        border-bottom: 2px solid;
-        border-color: #262626;
+        font-size: 36px;
+        line-height: 52px;
+        text-align: center;
+        margin-top: -1px;
+        /*border-top: 1px solid;*/
+        /*border-bottom: 1px solid;*/
+        /*border-color: #262626;*/
     
         img {
             position: absolute;
             display: none;
             margin-top: -3px;
-            max-height: 330px;
-            max-width: 330px;
+            height: auto;
+            width: auto;
+            max-height: 200px;
+            max-width: 200px;
             z-index: 2;
 
             @media (max-width: 640px) {

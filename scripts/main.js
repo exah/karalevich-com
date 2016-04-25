@@ -6,7 +6,7 @@ $(window).on('load', function() {
   // Hides all until loaded
 
   $(document).ready(function () {
-    $('body').removeClass('hidden');
+    $('#page').removeClass('hidden');
     $('#loader').addClass('hidden');
   });
 
@@ -173,6 +173,8 @@ $(window).on('load', function() {
 
 
 
+
+
   // Scroll to top
 
   $('.project-list-link,.scroll-top').click(function() {
@@ -183,8 +185,36 @@ $(window).on('load', function() {
 
 
 
+
+
   // ScrollReveal
 
-  ScrollReveal().reveal('.reveal', { reset: true });
+  ScrollReveal().reveal('.reveal', { reset: true, scale: 0, distance: 0 });
+
+
+
+
+  // Keyboard navigation
+
+  $(document).on('keyup',function(evt) {
+    if (evt.keyCode == 65) {
+       $('#about').removeClass('hidden');
+       $('#list').addClass('hidden');
+    }
+
+    if (evt.keyCode == 76) {
+       $('#list').removeClass('hidden');
+       $('#about').addClass('hidden');
+    }
+
+  });
+
+  $(document).on('keyup',function(evt) { // close popup
+    if (evt.keyCode == 27) {
+       $('#about, #list').addClass('hidden');
+    }
+  });
+
+
 
 });
