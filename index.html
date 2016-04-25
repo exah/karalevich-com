@@ -11,7 +11,7 @@ description: "Cross disciplinary designer"
 	{% include nav-b.html %}
 
 	{% for post in site.posts %}
-		<div id='{{ post.permalink }}' class='wrapper-screen'>
+		<div id='{{ post.permalink }}' class='wrapper-screen reveal'>
 			<div class='wrapper basic-waypoint'>
 				<div class='gap-t-2'>
 				{{ post.content }}
@@ -23,5 +23,6 @@ description: "Cross disciplinary designer"
 
 	{% include about.html %}
 	{% include list.html %}
+	{% include loader.html %}
 
 </div>
