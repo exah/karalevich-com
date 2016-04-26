@@ -99,7 +99,7 @@ $(window).on('load', function() {
     $('.slider').slick({
       lazyLoad: 'ondemand',
       adaptiveHeight: true,
-      speed: 350,
+      speed: 250,
       fade: true,
       focusOnSelect: true,
       dots: false,
@@ -153,8 +153,9 @@ $(window).on('load', function() {
 
   $('.slick-arrow').click(function() {
       $('html,body').animate({
-          scrollTop: $(this).closest('.wrapper-screen').offset().top},
-          'slow');
+          scrollTop: $(this).closest('.wrapper-screen').offset().top
+        }, 200
+      );
   });
 
 
@@ -181,13 +182,19 @@ $(window).on('load', function() {
 
   // Scroll to top
 
-  $('.project-list-link,.scroll-top').click(function() {
-
-      $('html,body').animate ({
-      scrollTop: $($(this).attr('href')).offset().top}, 'slow');
+  $('.project-list-link').click(function() {
+    $('html,body').animate ({
+      scrollTop: $($(this).attr('href')).offset().top
+    }, 'slow'
+    );
   });
 
-
+  $('.scroll-top').on('click',function() {
+    $('html,body').animate ({
+      scrollTop: 0
+    }, 'slow'
+    );
+  }); 
 
 
 
@@ -207,10 +214,10 @@ $(window).on('load', function() {
 
   var togglePopup = function($el) {
     if ($el.hasClass('hidden')) {
-        $el.removeClass('hidden');
-      } else {
-        $el.addClass('hidden');
-      }
+      $el.removeClass('hidden');
+    } else {
+      $el.addClass('hidden');
+    }
   }
 
   $(document).on('keyup',function(evt) { // close popup
@@ -250,8 +257,34 @@ $(window).on('load', function() {
 
   // Post count
 
-  var totalPosts = $('.wrapper-screen').length;
+  var totalPosts = $('.reveal').length;
     $('span.post-count').html(totalPosts);
+
+
+
+
+
+  // show 'about' when idle
+
+  idleTimer = null;
+  idleState = false;
+  idleWait = 300000;
+
+  (function ($) {
+
+      $(document).ready(function () {
+          $('*').on('mousemove keydown scroll', function () {
+              clearTimeout(idleTimer);
+              
+              idleState = false;
+              idleTimer = setTimeout(function () {
+                  $('#about').removeClass('hidden'); // hide 'about'
+                  idleState = true; }, idleWait);
+          });
+          $('#about').trigger('mousemove');
+      
+      });
+  }) (jQuery)
 
 
 
