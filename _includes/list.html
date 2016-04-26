@@ -4,18 +4,15 @@
 
     <div class='nav-t'>
       <div class='nav-content-between'>
-
-        <div class='nav-ch-l more-640'><a class='close-popup'>List –</a></div>
-          <div class='nav-ch-l less-640'><a class='close-popup'>(L)</a></div>
-
+        <div class='nav-ch-l nav-adapt'><a class='close-popup'>List –</a></div>
         <div class='nav-ch-c'>&nbsp;</div>
         <div class='nav-ch-r'>&nbsp;</div>
       </div>
     </div>
 
-    <div class='wrapper overflow-visible'>
+    <div class='wrapper margin-0 overflow-visible'>
 
-      <ul class='project-list'>
+      <ul class='project-list text-big'>
         {% for post in site.posts %}
           <li class='project-list-item'>
             <a class='project-list-link' href='#{{ post.permalink }}'>

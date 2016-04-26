@@ -34,6 +34,10 @@ body {
     -webkit-font-smoothing: antialiased;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+
+    @media (max-width: 640px) {
+        font-size: 14px;
+    }
 }
 
 .fade-in {
@@ -185,6 +189,10 @@ a:hover {
         height: 100%;
         align-items: flex-end;
     }
+
+    @media (max-width: 640px) {
+        height: 100%;
+    }
 }
 
 .wrapper {
@@ -202,7 +210,7 @@ a:hover {
     }
 
     @media (max-width: 640px) {
-        margin: 0px;
+        margin: 10px;
     }
 }
 
@@ -216,7 +224,6 @@ a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 18px;
 }
 
     .parent-center:after {
@@ -280,6 +287,14 @@ a:hover {
     flex-grow: 1;
 }
 
+.random {
+    display: none;
+}
+
+.margin-0 {
+    margin: 0;
+}
+
 
 
 
@@ -317,7 +332,7 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 100%;
+    width: 100%;
     padding-bottom: 20px;
 
     @media (max-width: 640px) {
@@ -347,21 +362,12 @@ a:hover {
     text-align: right;
 }
 
-.less-640 {
-    display: none;
-
-    @media (max-width: 640px) {
-        width: 30px;
-        display: block;
-    }
-}
-
-.more-640 {
+.nav-adapt {
     display: block;
     width: 100px;
 
     @media (max-width: 640px) {
-        display: none;
+        width: 60px;
     }
 }
 
@@ -405,13 +411,15 @@ a:hover {
         position: relative;
         width: 100%;
         padding-top: 3px;
-        font-size: 36px;
+        /*font-size: 36px;*/
         line-height: 52px;
         text-align: center;
         margin-top: -1px;
-        /*border-top: 1px solid;*/
-        /*border-bottom: 1px solid;*/
-        /*border-color: #262626;*/
+
+        @media (max-width: 640px) {
+            /*font-size: 24px;*/
+            line-height: 34px;
+        }
     
         img {
             position: absolute;
@@ -421,7 +429,6 @@ a:hover {
             width: auto;
             max-height: 200px;
             max-width: 200px;
-            /*z-index: 2;*/
 
             @media (max-width: 640px) {
                 display: none!important;

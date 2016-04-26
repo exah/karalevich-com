@@ -17,7 +17,7 @@
 	text-align: center;
 
 		@media (max-width: 640px) {
-			font-size: 24px;
+			font-size: 20px;
 			padding: 0 15px;
 			min-width: 100%;
 		}
@@ -62,11 +62,7 @@
     z-index: 1;
 
     @media (max-width: 640px) {
-    	width: 30%;
-    	background: url("/left.svg") no-repeat;
-        background-size: 12px 17px;
-        background-repeat: no-repeat;
-        background-position: 5% 48.7%;
+    	width: 40%;
     }
 }
 
@@ -78,13 +74,6 @@
     -moz-animation: fadein 0.2s;
     -webkit-animation: fadein 0.2s;
     -o-animation: fadein 0.2s;
-
-	@media (max-width: 640px) {
-		background: url("/left.svg") no-repeat;
-        background-size: 12px 17px;
-        background-repeat: no-repeat;
-        background-position: 5% 48.7%;
-	}
 }
 
 .slick-next {
@@ -105,11 +94,7 @@
     z-index: 1;
 
     @media (max-width: 640px) {
-    	width: 30%;
-    	background: url("/right.svg") no-repeat;
-        background-size: 12px 17px;
-        background-repeat: no-repeat;
-        background-position: 95% 48.7%;
+    	width: 40%;
     }
 }
 
@@ -121,11 +106,4 @@
     -moz-animation: fadein 0.2s;
     -webkit-animation: fadein 0.2s;
     -o-animation: fadein 0.2s;
-
-	@media (max-width: 640px) {
-    	background: url("/right.svg") no-repeat;
-        background-size: 12px 17px;
-        background-repeat: no-repeat;
-        background-position: 95% 48.7%;
-    }
 }

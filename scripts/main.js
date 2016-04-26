@@ -3,12 +3,14 @@ $(window).on('load', function() {
 
 
 
+
   // Hides all until loaded
 
   $(document).ready(function () {
     $('#page').removeClass('hidden');
     $('#loader').addClass('hidden');
   });
+
 
 
 
@@ -90,14 +92,14 @@ $(window).on('load', function() {
 
 
 
+
   // Slick initialization
 
   $(document).ready(function(){
     $('.slider').slick({
       lazyLoad: 'ondemand',
       adaptiveHeight: true,
-      speed: 500,
-      autoplaySpeed: 4000,
+      speed: 350,
       fade: true,
       focusOnSelect: true,
       dots: false,
@@ -109,6 +111,8 @@ $(window).on('load', function() {
 
 
 
+
+
   // Block resize with ratio
 
   function doResize() {
@@ -117,7 +121,6 @@ $(window).on('load', function() {
       var $parent = $fluid.parent();
       var parentHeight = $parent.height();
       var parentWidth = $parent.width();
-    
     
       if (!$fluid.data('ratio')) {
         $fluid.data(
@@ -150,9 +153,10 @@ $(window).on('load', function() {
 
   $('.slick-arrow').click(function() {
       $('html,body').animate({
-          scrollTop: $(this).parent().parent().parent().offset().top},
+          scrollTop: $(this).closest('.wrapper-screen').offset().top},
           'slow');
   });
+
 
 
 
@@ -189,31 +193,66 @@ $(window).on('load', function() {
 
   // ScrollReveal
 
-  ScrollReveal().reveal('.reveal', { reset: true, scale: 0, distance: 0 });
+  ScrollReveal().reveal('.reveal', {
+    reset: true,
+    scale: 0,
+    distance: 0
+  });
 
 
 
+  
 
   // Keyboard navigation
 
-  $(document).on('keyup',function(evt) {
-    if (evt.keyCode == 65) {
-       $('#about').removeClass('hidden');
-       $('#list').addClass('hidden');
-    }
+  var togglePopup = function($el) {
+    if ($el.hasClass('hidden')) {
+        $el.removeClass('hidden');
+      } else {
+        $el.addClass('hidden');
+      }
+  }
 
-    if (evt.keyCode == 76) {
-       $('#list').removeClass('hidden');
-       $('#about').addClass('hidden');
+  $(document).on('keyup',function(evt) { // close popup
+
+    switch(evt.keyCode) {
+      case 65: // A
+        return togglePopup($('#about'))
+      case 76: // L
+        return togglePopup($('#list'))
     }
 
   });
 
-  $(document).on('keyup',function(evt) { // close popup
+  $(document).on('keyup',function(evt) { // close popup with Esc
     if (evt.keyCode == 27) {
        $('#about, #list').addClass('hidden');
     }
   });
+
+
+
+
+
+  // Random end text
+
+  var divs = $('.random').get().sort(function() {
+  return 0.5 - Math.random();
+  }).slice(0,1)
+
+  if (divs.length > 0) {
+    $(divs).appendTo(divs[0].parentNode).show();
+  }
+
+
+
+
+
+  // Post count
+
+  var totalPosts = $('.wrapper-screen').length;
+    $('span.post-count').html(totalPosts);
+
 
 
 

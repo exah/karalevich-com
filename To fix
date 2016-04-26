@@ -1,17 +1,18 @@
 To fix:
 
-- make blocks resizible by height
+- make .wrapper-screen resize by height
+- make 'about' and 'list' resizible by content
 - clickable description text in project slides
-- flexbox issue with links-b in about and list (on window resize)
+- clickable menu on project slides
+- flexbox issue with .links-b in 'about' and 'list' (can't fit)
 - images appearing when not hovering in project list
 
 To add:
 
 - show hidden block when idle
 - welcome screen
-- change loader (Wait)
 - revert to slide 1 when clicking on another slider
-- dynamic 1/9 counter ?
+- dynamic 1/9 counter in .end
 
 Project cases:
 
