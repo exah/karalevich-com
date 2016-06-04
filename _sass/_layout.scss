@@ -81,6 +81,28 @@
     margin: 0;
 }
 
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.rotate {
+    animation: spin;
+    width: 80vh;
+    animation: spin 30s linear infinite;
+}
+
+@keyframes spin-2 {
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+.rotate-2 {
+    width: 80vh;
+    animation: spin-2 30s linear infinite;
+}
 
 
 
@@ -88,7 +110,7 @@
 /* LOADER */
 
 @keyframes flickerAnimation-2 {
-	0%  { opacity: 0 }
+	0% { opacity: 0 }
 	33% { opacity: 1 }
 	100% { opacity: 1 }
 }
@@ -98,7 +120,7 @@
 }
 
 @keyframes flickerAnimation-3 {
-	0%  { opacity: 0 }
+	0% { opacity: 0 }
 	66% { opacity: 1 }
 	100% { opacity: 1 }
 }

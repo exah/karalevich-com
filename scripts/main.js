@@ -99,7 +99,7 @@ $(window).on('load', function() {
     $('.slider').slick({
       lazyLoad: 'ondemand',
       adaptiveHeight: true,
-      speed: 10,
+      speed: 250,
       fade: true,
       focusOnSelect: true,
       dots: false,
@@ -276,24 +276,25 @@ $(window).on('load', function() {
 
 
 
-  // show 'about' when idle
+  // show 'idle' when idle
 
-  idleTimer = null;
-  idleState = false;
-  idleWait = 300000;
+  var idleTimer = null;
+  var idleState = false;
+  var idleWait = 100000;
 
   (function ($) {
 
       $(document).ready(function () {
           $('*').on('mousemove keydown scroll', function () {
               clearTimeout(idleTimer);
+              $('#idle').addClass('hidden');
               
               idleState = false;
               idleTimer = setTimeout(function () {
-                  $('#about').removeClass('hidden'); // hide 'about'
+                  $('#idle').removeClass('hidden');
                   idleState = true; }, idleWait);
           });
-          $('#about').trigger('mousemove');
+          $('#idle').trigger('mousemove');
       
       });
   }) (jQuery)
