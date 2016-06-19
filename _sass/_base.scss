@@ -91,7 +91,7 @@ a:hover {
 }
 
 .bg-black {
-    background: #000;
+    background: #000!important;
 }
 
 
@@ -185,6 +185,7 @@ a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
+    background: #f2f2f2;
 }
 
     .parent-center:after {
