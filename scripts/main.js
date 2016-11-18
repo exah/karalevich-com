@@ -31,7 +31,7 @@ $(window).on('load', function() {
 
   });
 
-  $(window).resize(function() {
+  function fluidResize() {
     var newWidth = $fluidEl.width();
 
     $allVideos.each(function() {
@@ -43,7 +43,9 @@ $(window).on('load', function() {
 
     });
 
-    }).resize();
+  }
+
+  $(window).resize(fluidResize).resize();
 
 
 
@@ -110,15 +112,7 @@ $(window).on('load', function() {
       focusOnSelect: true,
     });
 
-    // if ($(window).width() >= 640) {
-    //   $('.slider').slick({
-    //     fade: true
-    //   })
-    // } else {
-    //   $('.slider').slick({
-    //     fade: false
-    //   });
-    // }
+    $('.slider').on('lazyLoaded, afterChange', fluidResize);
   });
 
 
