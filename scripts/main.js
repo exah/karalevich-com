@@ -99,7 +99,7 @@ $(window).on('load', function() {
 
   $(document).ready(function(){
     $('.slider').slick({
-      lazyLoad: 'ondemand',
+      lazyLoad: 'progressive',
       adaptiveHeight: true,
       speed: 250,
       fade: true,
@@ -112,7 +112,10 @@ $(window).on('load', function() {
       focusOnSelect: true,
     });
 
-    $('.slider').on('lazyLoaded, afterChange', fluidResize);
+    $('.slider').on('lazyLoaded, afterChange', function() {
+      fluidResize();
+      $('.slider').slick('setPosition');
+    });
   });
 
 
