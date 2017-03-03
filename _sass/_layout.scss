@@ -221,6 +221,10 @@
   height: 100vh;
   color: #262626;
   cursor: pointer;
+
+  @media (max-width: 640px) {
+    height: 90vh;
+  }
 }
 
 .wd-intro--bg {
@@ -249,7 +253,7 @@
   font-size: 38px;
 
   @media (max-width: 640px) {
-    font-size: 28px;
+    font-size: 24px;
   }
 }
 
@@ -324,6 +328,10 @@
   justify-content: center;
   cursor: pointer;
   background-color: #fff;
+
+  @media (max-width: 640px) {
+    z-index: 1;
+  }
 }
 
 .wd-open--size:hover {
