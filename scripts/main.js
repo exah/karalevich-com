@@ -57,17 +57,17 @@ $(window).on('load', function() {
 
   $projectListItem.on('mousemove', function(e){
     var $img = $(this).find('img');
-    
+
     if ($(window).width() >= 640) {
       var coordX = event.pageX;
       var coordY = event.pageY;
       var offsetX = $(this).offset().left;
       var offsetY = $(this).offset().bottom;
-    
+
       if (!$img.is(':visible')) {
         $img.show();
       }
-    
+
       $img.css({
         left: coordX - offsetX+200,
         top: coordY - offsetY-1200,
@@ -77,10 +77,10 @@ $(window).on('load', function() {
         $img.hide();
       }
     }
-      
+
   }).on('mouseleave', function() {
     var $img = $(this).find('img');
-    
+
     if ($img.is(':visible')) {
       $img
       .hide()
@@ -130,13 +130,13 @@ $(window).on('load', function() {
       var $parent = $fluid.parent();
       var parentHeight = $parent.height();
       var parentWidth = $parent.width();
-    
+
       if (!$fluid.data('ratio')) {
         $fluid.data(
           'ratio', $fluid.width() / $fluid.height()
         );
       }
-    
+
       var ratio = $fluid.data('ratio');
 
       var nextHeight = parentWidth / ratio;
@@ -217,7 +217,7 @@ $(window).on('load', function() {
 
 
 
-  
+
 
   // Keyboard navigation
 
@@ -285,17 +285,15 @@ $(window).on('load', function() {
           $('*').on('mousemove keydown scroll', function () {
               clearTimeout(idleTimer);
               $('#idle').addClass('hidden');
-              
+
               idleState = false;
               idleTimer = setTimeout(function () {
                   $('#idle').removeClass('hidden');
                   idleState = true; }, idleWait);
           });
           $('#idle').trigger('mousemove');
-      
+
       });
   }) (jQuery)
-
-
 
 });
