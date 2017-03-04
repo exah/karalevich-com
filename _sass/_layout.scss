@@ -213,6 +213,10 @@
 #wd-open {
   position: relative;
   overflow: hidden;
+
+  @media (max-width: 640px) {
+    position: fixed;
+  }
 }
 
 #wd-intro {
