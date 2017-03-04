@@ -227,6 +227,7 @@
 
 #wd__info {
   position: relative;
+  overflow: hidden;
 }
 
 #wd__info--content {
@@ -307,8 +308,9 @@
 
 /* Message screen */
 
-#wd__message-screen, #wd__guests-screen, #wd__where-screen {
+#wd__message-screen, #wd__guests-screen, #wd__where-screen, #wd__lookbook-screen {
   height: 100vh;
+  overflow: hidden;
 }
 
 #wd__message-screen {
