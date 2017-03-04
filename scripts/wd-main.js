@@ -47,4 +47,10 @@ $(document).ready(function() {
     $(this).siblings().removeClass('wd__lookbook__img--zoom');
   })
 
+  // Draggable
+
+  $(function() {
+    $('.wd__lookbook__img, .wd__open--size').draggable()
+  })
+
 })
