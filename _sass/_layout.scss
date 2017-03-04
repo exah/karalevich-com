@@ -206,6 +206,7 @@
 #wd {
   font-family: 'Times New Roman';
   text-align: center;
+  position: relative;
 }
 
 .wd__wrapper {
@@ -226,7 +227,7 @@
 }
 
 #wd__info {
-  position: relative;
+  position: fixed;
   overflow: hidden;
 }
 
@@ -337,6 +338,7 @@
   transform: scale(1);
   transform: translate(-50%, -50%);
   z-index: 1;
+  opacity: .9;
 
   @media (max-width: 1136px) {
     font-size: 200px;
