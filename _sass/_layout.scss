@@ -388,11 +388,17 @@
   width: 300px;
   height: auto;
   position: absolute;
+  cursor: pointer;
   animation: rotate 80s infinite alternate;
 
   @media (max-width: 640px) {
     width: 120px;
   }
+}
+
+.wd__lookbook__img--zoom {
+  width: 600px;
+  height: auto;
 }
 
 @keyframes rotate {

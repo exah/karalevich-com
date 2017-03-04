@@ -40,4 +40,11 @@ $(document).ready(function() {
     $('#wd__message-screen').removeClass('wd__display--none')
     })
 
+  // Zoom on click
+
+  $('.wd__lookbook__img').click(function() {
+    $(this).addClass('wd__lookbook__img--zoom');
+    $(this).siblings().removeClass('wd__lookbook__img--zoom');
+  })
+
 })
