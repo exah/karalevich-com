@@ -201,8 +201,14 @@
 
 /* SPECIALS */
 
+
 /* Screens */
-.wd-wrapper {
+#wd {
+  font-family: 'Times New Roman';
+  text-align: center;
+}
+
+.wd__wrapper {
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -210,7 +216,7 @@
   justify-content: center;
 }
 
-#wd-open {
+#wd__open {
   position: relative;
   overflow: hidden;
 
@@ -219,41 +225,28 @@
   }
 }
 
-#wd-intro {
+#wd__intro {
   display: none;
   width: 100vw;
   height: 100vh;
   color: #262626;
-  cursor: pointer;
+  cursor:pointer;
 
   @media (max-width: 640px) {
     height: 90vh;
   }
 }
 
-.wd-intro--bg {
-  width: 100vw;
-  height: 100vh;
-  background-image: url(../specials/images/hearts1.gif);
-  background-repeat: no-repeat;
-  background-size: 70%;
-  background-position: center;
-}
-
-#wd-info {
+#wd__info {
  display: none;
  width: 100vw;
  height: 100vh;
  background: #FFF3F3;
 }
 
-/* Text style */
 
-#wd {
-  font-family: 'Times New Roman';
-  text-align: center;
-}
-.wd-desc {
+/* Text style */
+.wd__desc {
   font-size: 38px;
 
   @media (max-width: 640px) {
@@ -262,8 +255,10 @@
   }
 }
 
-.wd-h1 {
+.wd__h1 {
   font-size: 300px;
+  font-family: 'Helvetica';
+  font-weight: 100;
 
   @media (max-width: 1136px) {
     font-size: 200px;
@@ -273,10 +268,10 @@
   }
 }
 
-.wd-h2 {
+.wd__h2 {
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 26px;
+  font-size: 20px;
 
   @media (max-width: 640px) {
    font-size: 12px;
@@ -285,17 +280,25 @@
 
 
 /* Menu */
-.wd-menu {
+.wd__menu {
+  position: absolute;
+  width: 100%;
   display: flex;
   justify-content: space-around;
-  height: 10%;
+  height: 50px;
 
   @media (max-width: 640px) {
     height: 6%;
   }
 }
 
-.wd-menu-item {
+.wd__menu--fixed {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+}
+
+.wd__menu-item {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -303,28 +306,24 @@
   cursor: pointer;
 }
 
-.wd-menu-item--active {
+.wd__menu-item--active {
   border-bottom: 2px solid red;
   color: red;
 }
 
 
 /* Blocks */
-.wd-flexbox--center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.wd-desc--height {
+.wd__desc--height {
   height: 20%;
 }
 
-.wd-h1--height {
+.wd__h1--height {
   height: 60%;
 }
 
-.wd-open--size {
+
+/* Opening — envelopes */
+.wd__open--size {
   width: 50%;
   height: 50%;
   border: 2px solid red;
@@ -340,61 +339,68 @@
   }
 }
 
-.wd-open--size:hover {
+.wd__open--size:hover {
   color: red;
   z-index: 1;
 }
 
-.wd-open--button {
+.wd__open--button {
+  transform: rotate(-2deg);
+
   @media (max-width: 640px) {
     z-index: 1;
+    padding-bottom: 40px;
   }
 }
 
-.wd-envelope--1 {
+.wd__envelope--1 {
+  top: -40%;
+  left: 30%;
   position: absolute;
   transform: rotate(30deg)
 }
 
-.wd-envelope--2 {
+.wd__envelope--2 {
   position: absolute;
   top: 50%;
   left: 10%;
   transform: rotate(40deg)
 }
 
-.wd-envelope--3 {
+.wd__envelope--3 {
   position: absolute;
   top: 20%;
   left: 70%;
   transform: rotate(-35deg)
 }
 
-.wd-envelope--4 {
+.wd__envelope--4 {
   position: absolute;
   top: 0;
   left: -10%;
   transform: rotate(48deg)
 }
 
-.wd-envelope--5 {
+.wd__envelope--5 {
   position: absolute;
   top: 60%;
   left: 60%;
   transform: rotate(10deg)
 }
 
-.wd-envelope--6 {
+.wd__envelope--6 {
   position: absolute;
   top: -10%;
   left: -10%;
   transform: rotate(70deg)
 }
 
-.wd-heart {
+/* Heart */
+.wd__heart {
   color: red;
   padding: 0 100px 0 100px;
   animation: color 8s infinite alternate;
+  transform: scale(1);
 
   @media (max-width: 768px) {
     padding: 0 20px 0 20px;
@@ -404,17 +410,21 @@
 @keyframes color {
   33% {
     color: #F6FF3E;
+    transform: scale(1.5);
   }
   66% {
     color: #3EFF59;
   }
 }
 
-#wd-info--content {
-  height: 90vh;
+/* Content */
+#wd__info--content {
+  height: 100vh;
 }
 
-.wd-guests--content {
+
+/* Guests */
+.wd__guests--content {
   display: flex;
   padding: 40px;
   width: 100%;
@@ -425,7 +435,7 @@
   }
 }
 
- .wd-guests--col {
+ .wd__guests--col {
   width: 50%;
   list-style: none;
 
@@ -434,10 +444,44 @@
   }
  }
 
- .wd-guests--col li {
+ .wd__guests--col li {
   padding: 3px;
 }
 
- .wd-display--none {
+
+/* Lookbook */
+.wd__lookbook--content {
+  /*position: relative;*/
+  /*overflow: hidden;*/
+}
+
+.wd__lookbook__img {
+  width: 300px;
+  height: auto;
+  /*position: absolute;*/
+}
+
+wd__lookbook__img--01 {
+  transform: rotate(-2deg);
+}
+
+
+/* Modificators */
+.wd__flexbox--center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wd__display--none {
   display: none;
- }
+}
+
+.wd__fade-in {
+  animation: fadein 1.5s;
+
+  @keyframes fadein {
+    from { opacity: 0 }
+    to { opacity: 1 }
+  }
+}
