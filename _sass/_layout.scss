@@ -254,6 +254,7 @@
 
   @media (max-width: 640px) {
     font-size: 20px;
+    line-height: 20px;
   }
 }
 
@@ -330,13 +331,20 @@
   background-color: #fff;
 
   @media (max-width: 640px) {
-    z-index: 1;
+    width: 70%;
+    height: 70%;
   }
 }
 
 .wd-open--size:hover {
   color: red;
   z-index: 1;
+}
+
+.wd-open--button {
+  @media (max-width: 640px) {
+    z-index: 1;
+  }
 }
 
 .wd-envelope--1 {
@@ -421,6 +429,10 @@
     width: 100%;
   }
  }
+
+ .wd-guests--col li {
+  padding: 3px;
+}
 
  .wd-display--none {
   display: none;
