@@ -319,7 +319,10 @@
 }
 
 #wd__message-screen {
+
+  @media (max-width: 640px) {
   padding-bottom: 50px;
+  }
 }
 
 .wd__desc--height {
@@ -333,7 +336,7 @@
 /* Heart */
 #wd__heart {
   position: absolute;
-  top: 50%;
+  top: 48%;
   left: 50%;
   color: red;
   font-size: 350px;
