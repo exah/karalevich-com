@@ -316,6 +316,9 @@
 
 #wd__message-screen, #wd__guests-screen, #wd__where-screen, #wd__lookbook-screen {
   height: 100%;
+}
+
+#wd__message-screen {
 
   @media (max-width: 640px) {
   padding-bottom: 50px;
