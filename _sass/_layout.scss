@@ -207,6 +207,7 @@
   font-family: 'Times New Roman';
   text-align: center;
   position: relative;
+  overflow: hidden;
   height: 100vh;
   width: 100vw;
 }
@@ -221,7 +222,6 @@
 
 #wd__open {
   position: relative;
-  overflow: hidden;
 
   @media (max-width: 640px) {
     position: fixed;
@@ -230,7 +230,6 @@
 
 #wd__info {
   position: fixed;
-  overflow: hidden;
 }
 
 #wd__info--content {
@@ -317,10 +316,6 @@
 
 #wd__message-screen, #wd__guests-screen, #wd__where-screen, #wd__lookbook-screen {
   height: 100%;
-  overflow: hidden;
-}
-
-#wd__message-screen {
 
   @media (max-width: 640px) {
   padding-bottom: 50px;
