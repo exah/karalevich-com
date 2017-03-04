@@ -1,20 +1,13 @@
 <div id="wd__info" class="wd__wrapper wd__fade-in wd__display--none">
 
-    <div class="wd__menu">
-      <div id="wd__guests" class="wd__menu-item wd__h2">Guests</div>
-      <div id="wd__where" class="wd__menu-item wd__h2">Where</div>
-      <div id="wd__lookbook" class="wd__menu-item wd__h2">Lookbook</div>
-    </div>
+  {% include wd-heart.html %}
 
-    {% include wd-heart.html %}
-
-    <div id="wd__info--content">
-      {% include wd-message.html %}
-      {% include wd-guests.html %}
-      {% include wd-where.html %}
-      {% include wd-lookbook.html %}
-    </div>
-
-
+  <div id="wd__info--content">
+    {% include wd-message.html %}
+    {% include wd-guests.html %}
+    {% include wd-where.html %}
+    {% include wd-lookbook.html %}
+  </div>
+    {% include wd-menu.html %}
 
 </div>
