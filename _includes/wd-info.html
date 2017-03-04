@@ -1,50 +1,20 @@
-<div id="wd__info" class="wd__wrapper">
+<div id="wd__info" class="wd__wrapper wd__fade-in wd__display--none">
 
-  <div class="wd__menu">
-    <div id="wd__guests" class="wd__menu-item wd__h2 wd__menu-item--active">Guests</div>
-    <div id="wd__where" class="wd__menu-item wd__h2">Where</div>
-    <div id="wd__timing" class="wd__menu-item wd__h2">Timing</div>
-    <div id="wd__lookbook" class="wd__menu-item wd__h2">Lookbook</div>
-  </div>
-
-  <div id="wd__info--content" class="wd__flexbox--center">
-
-    <div class="wd__guests wd__guests--content wd__flexbox--center">
-
-      <ul class="wd__guests--col wd__desc">
-        <li>Denis&nbsp;Ilyashov & Anya&nbsp;Ilyashova</li>
-        <li>Olya&nbsp;Schetinina & Dima&nbsp;Razhev</li>
-        <li>Sergey&nbsp;Bespanski & girlfriend</li>
-        <li>Marina&nbsp;Zakinyan & Vlad&nbsp;Likh</li>
-        <li>Daria&nbsp;Shulga & Yanis</li>
-        <li>Regina&nbsp;Kiri</li>
-      </ul>
-      <ul class="wd__guests--col wd__desc">
-        <li>Olya&nbsp;Pankova & Artem&nbsp;Zamashnoy</li>
-        <li>Alisa&nbsp;Velieva & Andrew&nbsp;Roschevkin</li>
-        <li>Nastya&nbsp;Kholmova & Alexey&nbsp;Kholmov</li>
-        <li>Olya&nbsp;Polishuk</li>
-        <li>Andrey&nbsp;Belik</li>
-        <li>Sasha&nbsp;Bessonnova</li>
-      </ul>
-
+    <div class="wd__menu">
+      <div id="wd__guests" class="wd__menu-item wd__h2">Guests</div>
+      <div id="wd__where" class="wd__menu-item wd__h2">Where</div>
+      <div id="wd__lookbook" class="wd__menu-item wd__h2">Lookbook</div>
     </div>
 
-    <div class="wd__display--none wd__where wd__flexbox--center">
-      <div class="wd__desc">
-      Bolotov Dacha<br><br>
-      Unnamed Road, Dvoryaninovo<br>
-      Tula Oblast, Russia, 301005
-      </div>
+    {% include wd-heart.html %}
 
-    </div>
-    <div class="wd__display--none wd__timing">3</div>
-    <div class="wd__display--none wd__lookbook wd__lookbook--content">
-
-      <img class="wd__lookbook__img wd__lookbook__img--01" src="../specials/images/lookbook/lookbook-1.jpg">
-
+    <div id="wd__info--content">
+      {% include wd-message.html %}
+      {% include wd-guests.html %}
+      {% include wd-where.html %}
+      {% include wd-lookbook.html %}
     </div>
 
-  </div>
+
 
 </div>

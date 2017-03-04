@@ -202,7 +202,7 @@
 /* SPECIALS */
 
 
-/* Screens */
+/* Base */
 #wd {
   font-family: 'Times New Roman';
   text-align: center;
@@ -225,23 +225,12 @@
   }
 }
 
-#wd__intro {
-  display: none;
-  width: 100vw;
-  height: 100vh;
-  color: #262626;
-  cursor:pointer;
-
-  @media (max-width: 640px) {
-    height: 90vh;
-  }
+#wd__info {
+  position: relative;
 }
 
-#wd__info {
- display: none;
- width: 100vw;
- height: 100vh;
- background: #FFF3F3;
+#wd__info--content {
+  height: 100vh;
 }
 
 
@@ -271,34 +260,39 @@
 .wd__h2 {
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 20px;
+  font-size: 16px;
 
   @media (max-width: 640px) {
    font-size: 12px;
   }
 }
 
+.wd__letter {
+  padding: 100px;
+
+  @media (max-width: 640px) {
+    padding: 60px;
+  }
+}
 
 /* Menu */
 .wd__menu {
-  position: absolute;
+  position: fixed;
+  bottom: 0;
+  left: 0;
   width: 100%;
   display: flex;
   justify-content: space-around;
   height: 50px;
+  z-index: 1;
 
   @media (max-width: 640px) {
     height: 6%;
   }
 }
 
-.wd__menu--fixed {
-  position: fixed;
-  top: 0px;
-  width: 100%;
-}
-
 .wd__menu-item {
+  width: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -307,22 +301,144 @@
 }
 
 .wd__menu-item--active {
-  border-bottom: 2px solid red;
-  color: red;
+  border-bottom: 2px solid black;
 }
 
 
-/* Blocks */
+/* Message screen */
+
+#wd__message-screen, #wd__guests-screen, #wd__where-screen {
+  height: 100vh;
+}
+
+#wd__message-screen {
+  padding-bottom: 50px;
+}
+
 .wd__desc--height {
-  height: 20%;
+  height: 25%;
 }
 
 .wd__h1--height {
-  height: 60%;
+  height: 50%;
 }
 
+/* Heart */
+#wd__heart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: red;
+  font-size: 350px;
+  cursor: pointer;
+  animation: color 8s infinite alternate;
+  transform: scale(1);
+  transform: translate(-50%, -50%);
+  z-index: 1;
 
-/* Opening — envelopes */
+  @media (max-width: 1136px) {
+    font-size: 200px;
+  }
+  @media (max-width: 768px) {
+    padding: 0 20px 0 20px;
+    font-size: 90px;
+  }
+}
+
+@keyframes color {
+  33% {
+    color: #F6FF3E;
+    transform: scale(1.5) translate(-50%, -50%);
+  }
+  66% {
+    color: #3EFF59;
+  }
+}
+
+/* Guests screen */
+#wd__guests-screen {
+
+  @media (max-width: 640px) {
+  flex-direction: column;
+  }
+}
+
+.wd__guests--col {
+  width: 50%;
+  list-style: none;
+
+  @media (max-width: 640px) {
+    width: 100%;
+  }
+ }
+
+ .wd__guests--col li {
+  padding: 3px;
+}
+
+/* Where screen */
+
+/* Lookbook screen */
+
+.wd__lookbook__img {
+  width: 300px;
+  height: auto;
+  position: absolute;
+
+  @media (max-width: 640px) {
+    width: 120px;
+  }
+}
+
+.wd__lookbook__img--01 {
+  transform: rotate(-2deg);
+  top: 30%;
+  left: 10%;
+}
+
+.wd__lookbook__img--02 {
+  transform: rotate(3deg);
+  top: 60%;
+  left: 60%;
+}
+
+.wd__lookbook__img--03 {
+  transform: rotate(-4deg);
+  top: 5%;
+  left: 70%;
+}
+
+.wd__lookbook__img--04 {
+  transform: rotate(2deg);
+  top: 10%;
+  left: -5%;
+}
+
+.wd__lookbook__img--05 {
+  transform: rotate(12deg);
+  top: 75%;
+  left: 20%;
+}
+
+.wd__lookbook__img--06 {
+  transform: rotate(-6deg);
+  top: 82%;
+  left: 80%;
+}
+
+.wd__lookbook__img--07 {
+  transform: rotate(2deg);
+  top: 20%;
+  left: 80%;
+}
+
+.wd__lookbook__img--08 {
+  transform: rotate(2deg);
+  top: 2%;
+  left: 40%;
+}
+
+/* Open screen */
 .wd__open--size {
   width: 50%;
   height: 50%;
@@ -353,6 +469,7 @@
   }
 }
 
+/* Envelopes */
 .wd__envelope--1 {
   top: -40%;
   left: 30%;
@@ -393,76 +510,6 @@
   top: -10%;
   left: -10%;
   transform: rotate(70deg)
-}
-
-/* Heart */
-.wd__heart {
-  color: red;
-  padding: 0 100px 0 100px;
-  animation: color 8s infinite alternate;
-  transform: scale(1);
-
-  @media (max-width: 768px) {
-    padding: 0 20px 0 20px;
-  }
-}
-
-@keyframes color {
-  33% {
-    color: #F6FF3E;
-    transform: scale(1.5);
-  }
-  66% {
-    color: #3EFF59;
-  }
-}
-
-/* Content */
-#wd__info--content {
-  height: 100vh;
-}
-
-
-/* Guests */
-.wd__guests--content {
-  display: flex;
-  padding: 40px;
-  width: 100%;
-
-  @media (max-width: 640px) {
-    padding: 10;
-    flex-direction: column;
-  }
-}
-
- .wd__guests--col {
-  width: 50%;
-  list-style: none;
-
-  @media (max-width: 640px) {
-    width: 100%;
-  }
- }
-
- .wd__guests--col li {
-  padding: 3px;
-}
-
-
-/* Lookbook */
-.wd__lookbook--content {
-  /*position: relative;*/
-  /*overflow: hidden;*/
-}
-
-.wd__lookbook__img {
-  width: 300px;
-  height: auto;
-  /*position: absolute;*/
-}
-
-wd__lookbook__img--01 {
-  transform: rotate(-2deg);
 }
 
 
