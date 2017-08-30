@@ -1,44 +1,159 @@
 ---
 layout: default
-title: "Maksim Karalevich"
+project-title: "Maksim Karalevich"
 preview: "/preview.png"
-description: "Cross disciplinary designer"
+description: "Digital Designer, Art Director"
 ---
 
-<!DOCTYPE html>
+<div class="p-intro">
+	<div class="col-10 margin-t-6x">
+		<p>
+			My work spans across visual design, interactive web as well as UX for services and motion design. Currently working at Strelka Institute responsible for digital products. Now in San Francisco. <a class="a-has-line" href="">Write me</a>.
+		</p>
+	</div>
+	{% include signature.html %}
+</div>
 
-<html>
+<div class="projects-selected">
 
-{% include head.html %}
+	<div class="row-center">
 
-	<body>
+			<div class="col-12 project col-flex col-viewport margin-b-6x">
+				<a href="" class="text-small">
 
-		{% include loader.html %}
-
-<div id='page' class='page fade-in hidden'>
-
-	{% include nav-t.html %}
-
-	{% for post in site.posts %}
-		<div id='{{ post.permalink }}' class='wrapper-screen reveal'>
-			<div class='wrapper'>
-				<div class='wrapper-child gap-t-2'>
-				{{ post.content }}
-				<div class='nav-ch-c gap-t-1'>{{ post.title }}</div>
-				</div>
+					<video src="images/cover-1920.mp4" autoplay loop></video>
+					<div class="row-start margin-t-1x">
+						<p class="project-title">The New Normal</p>
+						<p class="margin-l-1x text-small text-small--thin project-desc opacity">Education Programme</p>
+					</div>
+				</a>
 			</div>
-		</div>
-	{% endfor %}
 
-	{% include about.html %}
-	{% include list.html %}
-	{% include end.html %}
-	{% include idle.html %}
+	</div>
+
+
+
+	<div class="row-between">
+
+		<div class="col-6 project col-flex col-viewport margin-b-6x">
+			<a href="" class="text-small">
+				<img class="lazyload" data-src="images/img-5.png">
+				<div class="row-start margin-t-1x">
+						<p class="project-title">Polytech.Science.Art</p>
+						<p class="margin-l-1x text-small text-small--thin project-desc opacity">Festival</p>
+				</div>
+			</a>
+		</div>
+
+		<div class="col-8 project col-flex col-viewport margin-b-6x">
+			<a href="" class="text-small">
+				<img class="lazyload" data-src="images/img-3.png">
+				<div class="row-start margin-t-1x">
+						<p class="project-title">Disrupt the(m)all</p>
+						<p class="margin-l-1x text-small text-small--thin project-desc opacity">Student field trip</p>
+				</div>
+			</a>
+		</div>
+
+	</div>
+
+
+
+	<div class="row-center">
+
+		<div class="col-12 project col-flex col-viewport margin-b-6x">
+			<a href="" class="text-small target">
+				<video src="images/website-cover.mp4" autoplay loop></video>
+				<div class="project-title row-start margin-t-1x">
+						<p>On and On</p>
+						<p class="margin-l-1x text-small text-small--thin project-desc opacity">Music video</p>
+				</div>
+			</a>
+		</div>
+
+	</div>
+
+
+
+	<div class="row-between">
+
+		<div class="col-8 project col-flex col-viewport margin-b-6x">
+			<a href="" class="text-small">
+				<img class="lazyload" data-src="images/img-6.png">
+				<div class="row-start margin-t-1x">
+						<p class="project-title">Hybrid Urbanism</p>
+						<p class="margin-l-1x text-small text-small--thin project-desc opacity">Education programme</p>
+				</div>
+			</a>
+		</div>
+
+		<div class="col-6 project col-flex col-viewport margin-b-6x">
+			<a href="" class="text-small">
+				<img class="lazyload" data-src="images/img-7.png">
+				<div class="row-start margin-t-1x">
+						<p class="project-title">Digital Russia</p>
+						<p class="margin-l-1x text-small text-small--thin project-desc opacity">Online magazine</p>
+				</div>
+			</a>
+		</div>
+
+	</div>
+
+
+
+	<div class="row-between">
+
+		<div class="col-8 project col-flex col-viewport margin-b-6x">
+			<p>
+				<a class="a-has-line" href="">View motion design projects</a> I did in the past 2,5 years while working at Strelka Institute.
+			</p>
+		</div>
+
+	</div>
+
+
+
+	<div class="row-end">
+
+		<div class="col-8 project col-flex col-viewport margin-b-6x">
+			<a href="" class="text-small">
+				<img class="lazyload" data-src="images/img-2.png">
+				<div class="row-start margin-t-1x">
+						<p class="project-title">Advanced Urban Design</p>
+						<p class="margin-l-1x text-small text-small--thin project-desc opacity">Education programme</p>
+				</div>
+			</a>
+		</div>
+
+	</div>
+
+
+
+	<div class="row-between">
+
+		<div class="col-8 project col-flex col-viewport margin-b-6x">
+			<a href="" class="text-small">
+				<img src="images/img-8.png">
+				<div class="row-start margin-t-1x">
+						<p class="project-title">Papin Locking</p>
+						<p class="margin-l-1x text-small text-small--thin project-desc opacity">Festival</p>
+				</div>
+			</a>
+		</div>
+
+		<div class="col-8 project col-flex col-viewport margin-b-6x">
+			<a href="" class="text-small">
+				<img src="images/img-9.png">
+				<div class="row-start margin-t-1x">
+						<p class="project-title">Norilsk Film</p>
+						<p class="margin-l-1x text-small text-small--thin project-desc opacity">Documentary</p>
+				</div>
+			</a>
+		</div>
+
+	</div>
+
 
 </div>
 
-{% include script.html %}
-
-	</body>
-
-</html>
+<div class="margin-b-2x">{% include menu.html %}</div>
