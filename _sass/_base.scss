@@ -1,3 +1,5 @@
+@import 'variables';
+
 /* BASIC */
 
 iframe, body, h1, h2, h3, h4, h5, h6,
@@ -10,21 +12,29 @@ dl, dd, ol, ul, li, figure {
 
 html,
 body {
-    hyphens: auto;
+    hyphens: none;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
 }
 
 body {
     font-family: Helvetica, Arial, sans-serif;
     letter-spacing: 1px;
     font-weight: 400;
-    font-size: 32px;
+    font-size: 30px;
     line-height: 45px;
     color: #333333;
     -webkit-font-smoothing: antialiased;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
-    transition: all 2s ease;
+    /*transition: all 2s ease;*/
+
+    @media (max-width: $screen-mobile) {
+        font-size: 20px;
+        line-height: 26px;
+        letter-spacing: .2px;
+    }
 }
 
 *, *:before, *:after {
@@ -39,9 +49,20 @@ body {
 	background: #ccc;
 }
 
-img, iframe, svg, video {
+img, svg, video {
     width: 100%;
     height: auto;
     display: block;
     transition: all 0.25s ease;
+}
+
+img {
+    /*background-image: linear-gradient(-45deg, #FCFCFC 0%, #E5E5E5 100%);*/
+}
+
+iframe {
+    width: 100%;
+    /*height: auto;*/
+    display: block;
+    /*transition: all 0.25s ease;*/
 }

@@ -8,9 +8,10 @@ $list.on('click', 'p:first-child', function() {
 
 // PROJECT COVER VIEWPORT ANIMATION
 
+
 function isScrolledIntoView(elem) {
   var docViewTop = $(window).scrollTop();
-  var docViewBottom = docViewTop + ($(window).height() + 460);
+  var docViewBottom = docViewTop + ($(window).height() + ($(elem).height() / 2));
 
   var elemTop = $(elem).offset().top;
   var elemBottom = elemTop + $(elem).height();
@@ -49,7 +50,7 @@ $('.project').hover(function() {
 $(window).scroll(function(){
   $(".p-intro").css("opacity", 1 - $(window).scrollTop() / 400);
   // $(".bg-black").css("opacity", 1 - $(window).scrollTop() / 400);
-  // $(".p-intro").css("top", 100 - $(window).scrollTop() / 2);
+  // $(".p-intro").css("top", 100 - $(window).scrollTop() / 1.3);
 });
 
 
