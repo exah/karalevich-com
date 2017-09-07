@@ -1,13 +1,6 @@
-var $list = $('.paragraphs');
-
-$list.on('click', 'p:first-child', function() {
-  var reversedItems = $list.children('.phrase').get().reverse();
-  $list.empty().append(reversedItems);
-})
 
 
 // PROJECT COVER VIEWPORT ANIMATION
-
 
 function isScrolledIntoView(elem) {
   var docViewTop = $(window).scrollTop();
@@ -28,29 +21,52 @@ $(window).scroll(function () {
 });
 
 
-// PROJECT COVER HOVER
+// VIMEO AUTOPLAY IN VIEWPORT
+
+$(window).scroll(function () {
+  $('.vimeo-viewport-autoplay').each(function () {
+    if (isScrolledIntoView(this) === true) {
+      $(this).attr('src', $(this).attr('src') + '&autoplay=1')
+    } else {
+
+    }
+  });
+});
+
+
+// PROJECT COVER HOVER ON INDEX
 
 $('.project').hover(function() {
     $(this).find('img, video').addClass('project-hover');
-    $(this).find('.project-desc').addClass('opacity');
+    $(this).find('.project-desc').addClass('elem-opacity--1');
 }, function() {
     $(this).find('img, video').removeClass('project-hover');
-    $('.project-desc').removeClass('opacity');
+    $('.project-desc').removeClass('elem-opacity--1');
 });
 
-// $('.target').hover(function() {
-//     $('body').css('background-color', '#262626');
-// }, function() {
-//     $('body').css('background-color', '#fff');
-// });
 
+// PROJECT BG TOGGLE COLOR TRANSITION
 
-// INTRO ANIMATION
+$(window).scroll(function() {
+    var scroll = $(window).scrollTop();
 
-$(window).scroll(function(){
-  $(".p-intro").css("opacity", 1 - $(window).scrollTop() / 400);
-  // $(".bg-black").css("opacity", 1 - $(window).scrollTop() / 400);
-  // $(".p-intro").css("top", 100 - $(window).scrollTop() / 1.3);
+    if (scroll >= 180) {
+      if ($('div').hasClass('bg-change')) {
+        $('.bg-change').removeClass('elem-opacity--0');
+        $('body').addClass('text-white');
+        $('body').css('background', 'black');
+        $('body').css('transition', 'all 0.5s ease');
+        $('.a-menu').addClass('a-menu--white');
+        $('.text-grey').addClass('text-white elem-opacity--04');
+        $('.ratio-wrap').css('background', '#1A1A1A');
+      }
+    } else {
+        $('.bg-change').addClass('elem-opacity--0');
+        $('body').removeClass('text-white');
+        $('body').css('background', 'white');
+        $('.a-menu').removeClass('a-menu--white');
+        $('.text-grey').removeClass('text-white elem-opacity--04');
+    }
 });
 
 

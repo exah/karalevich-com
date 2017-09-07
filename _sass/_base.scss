@@ -14,8 +14,6 @@ html,
 body {
     hyphens: none;
     box-sizing: border-box;
-    display: flex;
-    justify-content: center;
 }
 
 body {
@@ -24,10 +22,11 @@ body {
     font-weight: 400;
     font-size: 30px;
     line-height: 45px;
-    color: #333333;
+    color: $c-black;
     -webkit-font-smoothing: antialiased;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+    position: relative;
     /*transition: all 2s ease;*/
 
     @media (max-width: $screen-mobile) {
@@ -54,6 +53,7 @@ img, svg, video {
     height: auto;
     display: block;
     transition: all 0.25s ease;
+    border: none;
 }
 
 img {
