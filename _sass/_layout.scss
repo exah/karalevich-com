@@ -33,10 +33,20 @@
 
 /* Backgrounds */
 
-.bg-black {
+.popup {
   background-color: #000;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
 }
 
+
+.bg-black {
+  background-color: black;
+}
 
 /* MAIN WRAPPERS */
 
@@ -48,6 +58,19 @@
   @media (max-width: $screen-tablet){
     flex-direction: column;
   }
+}
+
+.menu-fixed {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: $space-x * 2;
+  mix-blend-mode: hard-light;
+}
+
+.menu-is-hidden {
+  transform: translate(0, -100px);
+  opacity: 0;
 }
 
 .wrapper {
@@ -78,16 +101,11 @@
   opacity: 0;
 }
 
-.project-hover {
-  /*transform: scale(.995);*/
-  /*opacity: .9;*/
-}
-
 .col-flex {
   display: flex;
   flex-direction: column;
   height: fit-content;
-  transition: all 0.5s ease;
+  transition: all .5s ease;
 }
 
 
@@ -445,6 +463,10 @@
 
 /* ELEMENT ATTRIBUTES */
 
+.elem-hide {
+  display: none;
+}
+
 .elem-opacity--1 {
   opacity: 1!important;
 }
@@ -457,6 +479,19 @@
   opacity: 0;
 }
 
+.elem-hover-opacity {
+  opacity: 1;
+}
+
+.elem-hover-opacity:hover {
+  opacity: 0;
+}
+
+.elem-deep-hover:hover {
+  transform: scale(.995);
+  opacity: .9;
+}
+
 .elem-fixed {
   position: fixed;
   top: 0;
@@ -465,12 +500,24 @@
   height: 100vh
 }
 
-.elem-transition {
-  transition: all 0.5s ease;
+.elem-transition--05 {
+  transition: all .5s ease;
+}
+
+.elem-transition--02 {
+  transition: all .5s ease;
 }
 
 .elem-index-minus {
   z-index: -1;
+}
+
+.elem-fade-in {
+  animation: fadein .5s;
+  @keyframes fadein {
+    from { opacity: 0 }
+    to { opacity: 1 }
+  }
 }
 
 
@@ -483,7 +530,7 @@
   border-radius: 30px 30px 5px 30px;
   background-image: linear-gradient(-189deg, #E8F4FF 0%, #D7EAFA 100%);
   /*background-color: aliceblue;*/
-  transition: all 0.5s ease;
+  /*transition: all .5s ease;*/
 
   @media (max-width: $screen-mobile) {
     border-radius: 20px 20px 5px 20px;
@@ -497,6 +544,20 @@
 
   @media (max-width: $screen-mobile) {
     border-radius: 20px 20px 20px 5px;
+  }
+}
+
+.bubble-project {
+  padding: $space-x;
+  border-radius: 10px;
+  /*background-image: linear-gradient(90deg, #1C1C1C 40%, rgba(0,0,0,0) 100%);*/
+  background-color: #1C1C1C;
+  transition: all .5s ease;
+  margin-bottom: 2px;
+
+  @media (max-width: $screen-mobile) {
+    /*border-radius: 20px 20px 5px 20px;*/
+    padding: $space-x / 2;
   }
 }
 
@@ -607,29 +668,27 @@ a {
   color: $c-black;
   text-decoration: none;
   width: fit-content;
-  transition: all 0.1s ease;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid $c-grey;
 }
 
 a:hover {
-  color: $c-grey;
+  /*color: $c-black;*/
+  border-bottom: 1px solid $c-black;
 }
 
 a[href*="//"]:not([href*="karalevich.com"]) {
   cursor: alias;
 }
 
-.a-has-line {
-  border-bottom: 1px solid $c-grey;
-}
-
-.a-has-line:hover {
-  border-bottom: 1px solid $c-black;
-  transition: border-color 0.5s ease;
-  color: $c-black;
-}
-
-.a-menu--white {
+.a-no-line {
   border-bottom: none!important;
+}
+
+.a-no-line:hover {
+  color: $c-grey;
+  border-bottom: none;
+  transition: all 0.2s ease;
 }
 
 .a-menu--white:hover {
@@ -658,7 +717,7 @@ a[href*="//"]:not([href*="karalevich.com"]) {
   }
 }
 
-.text-small--thin {
+.text-thin {
   font-weight: 100;
 }
 
