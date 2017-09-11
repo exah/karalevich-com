@@ -108,6 +108,7 @@ $(window).scroll(function() {
   $('#menu-button').removeClass('clicked').addClass('size center');
   $('.menu-dot').removeClass('clicked');
   $('#menu-list').css('display', 'none');
+  $('.page').removeClass('menu-button-effect');
 });
 
 

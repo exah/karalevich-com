@@ -399,6 +399,10 @@
 }
 .col-4 {
   width: 327px;
+
+  @media (max-width: $screen-mobile) {
+    width: 100%;
+  }
 }
 .col-2 {
   width: 155px;
@@ -499,6 +503,10 @@
 
 .margin-b-1x {
   margin-bottom: $space-x;
+
+  @media (max-width: $screen-mobile) {
+    margin-bottom: $space-x / 2;
+  }
 }
 
 .margin-b-05x {
@@ -698,7 +706,9 @@
 
   @media (max-width: $screen-mobile) {
     border-radius: 20px 20px 5px 20px;
-    padding: $space-x / 2;
+    padding: $space-x;
+    font-size: 20px;
+    line-height: 28px;
   }
 }
 
@@ -741,8 +751,9 @@ background-image: $c-gr-black98;
 .tag {
   min-width: max-content;
   padding: 5px 10px 5px 10px;
-  border: 1px solid #666666;
+  background-image: $c-gr-black;
   border-radius: 10px;
+  color: $c-white;
 
   @media (max-width: $screen-mobile) {
     padding: 4px 6px 2px 6px;
@@ -932,4 +943,8 @@ a[href*="//"]:not([href*="karalevich.com"]) {
   @media (max-width: $screen-tablet) {
     display: none;
   }
+}
+
+.timestamp {
+  font-size: 0.6em;
 }
