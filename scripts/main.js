@@ -43,86 +43,74 @@ $('.project').hover(function() {
 });
 
 
-// PROJECT LIST ACTION
-
-$('#project-link').click(function() {
-  $('#project-list').removeClass('elem-hide');
-  $('body').addClass('text-white');
-  $('body').css('background', 'black');
-  $('body').css('transition', 'all 0.5s ease');
-  $('.a-menu').addClass('a-menu--white');
-  $('.a-page').addClass('a-menu--white elem-opacity--04');
-  $('.text-grey').addClass('text-white elem-opacity--04');
-})
-
-
-// PROJECT LIST ITEM HOVER
-
-$('.bubble-project').hover(function() {
-  $(this).find('.project-title').removeClass('elem-opacity--04');
-}, function() {
-  $(this).find('.project-title').addClass('elem-opacity--04');
-})
-
-
-// PROJECT BG TOGGLE COLOR TRANSITION
+// WHITE TO BLACK BG TRANSITION
 
 $(window).scroll(function() {
     var scroll = $(window).scrollTop();
 
     if (scroll >= 180) {
-      if ($('div').hasClass('bg-change')) {
-        $('body').addClass('text-white');
-        $('body').addClass('.bg-black');
-        $('body').css('transition', 'all 0.5s ease');
+      if ($('div').hasClass('bg-change-on-scroll')) {
+        $('body').addClass('text-white bg-black elem-transition--05');
         $('.a-menu').addClass('a-menu--white');
         $('.text-grey').addClass('text-white elem-opacity--04');
+        $('.bubble').addClass('bubble-black');
+        // $('#menu-button').addClass('bubble-black98');
         $('.ratio-wrap').css('background', '#1A1A1A');
-      } else if (scroll == 0) {
-        $('body').removeClass('text-white');
-        $('body').removeClass('.bg-black');
-        $('.a-menu').removeClass('a-menu--white');
-        $('.text-grey').removeClass('text-white elem-opacity--04');
       }
+    } else {
+      $('body').removeClass('text-white bg-black');
+      $('.a-menu').removeClass('a-menu--white');
+      $('.text-grey').removeClass('text-white elem-opacity--04');
+      $('.bubble').removeClass('bubble-black');
+      // $('#menu-button').removeClass('bubble-black98');
     }
 });
 
 
-// MENU ELEMENT REVEAL ON SCROLL
+// FIXED MENU REVEAL ON SCROLL
 
 $(window).scroll(function() {
     var scroll = $(window).scrollTop();
 
     if (scroll >= 200) {
-      $('.menu-fixed').removeClass('menu-is-hidden')
+      $('#menu-on-scroll').removeClass('menu-is-hidden')
     } else {
-        $('.menu-fixed').addClass('menu-is-hidden')
+        $('#menu-on-scroll').addClass('menu-is-hidden')
+        $('#menu-button').removeClass('clicked').addClass('size center');
+        $('.menu-dot').removeClass('clicked');
+        $('#menu-list').css('display', 'none');
     }
 });
 
 
-// FIXED MENU ON HOVER
 
-$('.menu-fixed').mousemove(function(event) {
-  if(isNear($('.menu-fixed'), 60, event)) {
-    $('.menu-fixed').addClass('elem-opacity--0');
-  } else {
-    $('.menu-fixed').addClass('elem-opacity--1');
-  };
+// MENU BUTTON ON CLICK REVEALS MENU
+
+$('#open-menu').click(function() {
+  $(this).css('z-index', 'auto');
+  $('#menu-button').addClass('clicked').removeClass('size center');
+  $('.menu-dot').addClass('clicked');
+  $('#menu-list').css('display', 'block');
+  $('.page').css('filter', 'hue-rotate(90deg)').addClass('elem-transition--05');
+})
+
+$('.menu-dot').click(function() {
+  $('#open-menu').css('z-index', '1');
+  $('#menu-button').removeClass('clicked').addClass('size center');
+  $('.menu-dot').removeClass('clicked');
+  $('#menu-list').css('display', 'none');
+  $('.page').css('filter', 'inherit');
+})
+
+
+// MENU CLOSES IF PAGE CROLLED
+
+$(window).scroll(function() {
+  $('#open-menu').css('z-index', '1');
+  $('#menu-button').removeClass('clicked').addClass('size center');
+  $('.menu-dot').removeClass('clicked');
+  $('#menu-list').css('display', 'none');
 });
-
-function isNear( $element, distance, event ) {
-
-    var left = $element.offset().left - distance,
-        top = $element.offset().top - distance,
-        right = left + $element.width() + ( 2 * distance ),
-        bottom = top + $element.height() + ( 2 * distance ),
-        x = event.pageX,
-        y = event.pageY;
-
-    return ( x > left && x < right && y > top && y < bottom );
-
-};
 
 
 // INTRO ANIMATION

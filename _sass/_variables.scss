@@ -2,13 +2,20 @@
 
 $space-x: 20px;
 $screen-desktop-sm: 960px;
+$screen-desktop-big: 1536px;
 $screen-tablet: 768px;
 $screen-mobile: 640px;
 
 
-$c-black: #333333;
+$c-black: black;
 $c-white: white;
 $c-grey: rgba(0, 0, 0, .2);
 $c-white20: rgba(255, 255, 255, .2);
+$c-white40: rgba(255, 255, 255, .4);
 $c-white85: rgba(255, 255, 255, .85);
 $c-transp: rgba(0, 0, 0, 0);
+
+$c-gr-black: linear-gradient(-189deg, rgba(41,41,41,0.98) 1%, rgba(28,28,28,0.98) 97%);
+$c-gr-black98: linear-gradient(-189deg, rgba(28,28,28,0.98) 1%, rgba(28,28,28,0.98) 97%);
+
+$c-gr-blue: linear-gradient(-189deg, #E8F4FF 0%, #D7EAFA 100%);

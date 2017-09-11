@@ -50,6 +50,10 @@
 
 /* MAIN WRAPPERS */
 
+/* MENU */
+
+/* Menu states */
+
 .menu {
   display: flex;
   width: calc(100% - 80px);
@@ -60,12 +64,26 @@
   }
 }
 
-.menu-fixed {
+#menu-on-scroll {
   position: fixed;
   width: 100%;
+  /*background-color: white;*/
   top: 0;
   left: $space-x * 2;
-  mix-blend-mode: hard-light;
+  z-index: 1;
+
+  @media (max-width: $screen-mobile) {
+    left: $space-x / 2;
+  }
+}
+
+#menu-on-hover {
+  position: fixed;
+  width: calc(100% - 80px);
+  background-color: white;
+  top: 0;
+  left: $space-x * 2;
+  z-index: 2;
 }
 
 .menu-is-hidden {
@@ -73,23 +91,111 @@
   opacity: 0;
 }
 
-.wrapper {
-  width: 100%;
-  height: 100%;
+/* Menu properties */
+
+#menu-button {
+  border-radius: 10px 10px 10px 2px;
   display: flex;
-  justify-content: center;
+  position: relative;
 }
 
-.page {
-  /*position: relative;*/
-  max-width: 1800px;
-  margin-left: $space-x * 2;
-  margin-right: $space-x * 2;
+#menu-button.size {
+  width: 56px;
+  height: 36px;
+}
+
+#menu-button.center {
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-button:hover {
+  transform: translate(0px, -2px);
+}
+
+#menu-list {
+  display: none;
+}
+
+/* Menu on click */
+
+#menu-button.clicked {
+  width: 412px;
+  border-radius: 10px;
+  padding-top: $space-x * 2;
+  padding-bottom: $space-x * 2;
 
   @media (max-width: $screen-mobile) {
-    margin-left: $space-x;
-    margin-right: $space-x;
+    width: calc(100% - 20px);
+    padding-top: $space-x * 2;
+    padding-bottom: $space-x;
   }
+}
+
+.menu-dot.clicked {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 7px;
+  top: 16px;
+  left: 14px;
+
+  @media (max-width: $screen-mobile) {
+    left: 10px;
+  }
+}
+
+#open-menu {
+  width: 56px;
+  height: 36px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* Menu dot animation */
+
+#menu-button .menu-dot {
+  border-radius: 5px;
+  margin-right: 4px;
+  background-color: $c-white;
+}
+
+.menu-dot-size {
+  width: 10px;
+  height: 10px;
+}
+
+@keyframes blink {
+  0%    {opacity: .2}
+  20%   {opacity: .6}
+  100%  {opacity: .2}
+}
+
+#menu-button .menu-dot {
+  animation-name: blink;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  cursor: pointer;
+}
+
+#menu-button .menu-dot:nth-child(2) {
+  animation-delay: .2s;
+}
+
+#menu-button .menu-dot:nth-child(3) {
+  animation-delay: .4s;
+}
+
+
+
+.page {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
 }
 
 
@@ -219,6 +325,10 @@
 .col-half {
   width: 50%;
   position: relative;
+
+  @media (max-width: $screen-desktop-sm) {
+     width: 100%;
+    }
 }
 
 .col-16 {
@@ -231,6 +341,10 @@
 
 .col-12 {
   width: 1016px;
+
+  @media (min-width: $screen-desktop-big) {
+    width: 74.7%;
+  }
 }
 .col-10 {
   width: 844px;
@@ -238,13 +352,21 @@
     @media (max-width: $screen-desktop-sm) {
       width: calc(100% - 40px);
     }
+
+    @media (min-width: $screen-desktop-big) {
+      width: 61.5%;
+    }
 }
 .col-8  {
   width: 670px;
 
   @media (max-width: $screen-desktop-sm) {
-      width: 100%;
+    width: 100%;
     }
+
+  @media (min-width: $screen-desktop-big) {
+    width: 48.5%;
+  }
 }
 .col-7  {
   width: 585px;
@@ -259,6 +381,10 @@
   @media (max-width: $screen-desktop-sm) {
       width: 100%;
     }
+
+  @media (min-width: $screen-desktop-big) {
+    width: 42.4%;
+  }
 }
 .col-4 {
   width: 327px;
@@ -423,6 +549,14 @@
   }
 }
 
+.padding-b-2x {
+  padding-bottom: $space-x * 2;
+
+  @media (max-width: $screen-mobile) {
+    padding-bottom: $space-x / 2;
+  }
+}
+
 .padding-b-6x {
   padding-bottom: $space-x * 6;
 
@@ -432,6 +566,14 @@
 
   @media (max-width: $screen-mobile) {
     padding-bottom: $space-x * 2;
+  }
+}
+
+.padding-t-2x {
+  padding-top: $space-x * 2;
+
+  @media (max-width: $screen-mobile) {
+    padding-top: $space-x / 2;
   }
 }
 
@@ -505,7 +647,7 @@
 }
 
 .elem-transition--02 {
-  transition: all .5s ease;
+  transition: all .2s ease;
 }
 
 .elem-index-minus {
@@ -528,9 +670,6 @@
 .bubble {
   padding: $space-x;
   border-radius: 30px 30px 5px 30px;
-  background-image: linear-gradient(-189deg, #E8F4FF 0%, #D7EAFA 100%);
-  /*background-color: aliceblue;*/
-  /*transition: all .5s ease;*/
 
   @media (max-width: $screen-mobile) {
     border-radius: 20px 20px 5px 20px;
@@ -538,13 +677,24 @@
   }
 }
 
-
 .bubble-left {
   border-radius: 30px 30px 30px 5px;
 
   @media (max-width: $screen-mobile) {
     border-radius: 20px 20px 20px 5px;
   }
+}
+
+.bubble-blue {
+  background-image: $c-gr-blue;
+}
+
+.bubble-black {
+  background-image: $c-gr-black;
+}
+
+.bubble-black98 {
+background-image: $c-gr-black98;
 }
 
 .bubble-project {
@@ -696,6 +846,14 @@ a[href*="//"]:not([href*="karalevich.com"]) {
   opacity: .4;
 }
 
+.a-menu-projects {
+  opacity: .4;
+}
+
+.a-menu-projects:hover {
+  opacity: 1;
+}
+
 .text-white a {
   border-bottom: 1px solid $c-white20;
   color: $c-white85;
@@ -715,6 +873,11 @@ a[href*="//"]:not([href*="karalevich.com"]) {
     font-size: 16px;
     line-height: 24px;
   }
+
+  @media (min-width: $screen-desktop-big) {
+    font-size: 24px;
+    line-height: 36px;
+  }
 }
 
 .text-thin {
@@ -723,6 +886,10 @@ a[href*="//"]:not([href*="karalevich.com"]) {
 
 .text-center {
   text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .text-grey {

@@ -4,10 +4,10 @@
 	{% include head.html %}
 
 	<body class="elem-fade-in">
-		<div class="page margin-r-2x margin-l-2x">
+		{% include menu-fixed.html %}
+		<div class="page padding-r-2x padding-l-2x">
 			{% include menu.html %}
 			{{ content }}
-			<div class="margin-b-2x">{% include menu.html %}</div>
 		</div>
 	{% include script.html %}
 
