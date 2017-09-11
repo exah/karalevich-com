@@ -1,2 +1,16 @@
+<!DOCTYPE html>
+<html>
 
-    {{ content }}
+	{% include head.html %}
+
+	<body class="elem-fade-in">
+			{% include menu-fixed.html %}
+		<div class="page padding-r-2x padding-l-2x">
+			{% include menu.html %}
+			{{ content }}
+		</div>
+	{% include script.html %}
+
+	</body>
+
+</html>

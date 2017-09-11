@@ -9,7 +9,7 @@
 title: Maksim karalevich
 email: hi@karalevich.com
 description: > # this means to ignore newlines until "baseurl:"
-  Digital Designer
+  Digital Designer, Art Director
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://mkaralevich.github.io" # the base hostname & protocol for your site
 twitter_username: mkaralevich
@@ -17,4 +17,7 @@ github_username:  mkaralevich
 
 # Build settings
 markdown: kramdown
-# 
+
+gems:
+  - octopress-autoprefixer
+#

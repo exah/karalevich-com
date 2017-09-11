@@ -1,0 +1,11 @@
+{% if page.next.url %}
+	<div class="col-4 margin-b-1x text-small">
+		<p class="text-small text-grey">Next project</p>
+  	<a class="text-small a-has-line" href="{{page.next.url}}">{{page.next.title}}</a>
+	</div>
+	<div class="col-4 margin-b-1x text-small">
+	<a class="col-4" href="{{page.next.url}}">
+		<img class="margin-b-05x" src="{{page.next.preview}}">
+	</a>
+	</div>
+{% endif %}

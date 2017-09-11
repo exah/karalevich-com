@@ -1,0 +1,11 @@
+{% if page.previous.url %}
+	<div class="col-4 margin-b-1x text-small">
+		<p class="text-small text-grey">Next project</p>
+  	<a class="text-small a-has-line" href="{{page.previous.url}}">{{page.previous.title}}</a>
+	</div>
+	<div class="col-4 margin-b-1x text-small">
+	<a class="col-4" href="{{page.previous.url}}">
+		<img class="margin-b-05x" src="{{page.previous.preview}}">
+	</a>
+	</div>
+    {% endif %}

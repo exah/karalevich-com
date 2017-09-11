@@ -1,4 +1,16 @@
----
-layout: post
----
-{{ content }}
+<!DOCTYPE html>
+<html>
+
+	{% include head.html %}
+
+	<body class="elem-from-left">
+		{% include menu-fixed.html %}
+		<div class="page padding-r-2x padding-l-2x">
+			{% include menu.html %}
+			{{ content }}
+		</div>
+	{% include script.html %}
+
+	</body>
+
+</html>
