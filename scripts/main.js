@@ -89,8 +89,7 @@ $('#open-menu').click(function() {
   $('#menu-button').addClass('clicked').removeClass('size center');
   $('.menu-dot').addClass('clicked');
   $('#menu-list').css('display', 'block');
-  $('.page').css('transform', 'scale(.990)').addClass('elem-transition--05');
-  $('.page').css('opacity', '.9');
+  $('.page').addClass('elem-transition--05 menu-button-effect');
 })
 
 $('.menu-dot').click(function() {
@@ -98,8 +97,7 @@ $('.menu-dot').click(function() {
   $('#menu-button').removeClass('clicked').addClass('size center');
   $('.menu-dot').removeClass('clicked');
   $('#menu-list').css('display', 'none');
-  $('.page').css('transform', 'inherit');
-  $('.page').css('opacity', 'inherit');
+  $('.page').removeClass('menu-button-effect');
 })
 
 
