@@ -6,13 +6,13 @@
     <div class="menu-dot menu-dot-size"></div>
     <div style="margin-right: 0;" class="menu-dot menu-dot-size"></div>
 
-		<div id="menu-list" class="text-small margin-l-2x">
+		<div id="menu-list" class="text-small elem-fade-in margin-l-2x">
 			<ul class="col-flex">
 				<a href="/" class="a-page a-menu--white a-menu a-no-line margin-r-2x">Maksim Karalevich</a>
 				<a href="about.html" class="a-page a-menu--white a-menu a-no-line margin-r-2x">Information</a>
 				<a class="a-no-line a-menu--white" href="mailto:hi@karalevich.com"><li>Contact</li></a>
 			</ul>
-			<ul class="text-thin margin-t-1x margin-l-2x">
+			<ul id="project-list" class="text-thin margin-t-1x margin-l-2x">
 			{% for post in site.posts %}
 				<li><a class="a-no-line a-menu-projects" href="{{ post.permalink }}">{{ post.title }}</a></li>
 			{% endfor %}
