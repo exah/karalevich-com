@@ -11,9 +11,9 @@ function isScrolledIntoView(elem) {
 }
 
 $(window).scroll(function () {
-  $('.col-viewport').each(function () {
+  $('.elem-in-viewport').each(function () {
     if (isScrolledIntoView(this) === true) {
-      $(this).removeClass('col-viewport')
+      $(this).removeClass('elem-in-viewport')
     }
   });
 });
@@ -25,8 +25,6 @@ $(window).scroll(function () {
   $('.vimeo-viewport-autoplay').each(function () {
     if (isScrolledIntoView(this) === true) {
       $(this).attr('src', $(this).attr('src') + '&autoplay=1')
-    } else {
-
     }
   });
 });
@@ -46,23 +44,36 @@ $('.project').hover(function() {
 // WHITE TO BLACK BG TRANSITION
 
 $(window).scroll(function() {
-    var scroll = $(window).scrollTop();
+  var scroll = $(window).scrollTop();
 
+  if ($('div').hasClass('bg-change-on-scroll')) {
     if (scroll >= 180) {
-      if ($('div').hasClass('bg-change-on-scroll')) {
         $('body').addClass('text-white bg-black elem-transition--05');
         $('.a-menu').addClass('a-menu--white');
         $('.text-grey').addClass('text-white elem-opacity--04');
         $('.bubble').addClass('bubble-black');
+        $('.tag').addClass('tag-white');
         $('.ratio-wrap').css('background', '#1A1A1A');
-      }
-    } else {
+      } else {
       $('body').removeClass('text-white bg-black');
       $('.a-menu').removeClass('a-menu--white');
       $('.text-grey').removeClass('text-white elem-opacity--04');
       $('.bubble').removeClass('bubble-black');
+      $('.tag').removeClass('tag-white');
     }
+  }
 });
+
+
+// BLACK BG FROM START
+
+if ($('body').hasClass('bg-black-from-start')) {
+  $('body').addClass('text-white bg-black');
+  $('.a-menu').addClass('a-menu--white ');
+  $('.text-grey').addClass('text-white elem-opacity--04');
+  $('.bubble').addClass('bubble-black');
+  $('.ratio-wrap').css('background', '#1A1A1A');
+};
 
 
 // FIXED MENU REVEAL ON SCROLL
@@ -79,6 +90,12 @@ $(window).scroll(function() {
         $('#menu-list').css('display', 'none');
     }
 });
+
+// FIXED MENU FROM START ON PROJECTS
+
+if ($('body').hasClass('elem-from-left')) {
+  $('#menu-on-scroll').removeClass('menu-is-hidden elem-transition--02')
+};
 
 
 
@@ -101,7 +118,7 @@ $('.menu-dot').click(function() {
 })
 
 
-// MENU CLOSES IF PAGE CROLLED
+// MENU CLOSES IF PAGE SCROLLED
 
 $(window).scroll(function() {
   $('#open-menu').css('z-index', '1');
@@ -115,8 +132,30 @@ $(window).scroll(function() {
 // INTRO ANIMATION
 
 $(window).scroll(function(){
-  $(".p-intro").css("opacity", 1 - $(window).scrollTop() / 400);
+  $(".intro").css("opacity", 1 - $(window).scrollTop() / 400);
 });
+
+
+// RANDOM SIGNATURE: OFF
+
+// myArray = $('.signature');
+// var rand = myArray[Math.floor(Math.random() * myArray.length)];
+// $(rand).removeClass('elem-is-hidden');
+
+
+
+// TOGGLE PROJECT FOOTER
+
+$('.footer-button').click(function() {
+  if($('.project-footer').hasClass('elem-is-hidden')) {
+    $('.project-footer').removeClass('elem-is-hidden');
+    $('.button-toggle').html('–');
+  } else {
+    $('.project-footer').addClass('elem-is-hidden')
+    $('.button-toggle').html('+');
+  }
+})
+
 
 
 // LAZY LOAD

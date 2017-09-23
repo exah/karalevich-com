@@ -1,16 +1,16 @@
 <div id="menu-on-scroll" class="menu-is-hidden elem-transition--02 text-small padding-t-2x padding-b-2x">
 
-	<div id="menu-button" class="size center bubble-black98 text-white elem-transition--02">
+	<div id="menu-button" class="button size center bubble-black98 text-white elem-transition--02">
 		<div id="open-menu"></div>
     <div class="menu-dot menu-dot-size"></div>
     <div class="menu-dot menu-dot-size"></div>
     <div style="margin-right: 0;" class="menu-dot menu-dot-size"></div>
 
 		<div id="menu-list" class="text-small elem-fade-in margin-l-2x">
-			<ul class="col-flex">
-				<a href="/" class="a-page a-menu--white a-menu a-no-line margin-r-2x">Maksim Karalevich</a>
-				<a href="about.html" class="a-page a-menu--white a-menu a-no-line margin-r-2x">Information</a>
-				<a class="a-no-line a-menu--white" href="mailto:hi@karalevich.com"><li>Contact</li></a>
+			<ul class="row-to-column">
+				<a href="/" class="a-menu--white a-menu a-no-line margin-r-2x"><li>Maksim Karalevich</li></a>
+				<a href="about.html" class="a-menu--white a-menu a-no-line margin-r-2x"><li>Information</li></a>
+				<a href="mailto:hi@karalevich.com" class="a-no-line a-menu--white"><li>Contact</li></a>
 			</ul>
 			<ul id="project-list" class="text-thin margin-t-1x margin-l-2x">
 			{% for post in site.posts %}

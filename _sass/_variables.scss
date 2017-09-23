@@ -10,13 +10,13 @@ $screen-mobile: 640px;
 $c-black: #262626;
 $c-white: white;
 $c-grey: rgba(0, 0, 0, .2);
+$c-black40: rgba(0, 0, 0, .4);
 $c-white20: rgba(255, 255, 255, .2);
 $c-white40: rgba(255, 255, 255, .4);
 $c-white85: rgba(255, 255, 255, .85);
 $c-transp: rgba(0, 0, 0, 0);
 
-$c-gr-black: linear-gradient(-193deg, #313131 0%, #000000 100%);
+$c-gr-black: linear-gradient(180deg, #1D1D1D 0%, #1D1D1D 100%);
 $c-gr-black98: linear-gradient(-189deg, rgba(28,28,28,0.99) 1%, rgba(28,28,28,0.99) 97%);
-
-$c-gr-blue: linear-gradient(-189deg, #E9E9E9 0%, #F6F6F6 97%);
-/*$c-gr-blue: linear-gradient(-189deg, #E8F4FF 0%, #D7EAFA 100%);*/
+$c-gr-grey: linear-gradient(-189deg, #E9E9E9 0%, #F6F6F6 97%);
+$c-gr-blue: linear-gradient(-180deg, #008DFF 0%, #36A5FF 97%);
