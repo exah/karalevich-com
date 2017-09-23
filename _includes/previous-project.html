@@ -1,11 +1,15 @@
+
 {% if page.previous.url %}
-	<div class="col-4 margin-b-1x text-small">
-		<p class="text-small text-grey">Next project</p>
-  	<a class="text-small a-has-line" href="{{page.previous.url}}">{{page.previous.title}}</a>
-	</div>
-	<div class="col-4 margin-b-1x text-small">
-	<a class="col-4" href="{{page.previous.url}}">
-		<img class="margin-b-05x" src="{{page.previous.preview}}">
-	</a>
-	</div>
-    {% endif %}
+<div class="row-center margin-t-6x padding-t-6x top-border-line">
+
+		<div class="col-10 project row-to-column margin-b-6x">
+			<a href="{{page.previous.url}}" class="text-small a-ratio-wrap a-no-line">
+					<img src="{{page.previous.preview}}">
+				<div class="row-center margin-t-1x">
+					<p class="project-title text-center">{{page.previous.title}}</p>
+				</div>
+			</a>
+		</div>
+
+</div>
+{% endif %}

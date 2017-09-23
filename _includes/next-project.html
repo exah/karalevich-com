@@ -1,11 +1,13 @@
-{% if page.next.url %}
-	<div class="col-4 margin-b-1x text-small">
-		<p class="text-small text-grey">Next project</p>
-  	<a class="text-small a-has-line" href="{{page.next.url}}">{{page.next.title}}</a>
-	</div>
-	<div class="col-4 margin-b-1x text-small">
-	<a class="col-4" href="{{page.next.url}}">
-		<img class="margin-b-05x" src="{{page.next.preview}}">
-	</a>
-	</div>
-{% endif %}
+
+<div class="after-project-list row-center col-v-center">
+
+		<div class="col-10 row-to-column margin-t-6x margin-b-6x elem-in-viewport elem-transition--05">
+			<div class="text-small">More Projects</div>
+			<ul class="text-thin margin-t-1x margin-l-2x">
+			{% for post in site.posts %}
+				<li><a class="a-no-line" href="{{ post.permalink }}">{{ post.title }}</a></li>
+			{% endfor %}
+			</ul>
+		</div>
+
+</div>
