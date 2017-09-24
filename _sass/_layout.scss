@@ -171,7 +171,7 @@
   position: absolute;
   width: 14px;
   height: 14px;
-  border-radius: 7px;
+  // border-radius: 7px;
   top: 16px;
   left: 14px;
 
@@ -202,7 +202,7 @@
 /* Menu dot animation */
 
 .menu-dot {
-  border-radius: 5px;
+  border-radius: 100px;
   margin-right: 4px;
   background-color: $c-white;
 }
@@ -212,13 +212,25 @@
   height: 10px;
 }
 
+.menu-dot-size--big {
+  width: 20px;
+  height: 20px;
+}
+
 @keyframes blink {
   0%    {opacity: .2}
   20%   {opacity: .6}
   100%  {opacity: .2}
 }
 
-.menu-dot {
+.text-dot {
+  font-size: 1.6em;
+  vertical-align: -.13em;
+  position: absolute;
+  margin-left: -.6em;
+}
+
+.menu-dot, .text-dot {
   animation-name: blink;
   animation-duration: 5s;
   animation-iteration-count: infinite;
@@ -270,6 +282,12 @@
 .row-reverse {
   @media (max-width: $screen-tablet) {
     flex-direction: row-reverse;
+  }
+}
+
+.col-reverse {
+  @media (max-width: $screen-tablet) {
+    flex-direction: column-reverse;
   }
 }
 
@@ -330,6 +348,12 @@
 
 .row-clear-desktop-sm {
   @media (max-width: $screen-desktop-sm) {
+    flex-direction: column;
+  }
+}
+
+.row-clear-tablet {
+  @media (max-width: $screen-tablet) {
     flex-direction: column;
   }
 }
@@ -1045,6 +1069,10 @@ a[href*="//"]:not([href*="karalevich.com"]) {
 
 .text-white {
   color: $c-white85;
+}
+
+.text-blue {
+  color: $c-blue;
 }
 
 .project-desc {
