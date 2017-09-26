@@ -53,8 +53,8 @@
 
   @media (max-width: $screen-mobile) {
     height: 100vh;
-    font-size: 20px;
-    line-height: 28px;
+    // font-size: 20px;
+    // line-height: 28px;
   }
 }
 
@@ -88,7 +88,7 @@
 }
 
 .top-border-line {
-  border-top: 1px solid $c-grey;
+  border-top: 1px solid $c-black20;
 }
 
 .top-border-line--light {
@@ -227,7 +227,8 @@
   font-size: 1.6em;
   vertical-align: -.13em;
   position: absolute;
-  margin-left: -.6em;
+  margin-left: .1em;
+  margin-top: .06em;
 }
 
 .menu-dot, .text-dot {
@@ -275,8 +276,6 @@
 .row-to-column {
   display: flex;
   flex-direction: column;
-  // height: fit-content;
-  transition: all .5s ease;
 }
 
 .row-reverse {
@@ -480,6 +479,11 @@
     width: 100%;
   }
 }
+
+.col-3 {
+  width: 241px;
+}
+
 .col-2 {
   width: 155px;
 }
@@ -834,11 +838,16 @@
 .bubble-small {
   border-radius: 10px;
   max-width: 60vw;
+  border: 1px solid $c-black20;
 
   @media (max-width: $screen-mobile) {
   max-width: 80vw;
   padding: $space-x / 2;
   }
+}
+
+.elem-bottom-line {
+  border-bottom: 1px solid $c-black20;
 }
 
 .bubble-date {
@@ -891,7 +900,7 @@ background-image: $c-gr-black98;
 .tag {
   padding: 5px 10px;
   border-radius: 10px;
-  border: 1px solid $c-grey;
+  border: 1px solid $c-black20;
 
   @media (max-width: $screen-mobile) {
     padding: 4px 6px;
@@ -986,7 +995,7 @@ a {
   text-decoration: none;
   width: fit-content;
   transition: all 0.2s ease;
-  border-bottom: 1px solid $c-grey;
+  border-bottom: 1px solid $c-black20;
 }
 
 a:hover {
@@ -1003,7 +1012,7 @@ a[href*="//"]:not([href*="karalevich.com"]) {
 }
 
 .a-no-line:hover {
-  // color: $c-grey;
+  // color: $c-black20;
   border-bottom: none;
   transition: all 0.2s ease;
 }
@@ -1064,7 +1073,7 @@ a[href*="//"]:not([href*="karalevich.com"]) {
 }
 
 .text-grey {
-  color: $c-grey;
+  color: $c-black20;
 }
 
 .text-white {
@@ -1073,6 +1082,12 @@ a[href*="//"]:not([href*="karalevich.com"]) {
 
 .text-blue {
   color: $c-blue;
+}
+
+.text-left-tablet {
+  @media (max-width: $screen-tablet) {
+    text-align: left;
+  }
 }
 
 .project-desc {
