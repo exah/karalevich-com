@@ -1022,14 +1022,6 @@ a[href*="//"]:not([href*="karalevich.com"]) {
   opacity: .4;
 }
 
-.a-menu-projects {
-  opacity: .6;
-}
-
-.a-menu-projects:hover {
-  opacity: 1;
-}
-
 .text-white a {
   border-bottom: 1px solid $c-white20;
   color: $c-white85;

@@ -14,7 +14,7 @@
 			</ul>
 			<ul id="project-list" class="text-thin margin-t-1x margin-l-2x">
 			{% for post in site.posts %}
-				<li><a class="a-no-line a-menu-projects" href="{{ post.permalink }}">{{ post.title }}</a></li>
+				<a class="a-no-line" href="{{ post.permalink }}"><li class="a-menu--white elem-transition--02">{{ post.title }}</li></a>
 			{% endfor %}
 			</ul>
 		</div>
