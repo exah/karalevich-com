@@ -2,7 +2,7 @@
 
 function isScrolledIntoView(elem) {
   var docViewTop = $(window).scrollTop();
-  var docViewBottom = docViewTop + ($(window).height() + ($(elem).height() / 2));
+  var docViewBottom = docViewTop + ($(window).height() + (($(elem).height() * 90) / 100));
 
   var elemTop = $(elem).offset().top;
   var elemBottom = elemTop + $(elem).height();
@@ -14,17 +14,6 @@ $(window).scroll(function () {
   $('.elem-in-viewport').each(function () {
     if (isScrolledIntoView(this) === true) {
       $(this).removeClass('elem-in-viewport')
-    }
-  });
-});
-
-
-// VIMEO AUTOPLAY IN VIEWPORT
-
-$(window).scroll(function () {
-  $('.vimeo-viewport-autoplay').each(function () {
-    if (isScrolledIntoView(this) === true) {
-      $(this).attr('src', $(this).attr('src') + '&autoplay=1')
     }
   });
 });
