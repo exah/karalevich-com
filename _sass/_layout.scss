@@ -227,10 +227,19 @@
 
 .text-dot {
   font-size: 1.6em;
-  vertical-align: -.13em;
   position: absolute;
   margin-left: .1em;
   margin-top: .06em;
+}
+
+.bubble-date .text-dot {
+    font-size: 3em;
+    margin-top: -0.04em;
+    margin-left: .04em;
+
+    @media (max-width: $screen-mobile) {
+      margin-top: -0.06em;
+    }
 }
 
 .menu-dot, .text-dot {
