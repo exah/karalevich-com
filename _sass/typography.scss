@@ -1,0 +1,117 @@
+// TYPOGRAPHY
+
+// Links
+
+a {
+  color: $c-black;
+  text-decoration: none;
+  width: fit-content;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid $c-black20;
+}
+
+a:hover {
+  /*color: $c-black;*/
+  border-bottom: 1px solid $c-black;
+}
+
+a[href*="//"]:not([href*="karalevich.com"]) {
+  /*cursor: alias;*/
+}
+
+.a-no-line {
+  border-bottom: none!important;
+}
+
+.a-no-line:hover {
+  // color: $c-black20;
+  border-bottom: none;
+  transition: all 0.2s ease;
+}
+
+
+// Sizes
+
+.text-small {
+  font-size: 22px;
+  line-height: 34px;
+  letter-spacing: 0px;
+
+  @media (max-width: $screen-mobile) {
+    font-size: 18px;
+  	line-height: 28px;
+  }
+
+  @media (min-width: $screen-desktop-big) {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+.text-small-mobile {
+	@media (max-width: $screen-mobile) {
+		font-size: 18px;
+  	line-height: 28px;
+  	letter-spacing: 0px;
+	}
+}
+
+.caption {
+  font-size: 0.6em;
+  line-height: 1.5em;
+}
+
+
+// Style
+.text-thin {font-weight: 100}
+.text-italic {font-style: italic}
+
+// Alignment
+.text-center {text-align: center}
+.text-right {text-align: right}
+.text-left-tablet {
+  @media (max-width: $screen-tablet) {
+    text-align: left;
+  }
+}
+
+// Colors
+.text-grey {color: $c-black20}
+.text-white {color: $c-white85}
+.text-blue {color: $c-blue}
+
+
+// Black theme
+
+.a-menu--white:hover {
+  border-bottom: none;
+  opacity: .4;
+}
+
+.text-white a {
+  border-bottom: 1px solid $c-white20;
+  color: $c-white85;
+}
+
+.text-white a:hover {
+  border-bottom: 1px solid $c-white;
+  color: $c-white85;
+}
+
+
+// Project
+.project a:hover {color: $c-black}
+.project-desc {
+  opacity: 0;
+  transition: all 0.2s ease;
+
+  @media (max-width: $screen-tablet) {
+    opacity: 1;
+  }
+}
+
+.next-project .project-desc  {
+  @media (max-width: $screen-tablet) {
+    display: none;
+  }
+}
