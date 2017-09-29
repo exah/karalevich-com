@@ -18,7 +18,7 @@ body {
 
 body {
   font-family: Helvetica, Arial, sans-serif;
-  letter-spacing: .8px;
+  letter-spacing: .014em;
   font-weight: 400;
   font-size: 30px;
   line-height: 45px;
@@ -31,16 +31,19 @@ body {
   -webkit-text-size-adjust: 100%;
   position: relative;
 
+    @media (min-width: $screen-desktop-big) {
+      font-size: 34px;
+      line-height: 50px;
+    }
+
+    @media (max-width: $screen-desktop-sm) {
+      font-size: 28px;
+      line-height: 42px;
+    }
+
     @media (max-width: $screen-mobile) {
       font-size: 24px;
       line-height: 34px;
-      letter-spacing: .1px;
-    }
-
-    @media (min-width: $screen-desktop-big) {
-        font-size: 34px;
-        line-height: 50px;
-
     }
 }
 

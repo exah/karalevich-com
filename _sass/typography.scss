@@ -111,7 +111,7 @@ a[href*="//"]:not([href*="karalevich.com"]) {
 }
 
 .next-project .project-desc  {
-  @media (max-width: $screen-tablet) {
+  @media (max-width: $screen-desktop-sm) {
     display: none;
   }
 }
