@@ -103,11 +103,10 @@
 
 .menu {
   display: flex;
-  /*width: calc(100% - 80px);*/
   z-index: 1;
 
   @media (max-width: $screen-tablet){
-    flex-direction: column;
+    // flex-direction: column;
   }
 }
 
