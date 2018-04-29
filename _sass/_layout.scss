@@ -426,86 +426,46 @@
 .col-half {
   width: 50%;
   position: relative;
-
-  @media (max-width: $screen-desktop-sm) {
-     width: 100%;
-    }
+    @media (max-width: $screen-desktop-sm) {width: 100%}
 }
 
 .col-16 {
   width: 1360px;
-
-  @media (max-width: $screen-desktop-sm) {
-      width: 100%;
-    }
+    @media (max-width: $screen-desktop-sm) {width: 100%}
 }
 
 .col-12 {
   width: 1016px;
-
-  @media (min-width: $screen-desktop-big) {
-    width: 74.7%;
-  }
+    @media (min-width: $screen-desktop-big) {width: 74.7%}
 }
 .col-10 {
   width: 844px;
-
-    @media (max-width: $screen-desktop-sm) {
-      width: calc(100% - 40px);
-    }
-
-    @media (min-width: $screen-desktop-big) {
-      width: 61.5%;
-    }
+    @media (max-width: $screen-desktop-sm) {width: calc(100% - 40px)}
+    @media (min-width: $screen-desktop-big) {width: 61.5%}
+    // @media (max-width: $screen-mobile) {width: 100%}
 }
 .col-8  {
   width: 670px;
-
-  @media (max-width: $screen-desktop-sm) {
-    width: 100%;
-    }
-
-  @media (min-width: $screen-desktop-big) {
-    width: 48.5%;
-  }
+    @media (max-width: $screen-desktop-sm) {width: 100%}
+    @media (min-width: $screen-desktop-big) {width: 48.5%}
 }
 .col-7  {
   width: 585px;
-
-  @media (max-width: $screen-mobile) {
-      width: 100%;
-    }
+    @media (max-width: $screen-mobile) {width: 100%}
 }
 .col-6  {
   width: 500px;
-
-  @media (max-width: $screen-desktop-sm) {
-      width: 100%;
-    }
-
-  @media (min-width: $screen-desktop-big) {
-    width: 42.4%;
-  }
+    @media (max-width: $screen-desktop-sm) {width: 100%}
+    @media (min-width: $screen-desktop-big) {width: 42.4%}
 }
 .col-4 {
   width: 327px;
-
-  @media (max-width: $screen-mobile) {
-    width: 100%;
-  }
+    @media (max-width: $screen-mobile) {width: 100%}
 }
 
-.col-3 {
-  width: 241px;
-}
-
-.col-2 {
-  width: 155px;
-}
-
-.col-1 {
-  width: 69px;
-}
+.col-3 {width: 241px}
+.col-2 {width: 155px}
+.col-1 {width: 69px}
 
 
 /* ELEMENT ATTRIBUTES */
