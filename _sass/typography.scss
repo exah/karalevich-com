@@ -1,6 +1,7 @@
 // TYPOGRAPHY
 
-// Links
+
+// LINKS
 
 a {
   color: $c-black;
@@ -31,7 +32,8 @@ a[href*="//"]:not([href*="karalevich.com"]) {
 
 .text-small-mobile a {font-weight: 400}
 
-// Sizes
+
+// SIZES
 
 .text-small {
   font-size: 22px;
@@ -64,11 +66,17 @@ a[href*="//"]:not([href*="karalevich.com"]) {
 }
 
 
-// Style
+// STYLE
+
 .text-normal {font-weight: 400}
 .text-thin {font-weight: 100}
 .text-italic {font-style: italic}
 .text-uppercase {text-transform: uppercase}
+
+.unordered-list li {
+  list-style: circle;
+  list-style-position: inside;
+}
 
 // Alignment
 .text-center {text-align: center}
@@ -79,7 +87,9 @@ a[href*="//"]:not([href*="karalevich.com"]) {
   }
 }
 
-// Colors
+
+// COLORS
+
 .text-grey {color: $c-black20}
 .text-white {color: $c-white85}
 .text-blue {color: $c-blue}
@@ -103,7 +113,8 @@ a[href*="//"]:not([href*="karalevich.com"]) {
 }
 
 
-// Project
+// PROJECT
+
 .project a:hover {color: $c-black}
 .project-desc {
   opacity: 0;
