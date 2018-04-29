@@ -118,6 +118,17 @@ $(window).scroll(function() {
 });
 
 
+// MENU CLOSES ON CLICK OUTSIDE
+
+$('#open-menu').on('focusout', function () {
+  $('#open-menu').css('z-index', '1');
+  $('#menu-button').removeClass('clicked').addClass('size center');
+  $('.menu-dot').removeClass('clicked');
+  $('#menu-list').css('display', 'none');
+  $('.page').removeClass('menu-button-effect');
+});
+
+
 // INTRO ANIMATION
 
 $(window).scroll(function(){
