@@ -76,6 +76,8 @@ a[href*="//"]:not([href*="karalevich.com"]) {
 .unordered-list li {
   list-style: circle;
   list-style-position: inside;
+  text-indent: -1em;
+  padding-left: 1em;
 }
 
 
