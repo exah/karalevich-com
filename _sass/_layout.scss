@@ -89,13 +89,6 @@
   background-color: white;
 }
 
-.top-border-line {
-  border-top: 1px solid $c-black20;
-}
-
-.top-border-line--light {
-  border-top: 1px solid $c-white20;
-}
 
 /* MAIN WRAPPERS */
 /* MENU */
@@ -266,11 +259,22 @@
   height: 100vh;
 }
 
-.footer-button {
+.credits-block {
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid $c-black20;
+  display: inline-block;
   cursor: pointer;
+  border-radius: 10px!important;
+
+  @media (max-width: $screen-mobile) {
+    padding: 4px 6px;
+    border-radius: 6px;
+  }
 }
 
-.footer-button .button-toggle {
+.credits-block .button-toggle {
   vertical-align: .1em;
 }
 
@@ -468,7 +472,7 @@
 .col-1 {width: 69px}
 
 
-/* ELEMENT ATTRIBUTES */
+/* ELEMENT BEHAVIOUR */
 
 .elem-is-hidden {display: none}
 .elem-is-hidden--mobile {
@@ -547,6 +551,28 @@
 }
 
 
+/* ELEMENT STYLING */
+
+.elem-no-border {
+  border: 0
+}
+
+.elem-bottom-line {
+  border-bottom: 1px solid $c-black20;
+}
+
+.elem-top-line {
+  border-top: 1px solid $c-black20;
+}
+
+.elem-top-line--light {
+  border-top: 1px solid $c-white20;
+}
+
+.elem-padding-0 {
+  padding: 0
+}
+
 /* BUBBLES AND TAGS */
 
 .bubble {
@@ -584,10 +610,6 @@
   max-width: 80vw;
   padding: $space-x / 2;
   }
-}
-
-.elem-bottom-line {
-  border-bottom: 1px solid $c-black20;
 }
 
 .bubble-date {
@@ -641,6 +663,7 @@ background-image: $c-gr-black98;
   padding: 5px 10px;
   border-radius: 10px;
   border: 1px solid $c-black20;
+  display: inline-block;
 
   @media (max-width: $screen-mobile) {
     padding: 4px 6px;
