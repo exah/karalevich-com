@@ -45,7 +45,9 @@
 .margin-b-4x {margin-bottom: $space-x * 4;
   @media (max-width: $screen-mobile) {margin-bottom: $space-x * 2}
 }
-.margin-b-2x {margin-bottom: $space-x * 2}
+.margin-b-2x {margin-bottom: $space-x * 2;
+  @media (max-width: $screen-mobile) {margin-bottom: $space-x / 2}
+}
 .margin-b-1x {margin-bottom: $space-x;
   @media (max-width: $screen-mobile) {margin-bottom: $space-x / 2}
 }
