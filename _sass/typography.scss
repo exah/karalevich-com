@@ -1,38 +1,5 @@
 // TYPOGRAPHY
 
-
-// LINKS
-
-a {
-  color: $c-black;
-  text-decoration: none;
-  width: fit-content;
-  transition: all 0.2s ease;
-  border-bottom: 1px solid $c-black20;
-}
-
-a:hover {
-  /*color: $c-black;*/
-  border-bottom: 1px solid $c-black;
-}
-
-a[href*="//"]:not([href*="karalevich.com"]) {
-  /*cursor: alias;*/
-}
-
-.a-no-line {
-  border-bottom: none!important;
-}
-
-.a-no-line:hover {
-  // color: $c-black20;
-  border-bottom: none;
-  transition: all 0.2s ease;
-}
-
-.text-small-mobile a {font-weight: 400}
-
-
 // SIZES
 
 .text-small {
@@ -94,9 +61,45 @@ a[href*="//"]:not([href*="karalevich.com"]) {
 // COLORS
 
 .text-grey {color: $c-black20}
-.text-grey40 {color: $c-black40}
+.text-black40 {color: $c-black40}
+.text-black70 {color: $c-black70}
 .text-white {color: $c-white85}
 .text-blue {color: $c-blue}
+
+
+// LINKS
+
+a {
+  color: $c-black;
+  text-decoration: none;
+  width: fit-content;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid $c-black20;
+}
+
+a:hover {
+  /*color: $c-black;*/
+  border-bottom: 1px solid $c-black;
+}
+
+a[href*="//"]:not([href*="karalevich.com"]) {
+  /*cursor: alias;*/
+}
+
+.a-no-line {
+  border-bottom: none!important;
+}
+
+.a-no-line:hover {
+  // color: $c-black20;
+  border-bottom: none;
+  transition: all 0.2s ease;
+}
+
+.text-small-mobile a {font-weight: 400}
+
+
+.text-black70 a {color: $c-black70}
 
 
 // Black theme
