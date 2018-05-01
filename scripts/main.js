@@ -152,7 +152,7 @@ $(window).scroll(function(){
 $('.credits-block').click(function() {
   if($('.credits-content').hasClass('elem-is-hidden')) {
     $('.credits-button').addClass('elem-is-hidden')
-    $('.credits-block').addClass('elem-padding-0 elem-border-black10')
+    $('.credits-block').addClass('elem-padding-0 elem-no-border')
     $('.credits-content').removeClass('elem-is-hidden')
   }
 })
