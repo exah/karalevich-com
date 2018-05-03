@@ -42,30 +42,18 @@ $(window).scroll(function() {
         $('.text-grey').addClass('text-white elem-opacity--04')
         $('.bubble').addClass('bubble-black')
         $('.tag').addClass('tag-white')
+        $('.credits-button').addClass('tag-white')
         $('.ratio-wrap').css('background', '#1A1A1A')
-        $('.credits-block').addClass('tag-white')
       } else {
       $('body').removeClass('text-white bg-black')
       $('.a-menu').removeClass('a-menu--white')
       $('.text-grey').removeClass('text-white elem-opacity--04')
       $('.bubble').removeClass('bubble-black')
       $('.tag').removeClass('tag-white')
-      $('.credits-block').removeClass('tag-white')
+      $('.credits-button').removeClass('tag-white')
     }
   }
 })
-
-
-// BLACK BG FROM START
-
-if ($('body').hasClass('bg-black-from-start')) {
-  $('body').addClass('text-white bg-black')
-  $('.a-menu').addClass('a-menu--white ')
-  $('.text-grey').addClass('text-white elem-opacity--04')
-  $('.bubble').addClass('bubble-black')
-  $('.ratio-wrap').css('background', '#1A1A1A')
-  $('.credits-block').addClass('tag-white')
-};
 
 
 // FIXED MENU REVEAL ON SCROLL

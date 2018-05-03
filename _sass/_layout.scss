@@ -262,10 +262,13 @@
 .credits-block {
   width: fit-content;
   padding: 5px 10px;
-  border-radius: 10px;
-  border: 1px solid $c-black20;
   display: inline-block;
   cursor: pointer;
+}
+
+.credits-button {
+  border-radius: 10px;
+  border: 1px solid $c-black20;
 
   @media (max-width: $screen-mobile) {
     padding: 4px 6px;
@@ -276,10 +279,6 @@
 .credits-block .button-toggle {
   vertical-align: .1em;
 }
-
-// .credits-content {padding: 20px;
-//   @media(max-width: $screen-mobile) {padding: 16px}
-// }
 
 
 /* COLUMN ATTRIBUTES */

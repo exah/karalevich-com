@@ -3,6 +3,11 @@
 
 // Top
 
+.margin-t-10x {margin-top: $space-x * 10;
+  @media (max-width: $screen-tablet) {margin-top: $space-x * 8}
+  @media (max-width: $screen-mobile) {margin-top: $space-x * 6}
+}
+
 .margin-t-8x {margin-top: $space-x * 8;
   @media (max-width: $screen-tablet) {margin-top: $space-x * 6}
   @media (max-width: $screen-mobile) {margin-top: $space-x * 4}
