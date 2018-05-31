@@ -104,6 +104,17 @@
   @media (max-width: $screen-mobile) {padding-left: $space-x / 2}
 }
 .padding-l-1x {padding-left: $space-x}
+.padding-r-8x {padding-right: $space-x * 8;
+  @media (max-width: $screen-tablet) {padding-right: $space-x * 6}
+  @media (max-width: $screen-mobile) {padding-right: $space-x * 4}
+}
+.padding-r-6x {padding-right: $space-x * 6;
+  @media (max-width: $screen-tablet) {padding-right: $space-x * 4}
+  @media (max-width: $screen-mobile) {padding-right: $space-x * 4}
+}
+.padding-r-4x {padding-right: $space-x * 4;
+  @media (max-width: $screen-mobile) {padding-right: $space-x * 2}
+}
 .padding-r-2x {padding-right: $space-x * 2;
   @media (max-width: $screen-mobile) {padding-right: $space-x / 2}
 }

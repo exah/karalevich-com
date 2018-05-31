@@ -47,6 +47,13 @@
   padding-left: 1em;
 }
 
+.ordered-list li {
+  list-style-type: decimal;
+  list-style-position: inside;
+  text-indent: -1em;
+  padding-left: 1em;
+}
+
 
 // Alignment
 .text-center {text-align: center}
