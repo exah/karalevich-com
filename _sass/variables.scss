@@ -10,6 +10,7 @@ $screen-mobile: 640px;
 
 $c-black: #262626;
 $c-white: white;
+$c-black05: rgba(0, 0, 0, .05);
 $c-black10: rgba(0, 0, 0, .1);
 $c-black20: rgba(0, 0, 0, .2);
 $c-black40: rgba(0, 0, 0, .4);
@@ -20,7 +21,7 @@ $c-white85: rgba(255, 255, 255, .85);
 $c-blue: #36A5FF;
 $c-transp: rgba(0, 0, 0, 0);
 
-$c-gr-black: linear-gradient(180deg, #1D1D1D 0%, #1D1D1D 100%);
-$c-gr-black98: linear-gradient(-189deg, rgba(28,28,28,0.99) 1%, rgba(28,28,28,0.99) 97%);
+$c-gr-black: linear-gradient(180deg, rgba(28,28,28,0.99) 1%, rgba(28,28,28,0.92) 97%);
+$c-gr-black98: linear-gradient(180deg, rgba(28,28,28,0.99) 1%, rgba(28,28,28,0.99) 97%);
 $c-gr-grey: linear-gradient(-189deg, #E9E9E9 0%, #F6F6F6 97%);
 $c-gr-blue: linear-gradient(-180deg, #008DFF 0%, #36A5FF 97%);
