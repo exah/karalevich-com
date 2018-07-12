@@ -677,8 +677,8 @@ background-image: $c-gr-black98;
   bottom: 0;
   left: 0;
   z-index: 1;
-  width: 0;
-  height: 0;
+  // width: 0;
+  // height: 0;
 }
 
 .bubble-blurb {
@@ -700,16 +700,19 @@ background-image: $c-gr-black98;
   height: 70vh;
   border-radius: 10px;
   padding: 40px;
+  width: 500px;
+    @media (min-width: $screen-desktop-big) {width: 42.4%}
 
-  @media (max-width: $screen-mobile) {
-    border-radius: 6px;
-    height: 80vh;
-    padding: 20px;
+    @media (max-width: $screen-mobile) {
+      border-radius: 6px;
+      height: 80vh;
+      padding: 20px;
+      width: 100%
   }
+}
 
-  @media (max-width: $screen-mobile) {
-
-  }
+.blurb-p-margin {
+  margin-top: 2px;
 }
 
 
