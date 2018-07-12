@@ -160,12 +160,15 @@ setInterval(function() {
 $('#blurb').click(function() {
   if ($(this).hasClass('bubble-blurb')) {
     $(this).removeClass('bubble-blurb')
-      .addClass('bubble-blurb--clicked text-small')
+      .addClass('bubble-blurb--clicked text-small bubble-blurb--scaled')
+    $('.blurb-bg').toggleClass('blurb-bg-mobile elem-transition--05')
     $('.blurb-p').toggleClass('margin-t-1x blurb-p-margin')
+    $('.blurb-wrapper').toggleClass('blurb-wrapper--v-center')
   } else if ($(this).hasClass('bubble-blurb--clicked')) {
-    $(this).removeClass('bubble-blurb--clicked').addClass('bubble-blurb')
-    $('.blurb-content-wrapper')
+    $(this).removeClass('bubble-blurb--clicked bubble-blurb--scaled').addClass('bubble-blurb')
+    $('.blurb-bg').toggleClass('blurb-bg-mobile elem-transition--05')
     $('.blurb-p').toggleClass('margin-t-1x blurb-p-margin')
+    $('.blurb-wrapper').toggleClass('blurb-wrapper--v-center')
   }
 })
 
