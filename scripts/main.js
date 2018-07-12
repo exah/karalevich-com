@@ -161,12 +161,11 @@ $('#blurb').click(function() {
   if ($(this).hasClass('bubble-blurb')) {
     $(this).removeClass('bubble-blurb')
       .addClass('bubble-blurb--clicked text-small')
-    $('.blurb-content-wrapper')
-    $('.blurb-p').toggleClass('margin-t-1x')
+    $('.blurb-p').toggleClass('margin-t-1x blurb-p-margin')
   } else if ($(this).hasClass('bubble-blurb--clicked')) {
     $(this).removeClass('bubble-blurb--clicked').addClass('bubble-blurb')
     $('.blurb-content-wrapper')
-    $('.blurb-p').toggleClass('margin-t-1x')
+    $('.blurb-p').toggleClass('margin-t-1x blurb-p-margin')
   }
 })
 
