@@ -103,10 +103,23 @@ a[href*="//"]:not([href*="karalevich.com"]) {
   transition: all 0.2s ease;
 }
 
+.a-dotted-line {
+  border-bottom: 1px dotted $c-black20;
+}
+
 .text-small-mobile a {font-weight: 400}
 
 
 .text-black70 a {color: $c-black70}
+
+.bubble-black {
+  color: $c-white85;
+}
+
+.bubble-black a {
+  border-bottom: 1px solid $c-white20;
+  color: $c-white85;
+}
 
 
 // Black theme

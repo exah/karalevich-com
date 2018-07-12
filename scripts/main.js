@@ -147,6 +147,28 @@ $('.credits-block').click(function() {
 
 
 
-// LAZY LOAD
+// TWO-IMAGE SLIDESOW ANIMATION
 
-lazyload()
+setInterval(function() {
+  $('.elem-show-hide-loop').toggleClass('elem-opacity--1')
+}, 3000)
+
+
+
+// BLURB
+
+$('#blurb').click(function() {
+  if ($(this).hasClass('bubble-blurb')) {
+    $(this).removeClass('bubble-blurb bubble-center').addClass('bubble-blurb--clicked bubble-left')
+  } else if ($(this).hasClass('bubble-blurb--clicked')) {
+    $(this).removeClass('bubble-blurb--clicked bubble-left').addClass('bubble-blurb bubble-center')
+  }
+})
+
+
+
+// LAZYLOAD.JS
+
+var myLazyLoad = new LazyLoad({
+    elements_selector: ".lazy"
+});

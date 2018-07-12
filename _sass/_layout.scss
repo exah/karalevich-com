@@ -24,6 +24,7 @@
 .signature {
   stroke-width: 1;
   z-index: -2;
+  stroke: #cccccc;
 
   @media (max-width: $screen-mobile) {
     margin-top: 0;
@@ -268,7 +269,7 @@
 
 .credits-button {
   border-radius: 10px;
-  border: 1px solid $c-black20;
+  // border: 1px solid $c-black20;
 
   @media (max-width: $screen-mobile) {
     padding: 4px 6px;
@@ -474,6 +475,7 @@
 .col-1 {width: 69px}
 
 
+
 /* ELEMENT BEHAVIOUR */
 
 .elem-is-hidden {display: none}
@@ -499,6 +501,10 @@
   z-index: 1;
   width: 100vw;
   height: 100vh;
+}
+
+.elem-absolute {
+  position: absolute;
 }
 
 .elem-relative {
@@ -558,9 +564,12 @@
 .elem-no-border {border: 0}
 .elem-padding-0 {padding: 0}
 .elem-border-black10 {border: 1px solid $c-black10}
+.elem-border-black05 {border: 1px solid $c-black05}
 .elem-bottom-line {border-bottom: 1px solid $c-black20}
 .elem-top-line {border-top: 1px solid $c-black20}
 .elem-top-line--light {border-top: 1px solid $c-white20}
+.elem-shadow-1 {box-shadow: 0px 1px 1px 0px #00000038}
+.elem-shadow-2 {box-shadow: 0 0px 2px 0 rgba(0,0,0,0.32)}
 
 /* BUBBLES AND TAGS */
 
@@ -605,6 +614,10 @@
   position: absolute;
 }
 
+.bubble-white {
+  background-color: white;
+}
+
 .bubble-grey {
   background-image: $c-gr-grey;
 }
@@ -646,12 +659,49 @@ background-image: $c-gr-black98;
   }
 }
 
+.bubble-blurb {
+  transform: scale(0.2);
+  cursor: zoom-in;
+  bottom: -160px;
+  left: -160px;
+
+  @media (max-width: $screen-mobile) {
+    bottom: -156px;
+    left: -156px;
+  }
+}
+
+.bubble-blurb--clicked {
+  transform: scale(1);
+  transform-origin: bottom left;
+  cursor: zoom-out;
+  bottom: 40px;
+  left: 40px;
+
+  @media (max-width: $screen-mobile) {
+    bottom: 0px;
+    left: 0px;
+  }
+}
+
+#blurb {
+  position: fixed;
+  z-index:99;
+  height: 70vh;
+  overflow: scroll;
+}
+
+.blurb-wrapper {
+  width: calc(100% - 80%);
+  left: -134px;
+}
+
 /* Tags */
 
 .tag {
   padding: 5px 10px;
   border-radius: 10px;
-  border: 1px solid $c-black20;
+  // border: 1px solid $c-black20;
   display: inline-block;
 
   @media (max-width: $screen-mobile) {
