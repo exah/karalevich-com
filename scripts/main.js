@@ -160,18 +160,42 @@ setInterval(function() {
 $('#blurb').click(function() {
   if ($(this).hasClass('bubble-blurb')) {
     $(this).removeClass('bubble-blurb')
-      .addClass('bubble-blurb--clicked text-small bubble-blurb--scaled')
-    $('.blurb-bg').toggleClass('blurb-bg-mobile elem-transition--05')
-    $('.blurb-p').toggleClass('margin-t-1x blurb-p-margin')
-    $('.blurb-wrapper').toggleClass('blurb-wrapper--v-center')
-  } else if ($(this).hasClass('bubble-blurb--clicked')) {
+      .addClass('bubble-blurb--clicked bubble-blurb--scaled')
+    $('.blurb-bg').addClass('blurb-bg-mobile elem-transition--05')
+    $('.blurb-p').addClass('margin-t-1x text-small').removeClass('blurb-p-margin')
+    $('.blurb-wrapper').addClass('blurb-wrapper--v-center')
+    $('.blurb-content-wrapper').removeClass('blurb-content-wrapper--clicked-2')
+      .addClass('blurb-content-wrapper--clicked-1')
+    $('.page').addClass('elem-transition--05 menu-button-effect')
+  }
+  else if ($(this).hasClass('bubble-blurb--clicked')) {
     $(this).removeClass('bubble-blurb--clicked bubble-blurb--scaled').addClass('bubble-blurb')
-    $('.blurb-bg').toggleClass('blurb-bg-mobile elem-transition--05')
-    $('.blurb-p').toggleClass('margin-t-1x blurb-p-margin')
-    $('.blurb-wrapper').toggleClass('blurb-wrapper--v-center')
+    $('.blurb-bg').removeClass('blurb-bg-mobile elem-transition--05')
+    $('.blurb-p').removeClass('margin-t-1x blurb-p-margin text-small')
+    $('.blurb-wrapper').removeClass('blurb-wrapper--v-center')
+    $('.blurb-content-wrapper').removeClass('blurb-content-wrapper--clicked-1')
+      .addClass('blurb-content-wrapper--clicked-2')
+    $('.page').removeClass('menu-button-effect')
   }
 })
 
+
+
+// BLURB CLOSES IF PAGE IS SCROLLED
+
+$(window).scroll(function() {
+  if ($('#blurb').hasClass('bubble-blurb--clicked')) {
+    $('#blurb').removeClass('bubble-blurb--clicked bubble-blurb--scaled')
+      .addClass('bubble-blurb')
+    $('.blurb-bg').removeClass('blurb-bg-mobile elem-transition--05')
+    $('.blurb-p').removeClass('text-small')
+      .addClass('blurb-p-margin')
+    $('.blurb-wrapper').removeClass('blurb-wrapper--v-center')
+    $('.blurb-content-wrapper').removeClass('blurb-content-wrapper--clicked-1')
+      .addClass('blurb-content-wrapper--clicked-2')
+    $('.page').removeClass('menu-button-effect')
+  }
+})
 
 
 // LAZYLOAD.JS
