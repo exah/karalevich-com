@@ -163,7 +163,6 @@ $('#blurb').click(function() {
       .addClass('bubble-blurb--clicked bubble-blurb--scaled')
     $('.blurb-bg').addClass('blurb-bg-mobile elem-transition--05')
     $('.blurb-p').addClass('margin-t-1x text-small').removeClass('blurb-p-margin')
-    // $('.blurb-wrapper').addClass('blurb-wrapper--v-center')
     $('.blurb-content-wrapper').removeClass('blurb-content-wrapper--clicked-2')
       .addClass('blurb-content-wrapper--clicked-1')
     $('.page').addClass('elem-transition--05 menu-button-effect')
@@ -171,7 +170,7 @@ $('#blurb').click(function() {
   else if ($(this).hasClass('bubble-blurb--clicked')) {
     $(this).removeClass('bubble-blurb--clicked bubble-blurb--scaled').addClass('bubble-blurb')
     $('.blurb-bg').removeClass('blurb-bg-mobile elem-transition--05')
-    $('.blurb-p').removeClass('margin-t-1x blurb-p-margin text-small')
+    $('.blurb-p').removeClass('margin-t-1x text-small').addClass('blurb-p-margin')
     $('.blurb-wrapper').removeClass('blurb-wrapper--v-center')
     $('.blurb-content-wrapper').removeClass('blurb-content-wrapper--clicked-1')
       .addClass('blurb-content-wrapper--clicked-2')
