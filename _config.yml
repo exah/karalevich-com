@@ -21,3 +21,5 @@ markdown: kramdown
 gems:
   - octopress-autoprefixer
 #
+
+exclude: [vendor]
