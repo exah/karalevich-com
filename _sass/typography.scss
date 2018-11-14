@@ -70,7 +70,7 @@
 .text-grey {color: $c-black20}
 .text-black40 {color: $c-black40}
 .text-black70 {color: $c-black70}
-.text-white {color: $c-white85}
+.text-white {color: $c-white80}
 .text-blue {color: $c-blue}
 
 
@@ -113,12 +113,12 @@ a[href*="//"]:not([href*="karalevich.com"]) {
 .text-black70 a {color: $c-black70}
 
 .bubble-black {
-  color: $c-white85;
+  color: $c-white80;
 }
 
 .bubble-black a {
   border-bottom: 1px solid $c-white20;
-  color: $c-white85;
+  color: $c-white80;
 }
 
 
@@ -131,12 +131,12 @@ a[href*="//"]:not([href*="karalevich.com"]) {
 
 .text-white a {
   border-bottom: 1px solid $c-white20;
-  color: $c-white85;
+  color: $c-white80;
 }
 
 .text-white a:hover {
   border-bottom: 1px solid $c-white;
-  color: $c-white85;
+  color: $c-white80;
 }
 
 
