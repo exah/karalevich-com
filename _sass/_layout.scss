@@ -113,13 +113,13 @@
 
 #menu-on-scroll {
   position: fixed;
-  width: 100%;
   top: 0;
   left: $space-x * 2;
   z-index: 999;
 
   @media (max-width: $screen-mobile) {
     left: $space-x / 2;
+    width: 100%;
   }
 }
 
@@ -569,6 +569,7 @@
 .elem-border-black10 {border: 1px solid $c-black10}
 .elem-border-black05 {border: 1px solid $c-black05}
 .elem-bottom-line {border-bottom: 1px solid $c-black20}
+.elem-bottom-line--light {border-bottom: 1px solid $c-white20}
 .elem-top-line {border-top: 1px solid $c-black20}
 .elem-top-line--light {border-top: 1px solid $c-white20}
 .elem-shadow-1 {box-shadow: 0px 1px 1px 0px #00000038}
