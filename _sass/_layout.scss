@@ -113,13 +113,13 @@
 
 #menu-on-scroll {
   position: fixed;
-  width: 100%;
   top: 0;
   left: $space-x * 2;
   z-index: 999;
 
   @media (max-width: $screen-mobile) {
     left: $space-x / 2;
+    width: 100%;
   }
 }
 
