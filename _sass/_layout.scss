@@ -259,6 +259,10 @@
 
 .after-project-list {
   height: 100vh;
+
+  @media (max-height: 800px) {
+    height: auto;
+  }
 }
 
 .credits-block {
