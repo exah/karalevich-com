@@ -52,7 +52,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  jekyll (= 3.1.6)
+  jekyll (>= 3.6.3)
   octopress-autoprefixer
   thin
 
