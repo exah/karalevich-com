@@ -1,9 +1,3 @@
-> Rill—Common Connections
-
-<https://rill.cc>
-
----
-
 #### Built with:
 
 - [Next.js](https://nextjs.org/)
