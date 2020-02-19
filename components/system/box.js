@@ -29,20 +29,35 @@ const __variant = ({
     )
   )(theme)
 
-/* Add flexbox snippets */
+/* Flexbox snippets */
 const flexes = variant({
-	key: 'flexes',
-	prop: 'flexes',
+  scale: 'flexes',
+  prop: 'flexes',
+  variants: 'flexes',
 })
-/* Add text styling */
+/* Paddings */
+const paddings = variant({
+  scale: 'paddings',
+  prop: 'ps',
+  variants: 'paddings',
+})
+/* Margins */
+const margins = variant({
+  scale: 'margins',
+  prop: 'ms',
+  variants: 'margins',
+})
+/* Text styling */
 const styling = variant({
-	key: 'styling',
-	prop: 'styling',
+  scale: 'styling',
+  prop: 'styling',
+  variants: 'styling',
 })
-/* Add link styling */
+/* Link styling */
 const links = variant({
-  key: 'links',
+  scale: 'links',
   prop: 'link',
+  variants: 'links',
 })
 
 export const Box = styled('div', {
@@ -54,6 +69,8 @@ export const Box = styled('div', {
 },
   base,
   flexes,
+  paddings,
+  margins,
   styling,
   links,
   __variant,
@@ -76,5 +93,5 @@ export const Flex = styled(Box)({
 })
 
 export const Grid = styled(Box)({
-	display: 'grid',
+  display: 'grid',
 })
