@@ -5,6 +5,7 @@ import { Meta } from '../components/Meta'
 import {
 	Nav,
   Intro,
+  SelectWork,
 } from '../components/bridge'
 
 import HelperGrid from '../components/utils'
@@ -14,6 +15,7 @@ const App = props =>
     <Meta />
     <Nav />
     <Intro />
+    <SelectWork />
     <HelperGrid />
   </Theme>
 
