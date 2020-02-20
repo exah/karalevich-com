@@ -1,8 +1,8 @@
 import React from 'react'
 import { Theme } from '../components/system/theme'
-import { Meta } from '../components/Meta'
 
 import {
+  Meta,
 	Nav,
   Intro,
   SelectWork,
@@ -12,7 +12,13 @@ import HelperGrid from '../components/utils'
 
 const App = props =>
   <Theme>
-    <Meta />
+    <Meta
+      name={props.name}
+      description={props.description}
+      keywords={props.keywords}
+      title={props.title}
+      url={props.url}
+    />
     <Nav />
     <Intro />
     <SelectWork />
@@ -20,3 +26,10 @@ const App = props =>
   </Theme>
 
 export default App
+
+App.getInitialProps = async () => {
+  const configData = await import(`../data/config.json`)
+  return {
+    ...configData.default,
+  }
+}

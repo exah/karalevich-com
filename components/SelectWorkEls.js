@@ -1,39 +1,40 @@
 import { Flex, Grid, Text, Link, Image } from './system'
 import { Layout } from './Layout'
 
-export const Project = () =>
+export const Project = (props) =>
 	<Layout
-			gridColumn='1/-1'
-			px={0}
-			pb={6}
+		gridColumn='1/-1'
+	>
+		<Link
+			px={2}
+			gridColumn='1/5'
+			variant='x'
 		>
-			<Link
-				gridColumn='1/5'
-				variant='x'
-			>
-				Title
-			</Link>
-			<Link
-				gridColumn='5/9'
-				variant='x'
-			>
-				Description
-			</Link>
-			<Link
-				gridColumn='9/-1'
-				variant='x'
-			>
-				Role
-			</Link>
-			<Flex
-				gridColumn='1/-1'
-				height='800px'
-				mt={1}
-				flexes='ccc'
-				bg='grey'
-			>
-				img
-			</Flex>
-		</Layout>
+			{props.title}
+		</Link>
+		<Link
+			px={2}
+			gridColumn='5/9'
+			variant='x'
+		>
+			{props.lead}
+		</Link>
+		<Link
+			px={2}
+			gridColumn='9/-1'
+			variant='x'
+		>
+			{props.role}
+		</Link>
+		<Image
+			src={props.cover}
+			gridColumn={props.column}
+			width='100%'
+			height='auto'
+			mt={1}
+			pb={6}
+			flexes='ccc'
+		/>
+</Layout>
 
 	export default Project

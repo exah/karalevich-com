@@ -6,7 +6,6 @@ export const Layout = forwardRef((props, ref) =>
 	<Grid
 		ref={ref}
 		width='100%'
-		px={2}
 		maxHeight={props.maxHeight}
 		overflow='hidden'
 		gridTemplateColumns={`repeat(${props.columns}, 1fr)`}

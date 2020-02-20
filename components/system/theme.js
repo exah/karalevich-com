@@ -57,12 +57,12 @@ const lineHeights = '1.15'
 
 const text = {
 	x: {
-		fontSize: [0, null, null, 1],
+		fontSize: [0, null, null, null, 1],
 		lineHeight: lineHeights,
 		color: 'blacks.4',
 	},
 	p: {
-		fontSize: [0, null, null, 1],
+		fontSize: [0, null, null, null, 1],
 		lineHeight: lineHeights,
 		color: 'blacks.4',
 		textIndent: '1rem',

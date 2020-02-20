@@ -3,12 +3,12 @@ import { Layout } from './Layout'
 
 const Intro = () =>
 	<Layout
+		px={2}
+		width='100%'
 		sx={{
 			position: 'absolute',
 			top: 0,
 			left: 0,
-			width: '100%,'
-			// height: '100%,'
 		}}
 	>
 		<Flex
