@@ -1,4 +1,3 @@
-import React from 'react'
 import { Theme } from '../components/system/theme'
 
 import {

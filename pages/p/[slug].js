@@ -1,3 +1,4 @@
+import { Theme } from '../../components/system/theme'
 import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
 import { Meta, Nav } from '../../components/bridge'
@@ -8,7 +9,7 @@ export default function ProjectTempalte(props) {
 	const markdownBody = props.content
 	const frontmatter = props.data
 	return (
-		<>
+		<Theme>
 			<Meta
 				title={props.title}
 			/>
@@ -21,7 +22,7 @@ export default function ProjectTempalte(props) {
  					{frontmatter.description}
  				</Text>
  			</Layout>
- 		</>
+ 		</Theme>
 	)
 }
 
