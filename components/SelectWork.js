@@ -19,11 +19,12 @@ const SelectWork = () =>
 		</Layout>
 		
 		<Project
-			column='1/-1'
+			href='/p/the-new-normal'
 			title='Four Flowers School · Family Education'
 			lead='Platform for self-directed education'
 			role='(Co-Founder)'
 			cover='/covers/c-four-flowers.png'
+			column='1/-1'
 		/>
 	</>
 

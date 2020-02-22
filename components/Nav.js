@@ -10,11 +10,12 @@ const Nav = () =>
 			px={2}
 			sx={{
 				position: 'fixed',
+				zIndex: 2,
 			}}
 		>
-			<Link variant='x' link='underline'>Maksim</Link>
-			<Link variant='x' link='underline'>About</Link>
-			<Link variant='x' link='underline'>Entries</Link>
+			<Link href='/' variant='x' link='underline'>Maksim</Link>
+			<Link href='/about' variant='x' link='underline'>About</Link>
+			<Link href='/enties' variant='x' link='underline'>Entries</Link>
 		</Flex>
 
 	export default Nav

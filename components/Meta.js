@@ -17,5 +17,5 @@ export const Meta = props =>
 		<meta property="og:url" content={props.url} />
 		<meta property="og:type" content="website" />
 	  <link rel="icon" href="/fav.png" />
-	  <title>{ props.title === "Maksim Karalevich—Designer" ? props.title : "—" + props.title }</title>
+	  <title>{ props.title === "Maksim Karalevich—Designer" ? props.title : "Maksim—" + props.title }</title>
 	</Head>

@@ -11,12 +11,21 @@ export default function ProjectTempalte(props) {
 	return (
 		<Theme>
 			<Meta
-				title={props.title}
+				title={frontmatter.title}
 			/>
  			<Nav />
- 			<Layout>
+ 			<Layout
+ 				px={2}
+				width='100%'
+				sx={{
+					position: 'absolute',
+					top: 0,
+					left: 0,
+				}}
+			>
  				<Text
  					gridColumn='1/5'
+ 					pt={5}
  					variant='p'
 				>
  					{frontmatter.description}
@@ -26,8 +35,8 @@ export default function ProjectTempalte(props) {
 	)
 }
 
-ProjectTempalte.getInitialProps = async function(context) {
-	const { slug } = context.query
+ProjectTempalte.getInitialProps = async ctx => {
+	const { slug } = ctx.query
 	const content = await import(`../../projects/${slug}.md`)
 	const config = await import(`../../data/config.json`)
 	const data = matter(content.default)

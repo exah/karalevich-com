@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react'
 import { Box, Flex, Grid } from './system/box'
+import NextLink from 'next/link'
 
 export { Box, Flex, Grid }
 
@@ -13,10 +14,15 @@ export const Text = forwardRef((props, ref) =>
 )
 
 export const Link = forwardRef((props, ref) =>
-  <Text
-    as='a'
-    {...props}
+  <NextLink
+    href={props.href}
+    passHref={true}
+  >
+    <Text
+      as='a'
+      {...props}
   />
+  </NextLink>
 )
 
 export const Button = forwardRef((props, ref) =>

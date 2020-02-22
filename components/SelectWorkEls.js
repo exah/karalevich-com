@@ -2,39 +2,43 @@ import { Flex, Grid, Text, Link, Image } from './system'
 import { Layout } from './Layout'
 
 export const Project = (props) =>
-	<Layout
-		gridColumn='1/-1'
+	<Link
+		href={props.href}
 	>
-		<Link
-			px={2}
-			gridColumn='1/5'
-			variant='x'
+		<Layout
+			gridColumn='1/-1'
 		>
-			{props.title}
-		</Link>
-		<Link
-			px={2}
-			gridColumn='5/9'
-			variant='x'
-		>
-			{props.lead}
-		</Link>
-		<Link
-			px={2}
-			gridColumn='9/-1'
-			variant='x'
-		>
-			{props.role}
-		</Link>
-		<Image
-			src={props.cover}
-			gridColumn={props.column}
-			width='100%'
-			height='auto'
-			mt={1}
-			pb={6}
-			flexes='ccc'
-		/>
-</Layout>
+			<Text
+				px={2}
+				gridColumn='1/5'
+				variant='x'
+			>
+				{props.title}
+			</Text>
+			<Text
+				px={2}
+				gridColumn='5/9'
+				variant='x'
+			>
+				{props.lead}
+			</Text>
+			<Text
+				px={2}
+				gridColumn='9/-1'
+				variant='x'
+			>
+				{props.role}
+			</Text>
+			<Image
+				src={props.cover}
+				gridColumn={props.column}
+				width='100%'
+				height='auto'
+				mt={1}
+				pb={6}
+				flexes='ccc'
+			/>
+	</Layout>
+</Link>
 
 	export default Project
