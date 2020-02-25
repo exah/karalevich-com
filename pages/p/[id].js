@@ -3,14 +3,21 @@ import ReactMarkdown from 'react-markdown'
 
 import { Theme } from '../../components/system/theme'
 import { Layout } from '../../components/Layout'
-import { Flex, Text, Link } from '../../components/system'
+import { Flex, Text, Link, Image } from '../../components/system'
 import { Meta, Nav } from '../../components/bridge'
 
-const mdLink = props =>
-	<Link
-		link='underline'
-		{...props}
-	/>
+const renderers = {
+	paragraph: Text,
+	image: ({src, alt}) => {
+		let output
+		if (src.match(/\.png/i)) {
+			return <Image src={src} width='40px' />
+		}
+		else if(src.match(/\.vimeo/)) {
+			return <Link href={src}>{alt}</Link>
+		}
+	}
+}
 
 export default function Project(props) {
 	const markdown = props.content
@@ -31,11 +38,7 @@ export default function Project(props) {
 
 	 			<ReactMarkdown
 	 				source={markdown}
-	 				renderers={{
-	 					'paragraph': Text,
-	 					'link': mdLink,
-	 					
-	 					}}
+	 				renderers={renderers}
 	 			/>
  			
  			</Layout>
