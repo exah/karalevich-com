@@ -16,6 +16,7 @@ export const Text = forwardRef((props, ref) =>
 export const Link = forwardRef((props, ref) =>
   <NextLink
     href={props.href}
+    as={props.nextAs}
     passHref={true}
   >
     <Text

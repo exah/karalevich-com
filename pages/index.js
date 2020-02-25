@@ -1,34 +1,18 @@
 import { Theme } from '../components/system/theme'
+import { Link } from '../components/system'
 
-import {
-  Meta,
-	Nav,
-  Intro,
-  SelectWork,
-} from '../components/bridge'
+const Project = props =>
+  <Link
+     variant='x' link='underline'
+     href='/p/[id]' nextAs={`/p/${props.id}`}
+  >
+    Title: {props.id}
+  </Link>
 
-import HelperGrid from '../components/utils'
-
-const App = props =>
-  <Theme>
-    <Meta
-      name={props.name}
-      description={props.description}
-      keywords={props.keywords}
-      title={props.title}
-      url={props.url}
-    />
-    <Nav />
-    <Intro />
-    <SelectWork />
-    <HelperGrid />
-  </Theme>
-
-export default App
-
-App.getInitialProps = async () => {
-  const configData = await import(`../data/config.json`)
-  return {
-    ...configData.default,
-  }
+export default function App() {
+  return (
+    <Theme>
+       <Project id='the-new-normal' />
+    </Theme>
+  )
 }
