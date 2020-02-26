@@ -9,7 +9,7 @@ import { Meta, Nav } from '../../components/bridge'
 const renderers = {
 	paragraph: Text,
 	image: ({src, alt}) => {
-		let output
+		let output = ''
 		if (src.match(/\.png/i)) {
 			return <Image src={src} width='40px' />
 		}
