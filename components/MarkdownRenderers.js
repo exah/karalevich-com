@@ -1,5 +1,5 @@
 import { Layout } from './Layout'
-import { Flex, Text, Link, Image, Video } from './system'
+import { Text, Link, Image, Video } from './system'
 
 const MarkdownText = props =>
 	<Text
@@ -10,10 +10,16 @@ const MarkdownText = props =>
 	/>
 
 const MarkdownLink = props =>
-	<Link gridColumn='1/5' {...props} />
+	<Link
+		gridColumn='1/5'
+		{...props} 
+	/>
 
 const MarkdownParagraph = props =>
-	<Layout pb={6} {...props} />
+	<Layout
+		pb={6}
+		{...props} 
+	/>
 
 const MarkdownImage = props =>
 	<>
@@ -22,21 +28,26 @@ const MarkdownImage = props =>
 			gridColumn={props.width}
 		/>
 		<Text as='figcaption'
-			variant='x'
 			gridColumn='5/9'
+			variant='x'
 		>
 			{props.alt}
 		</Text>
 	</>
 
 MarkdownImage.defaultProps = {
-	width: '1/9'
+	width: '1/9',
 }
 
 const InlineVideo = props =>
 	<>
 		<Video src={props.src} />
-		<Text as='figcaption'>{props.alt}</Text>
+		<Text as='figcaption'
+			gridColumn='5/9'
+			variant='x'
+		>
+			{props.alt}
+		</Text>
 	</>
 
 export const renderers = {
@@ -47,8 +58,9 @@ export const renderers = {
 		let output = ''
 		const isImage = src.match(/\.png/i)
 		const isInlineVideo = src.match(/\.mp4/i)
+		const isHalf = src.match(/size=half/i) ? '1/5' : '1/9'
 		
-		if (isImage) return <MarkdownImage src={src} alt={alt} />
+		if (isImage || isHalf) return <MarkdownImage src={src} alt={alt} width={isHalf} />
 		else if (isInlineVideo) return <InlineVideo src={src} alt={alt} />
 		else return <Link href={src}>{alt}</Link>
 	},

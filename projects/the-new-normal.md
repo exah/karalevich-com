@@ -1,7 +1,7 @@
 ---
 title: The New Normal
 lead: Interactive narrative for research programme
-client: In-house
+client: (In-house)
 cover: /covers/c-the-new-normal.png
 description: Visual language and interactive website for the theme of the 7th academic year at Strelka Institute.
 role: Identity, visual design, UX prototyping
@@ -16,11 +16,9 @@ The research focuses on the new contemporary condition, which has emerged with t
 
 ![Various block combinations for different types of information](/covers/c-the-new-normal.png)
 
-
 ![Motion design for a programme online promotion and theme video during offline lectures](/covers/c-the-new-normal.png)
 
 ![half image](/covers/c-four-flowers.png?size=half)
-
-![half image](/covers/c-os-ux.png?size=half)
+![half image](/covers/c-os-ux.png)
 
 ![Fugue Tails by Radim Peško and William Pro by Maria Doreuli](/covers/c-rill.png)
