@@ -3,8 +3,8 @@ import ReactMarkdown from 'react-markdown'
 import { renderers } from '../../components/MarkdownRenderers'
 
 import { Theme } from '../../components/system/theme'
-import { Layout } from '../../components/Layout'
 import { Flex, Text, Link, Image } from '../../components/system'
+import { Layout } from '../../components/Layout'
 import { Meta, Nav } from '../../components/bridge'
 
 export default function Project(props) {
@@ -54,13 +54,13 @@ export default function Project(props) {
 
  			<Image width='100%' pb={6} src={meta.cover} />
 	 		
-	 		
+	 		<Layout>
 	 			<ReactMarkdown
 	 				source={markdown}
 	 				renderers={renderers}
 	 				escapeHtml={false}
 	 			/>
- 			
+ 			</Layout>
  			
  		</Theme>
 	)

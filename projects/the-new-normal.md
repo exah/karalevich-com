@@ -12,6 +12,7 @@ column: 1/-1
 ---
 
 The research focuses on the new contemporary condition, which has emerged with the rapid development of technology, including machine intelligence, biotechnology, automation, and alternative spaces created in VR and AR.
+
 [thenewnormal.strelka.com](http://thenewnormal.strelka.com)
 
 ![Various block combinations for different types of information](/covers/c-the-new-normal.png)
@@ -19,6 +20,7 @@ The research focuses on the new contemporary condition, which has emerged with t
 ![Motion design for a programme online promotion and theme video during offline lectures](/covers/c-the-new-normal.png)
 
 ![half image](/covers/c-four-flowers.png?size=half)
-![half image](/covers/c-os-ux.png)
 
-![Fugue Tails by Radim Peško and William Pro by Maria Doreuli](/covers/c-rill.png)
+![ ](/covers/c-os-ux.png)
+
+![Fugue Tails by Radim Peško and William Pro by Maria Doreuli](/covers/c-rill.png?size=fullscreen)
