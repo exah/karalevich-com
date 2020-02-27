@@ -22,10 +22,34 @@ export default function Project(props) {
  				pb={2}
  				width='100%'
 			>
-	 			<Text gridColumn='1/5' gridRow='1' height='52vh'>{meta.description}</Text>
-	 			<Text gridColumn='1/5' gridRow='2'>{meta.title}</Text>
-	 			<Text gridColumn='5/9' gridRow='2'>{meta.lead}</Text>
-	 			<Text gridColumn='9/-1' gridRow='2'>{meta.client}</Text>
+	 			<Text
+	 				gridColumn='1/5'
+	 				gridRow='1' height='52vh'
+	 				variant='x'
+ 				>
+	 				{meta.description}
+	 			</Text>
+	 			<Text
+	 				gridColumn='1/5'
+	 				gridRow='2'
+	 				variant='x'
+ 				>
+	 				{meta.title}
+	 			</Text>
+	 			<Text
+	 				gridColumn='5/9'
+	 				gridRow='2'
+	 				variant='x'
+ 				>
+	 				{meta.lead}
+	 			</Text>
+	 			<Text
+	 				gridColumn='9/-1'
+	 				gridRow='2'
+	 				variant='x'
+ 				>
+	 				{meta.client}
+	 			</Text>
 	 		</Layout>
 
  			<Image width='100%' pb={6} src={meta.cover} />

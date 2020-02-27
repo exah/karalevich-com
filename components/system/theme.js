@@ -65,7 +65,6 @@ const text = {
 		fontSize: [0, null, null, null, 1],
 		lineHeight: lineHeights,
 		color: 'blacks.4',
-		textIndent: '1rem',
 		pb: 2,
 		':last-child': {
 			pb: 0,

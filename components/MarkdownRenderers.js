@@ -3,6 +3,7 @@ import { Flex, Text, Link, Image, Video } from './system'
 
 const MarkdownText = props =>
 	<Text
+		variant='x'
 		gridColumn='1/5'
 		px={2}
 		{...props}
@@ -21,6 +22,7 @@ const MarkdownImage = props =>
 			gridColumn={props.width}
 		/>
 		<Text as='figcaption'
+			variant='x'
 			gridColumn='5/9'
 		>
 			{props.alt}

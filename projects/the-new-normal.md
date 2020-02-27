@@ -20,6 +20,7 @@ The research focuses on the new contemporary condition, which has emerged with t
 ![Motion design for a programme online promotion and theme video during offline lectures](/covers/c-the-new-normal.png)
 
 ![half image](/covers/c-four-flowers.png?size=half)
+
 ![half image](/covers/c-os-ux.png?size=half)
 
 ![Fugue Tails by Radim Peško and William Pro by Maria Doreuli](/covers/c-rill.png)
