@@ -82,3 +82,15 @@ export const Image = forwardRef((props, ref) =>
     }}
   />
 )
+
+export const Video = forwardRef((props, ref) =>
+  <Box
+    ref={ref}
+    as='video'
+    {...props}
+    __css={{
+      maxWidth: '100%',
+      height: 'auto',
+    }}
+  />
+)
