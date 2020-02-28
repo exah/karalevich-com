@@ -2,6 +2,8 @@ import { Fragment } from 'react'
 import { Layout } from './Layout'
 import { Flex, Grid, Text, Link, Image, Video } from './system'
 
+// Base markdown components
+
 const MarkdownText = props =>
 	<Text
 		variant='p'
@@ -25,52 +27,59 @@ const MarkdownLink = props =>
 const MarkdownParagraph = props =>
 	<Fragment {...props} />
 
-const setImageSize = ({layout}) => {
+
+
+// Set media layout
+
+const setMediaSize = ({layout}) => {
 	if (layout === 'isHalf') { return '33.33%' }
 	else if (layout === 'isFullscreen') { return '100%' }
-	else return '66.66%'
+	else return '66.68%'
 }
 
-const setFigSize = ({layout}) => {
+const setCaptionSize = ({layout}) => {
 	if (layout === 'isHalf') { return '100%' }
 	else if (layout === 'isFullscreen') { return '33.33%' }
 	else return '50%'
 }
 
+const setCaptionAlignment = ({layout}) => {
+ if (layout === 'default') { return 'right' }
+ else if (layout === 'isFullscreen') { return 'center' }
+	else return 'start'
+}
+
 const MarkdownImage = props =>
 	<Flex
 		as='figure'
-		width={setImageSize(props)}
+		width={setMediaSize(props)}
+		flexes='cse'
 		pb={6}
-	>
-		
+	>  
+
 		<Image width='100%' src={props.src} />
-		
-		{props.alt === ' ' ? null :
-			<Text
+		{props.alt === ' ' ? null
+		: <Text
 				as='figcaption'
-				width={setFigSize(props)}
-				alignSelf='right'
+				width={setCaptionSize(props)}
+				alignSelf={setCaptionAlignment(props)}
+				mt={2}
 				variant='p'
 				color='blacks.3'
-				mt={2}
 			>
 				{props.alt}
 			</Text>
 		}
-	</Flex>
 
-MarkdownImage.defaultProps = {
-	layout: '2/3',
-}
+	</Flex>
 
 const InlineVideo = props =>
 	<>
-		<Video src={props.src} />
+		<Video src={props.src} playsinline autoplay mute />
 		<Text
 			as='figcaption'
-			gridColumn='5/9'
-			variant='x'
+			width={setCaptionSize(props)}
+			variant='p'
 			color='blacks.3'
 			mt={2}
 		>
@@ -78,28 +87,29 @@ const InlineVideo = props =>
 		</Text>
 	</>
 
+// Switch Components
+
+const setMediaComponent = ({src, alt}) => {
+		
+	const isImage = src.match(/\.jpg/i)
+	const isVideo = src.match(/\.mp4/i)
+	const isHalf = src.match(/size=half/i)
+	const isFullscreen = src.match(/size=fullscreen/i)
+
+	let layout = 'default'
+	if (src.match(/size=half/i)) layout = 'isHalf'
+	if (src.match(/size=fullscreen/i)) layout = 'isFullscreen'
+
+	if (isImage) {
+		return <MarkdownImage src={src} alt={alt} layout={layout} />
+	} else if (isVideo) {
+		return <MarkdownVideo src={src} alt={alt} layout={layout} />
+	}
+}
+
 export const renderers = {
 	text: MarkdownText,
 	paragraph: MarkdownParagraph,
-	image: ({src, alt}) => {
-		
-		let imageSize
-		const isHalf = src.match(/size=half/i)
-		const isFullscreen = src.match(/size=fullscreen/i)
-		const isImage = src.match(/\.png/i)
-		const isInlineVideo = src.match(/\.mp4/i)
-
-		if (isImage) {
-			if (isHalf) {
-				imageSize = 'isHalf'
-				return <MarkdownImage src={src} alt={alt} layout={imageSize} />
-			}
-			else if (isFullscreen) {
-				imageSize = 'isFullscreen'
-				return <MarkdownImage src={src} alt={alt} layout={imageSize} />
-			}
-			else return <MarkdownImage src={src} alt={alt} layout={'default'} />
-		}
-	},
+	image: ({src, alt}) => setMediaComponent({src, alt}),
 link: MarkdownLink
 }

@@ -3,6 +3,7 @@ import { Layout } from './Layout'
 
 const Nav = () =>
 		<Flex
+			as='nav'
 			gridColumn='1/-1'
 			flexes='rbe'
 			width='100%'

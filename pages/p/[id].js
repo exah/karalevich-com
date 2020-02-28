@@ -14,18 +14,24 @@ export default function Project(props) {
 		<Theme>
 			<Meta title={meta.title} />
 			<Nav />
+
+			<Flex
+	 			as='article'
+	 			width='100%'
+	 			flexes='rss'
+ 			>
  			
  			<Text
  				width={1/3}
  				height='52vh'
  				pl={2}
- 				variant='x'
+ 				pt={5}
+ 				variant='p'
 				>
 	 				{meta.description}
 	 			</Text>
  			
  			<Flex
- 				as='heading'
  				px={2}
  				pb={2}
  				width='100%'
@@ -53,11 +59,12 @@ export default function Project(props) {
 
  			<Image width='100%' pb={6} src={meta.cover} />
 	 		
- 			<ReactMarkdown
- 				source={markdown}
- 				renderers={renderers}
- 				escapeHtml={false}
- 			/>
+				<ReactMarkdown
+	 				source={markdown}
+	 				renderers={renderers}
+	 				escapeHtml={false}
+	 			/>
+	 		</Flex>
  			
  		</Theme>
 	)

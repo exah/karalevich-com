@@ -69,6 +69,7 @@ const text = {
 		':last-child': {
 			pb: 0,
 		},
+		textIndent: '2rem'
 	},
 }
 
