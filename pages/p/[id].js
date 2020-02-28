@@ -12,55 +12,52 @@ export default function Project(props) {
 	const meta = props.data
 	return (
 		<Theme>
-			<Meta
-				title={meta.title}
-			/>
+			<Meta title={meta.title} />
 			<Nav />
- 			<Layout
- 				px={2}
- 				pt={4}
- 				pb={2}
- 				width='100%'
-			>
-	 			<Text
-	 				gridColumn='1/5'
-	 				gridRow='1' height='52vh'
-	 				variant='x'
- 				>
+ 			
+ 			<Text
+ 				width={1/3}
+ 				height='52vh'
+ 				pl={2}
+ 				variant='x'
+				>
 	 				{meta.description}
 	 			</Text>
+ 			
+ 			<Flex
+ 				as='heading'
+ 				px={2}
+ 				pb={2}
+ 				width='100%'
+ 				flexes='rss'
+			>
 	 			<Text
-	 				gridColumn='1/5'
-	 				gridRow='2'
+	 				width={1/3}
 	 				variant='x'
  				>
 	 				{meta.title}
 	 			</Text>
 	 			<Text
-	 				gridColumn='5/9'
-	 				gridRow='2'
+	 				width={1/3}
 	 				variant='x'
  				>
 	 				{meta.lead}
 	 			</Text>
 	 			<Text
-	 				gridColumn='9/-1'
-	 				gridRow='2'
+	 				width={1/3}
 	 				variant='x'
  				>
 	 				{meta.client}
 	 			</Text>
-	 		</Layout>
+	 		</Flex>
 
  			<Image width='100%' pb={6} src={meta.cover} />
 	 		
-	 		<Layout>
-	 			<ReactMarkdown
-	 				source={markdown}
-	 				renderers={renderers}
-	 				escapeHtml={false}
-	 			/>
- 			</Layout>
+ 			<ReactMarkdown
+ 				source={markdown}
+ 				renderers={renderers}
+ 				escapeHtml={false}
+ 			/>
  			
  		</Theme>
 	)
