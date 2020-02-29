@@ -17,7 +17,7 @@ The research focuses on the new contemporary condition, which has emerged with t
 
 ![Various block combinations for different types of information](/projects/the-new-normal/pages--r169.jpg)
 
-![some cap](/projects/the-new-normal/adaptive-01--r11.jpg?size=half)
+![erfers](/projects/the-new-normal/adaptive-01--r11.jpg?size=half)
 
 ![ ](/projects/the-new-normal/adaptive-02--r11.jpg?size=half)
 

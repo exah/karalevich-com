@@ -14,15 +14,28 @@ const MarkdownText = props =>
 		{props.children}
 	</Text>
 
+
 const MarkdownLink = props =>
 	<Link
-		color='blacks.2'
 		variant='x'
 		width={1/3}
 		href={props.href}
 	>
 		{props.children}
 	</Link>
+
+const unwrapLink = props => {
+	const {children} = props
+
+	if (children && children[0]
+    && children.length === 1
+    && children[0].props
+    && children[0].props.href) {
+
+    return <MarkdownLink {...props} /> 
+  }
+  return <MarkdownText {...props} />
+}
 
 const MarkdownParagraph = props =>
 	<Fragment {...props} />
@@ -55,20 +68,22 @@ const MarkdownImage = props =>
 		width={setMediaSize(props)}
 		flexes='cse'
 		pb={6}
+		pl={ props.layout !== 'isFullscreen' && 2 }
 	>  
 
 		<Image width='100%' src={props.src} />
-		{props.alt === ' ' ? null
-		: <Text
-				as='figcaption'
-				width={setCaptionSize(props)}
-				alignSelf={setCaptionAlignment(props)}
-				mt={2}
-				variant='p'
-				color='blacks.3'
-			>
-				{props.alt}
-			</Text>
+		{ props.alt === ' ' ? null
+			: <Text
+					as='figcaption'
+					width={setCaptionSize(props)}
+					alignSelf={setCaptionAlignment(props)}
+					pt={2}
+					pl={ props.layout !== 'isHalf' && 2 }
+
+					variant='p'
+				>
+					{props.alt}
+				</Text>
 		}
 
 	</Flex>
@@ -80,7 +95,6 @@ const InlineVideo = props =>
 			as='figcaption'
 			width={setCaptionSize(props)}
 			variant='p'
-			color='blacks.3'
 			mt={2}
 		>
 			{props.alt}
@@ -107,9 +121,11 @@ const setMediaComponent = ({src, alt}) => {
 	}
 }
 
+// Export renderers
+
 export const renderers = {
 	text: MarkdownText,
 	paragraph: MarkdownParagraph,
 	image: ({src, alt}) => setMediaComponent({src, alt}),
-link: MarkdownLink
+	link: (props) => unwrapLink(props),
 }

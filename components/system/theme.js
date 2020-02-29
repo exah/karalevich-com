@@ -31,7 +31,7 @@ const space = [
 	'8rem',		// 10: 128px
 ]
 
-const colors = {
+/*const colors = {
 	transparent: 'rgba(0,0,0,.0)',
 	black: '#000',
 	blacks: [
@@ -49,6 +49,21 @@ const colors = {
 		'rgba(255,255,255,.56)',
 		'rgba(255,255,255,.88)',
 	],
+}*/
+
+const colors = {
+	text: '#000',
+	bg: 'FFF',
+	tinted: 'rgba(0,0,0,.56)',
+	ui: 'rgba(0,0,0,.16)',
+	modes: {
+		dark: {
+			text: '#FFF',
+			bg: '#000',
+			tinted: 'rgba(255,255,255,.56)',
+			ui: 'rgba(255,255,255,.16)',
+		},
+	},
 }
 
 const fonts = 'Helvetica Neue, -system, Sans-Serif'
@@ -59,12 +74,12 @@ const text = {
 	x: {
 		fontSize: [0, null, null, null, 1],
 		lineHeight: lineHeights,
-		color: 'blacks.4',
+		color: 'text',
 	},
 	p: {
 		fontSize: [0, null, null, null, 1],
 		lineHeight: lineHeights,
-		color: 'blacks.4',
+		color: 'tinted',
 		pb: 2,
 		':last-child': {
 			pb: 0,
@@ -80,7 +95,7 @@ const styling = {
 const links = {
 	underline: {
 		borderBottom: '1px solid',
-		borderColor: 'blacks.2',
+		borderColor: 'ui',
 	},
 	dot: {
 		':before': {

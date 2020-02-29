@@ -27,6 +27,7 @@ export default function Project(props) {
  				pl={2}
  				pt={5}
  				variant='p'
+ 				color='text'
 				>
 	 				{meta.description}
 	 			</Text>
