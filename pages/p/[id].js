@@ -11,61 +11,62 @@ export default function Project(props) {
 	const markdown = props.content
 	const meta = props.data
 	return (
-		<Theme>
+		<Theme theme='dark'>
 			<Meta title={meta.title} />
-			<Nav />
+				<Nav />
 
-			<Flex
-	 			as='article'
-	 			width='100%'
-	 			flexes='rss'
- 			>
- 			
- 			<Text
- 				width={1/3}
- 				height='52vh'
- 				pl={2}
- 				pt={5}
- 				variant='p'
- 				color='text'
+				<Flex
+		 			as='article'
+		 			width='100%'
+		 			flexes='rss'
+					bg='bg'
+	 			>
+	 			
+	 			<Text
+	 				width={1/3}
+	 				height='52vh'
+	 				pl={2}
+	 				pt={5}
+	 				variant='p'
+	 				color='text'
+					>
+		 				{meta.description}
+		 			</Text>
+	 			
+	 			<Flex
+	 				px={2}
+	 				pb={2}
+	 				width='100%'
+	 				flexes='rss'
 				>
-	 				{meta.description}
-	 			</Text>
- 			
- 			<Flex
- 				px={2}
- 				pb={2}
- 				width='100%'
- 				flexes='rss'
-			>
-	 			<Text
-	 				width={1/3}
-	 				variant='x'
- 				>
-	 				{meta.title}
-	 			</Text>
-	 			<Text
-	 				width={1/3}
-	 				variant='x'
- 				>
-	 				{meta.lead}
-	 			</Text>
-	 			<Text
-	 				width={1/3}
-	 				variant='x'
- 				>
-	 				{meta.client}
-	 			</Text>
-	 		</Flex>
+		 			<Text
+		 				width={1/3}
+		 				variant='x'
+	 				>
+		 				{meta.title}
+		 			</Text>
+		 			<Text
+		 				width={1/3}
+		 				variant='x'
+	 				>
+		 				{meta.lead}
+		 			</Text>
+		 			<Text
+		 				width={1/3}
+		 				variant='x'
+	 				>
+		 				{meta.client}
+		 			</Text>
+		 		</Flex>
 
- 			<Image width='100%' pb={6} src={meta.cover} />
-	 		
-				<ReactMarkdown
-	 				source={markdown}
-	 				renderers={renderers}
-	 				escapeHtml={false}
-	 			/>
-	 		</Flex>
+	 			<Image width='100%' pb={6} src={meta.cover} />
+		 		
+					<ReactMarkdown
+		 				source={markdown}
+		 				renderers={renderers}
+		 				escapeHtml={false}
+		 			/>
+		 		</Flex>
  			
  		</Theme>
 	)

@@ -81,6 +81,7 @@ const MarkdownImage = props =>
 					pl={ props.layout !== 'isHalf' && 2 }
 
 					variant='p'
+					color='tinted'
 				>
 					{props.alt}
 				</Text>

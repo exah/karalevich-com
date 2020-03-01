@@ -2,6 +2,8 @@ import React from 'react'
 import { ThemeProvider } from 'emotion-theming'
 import { injectGlobal } from 'emotion'
 import flexes from './flexes'
+import merge from 'lodash.merge'
+import get from 'lodash.get'
 
 const breakpoints = [
 	'24rem',	// 1: 384
@@ -59,7 +61,7 @@ const text = {
 	p: {
 		fontSize: [0, null, null, null, 1],
 		lineHeight: lineHeights,
-		color: 'tinted',
+		color: 'text',
 		pb: 2,
 		':last-child': {
 			pb: 0,
@@ -78,6 +80,7 @@ const links = {
 		borderColor: 'ui',
 	},
 	dot: {
+		color: 'tinted',
 		':before': {
 			content: '•',
 			pr: 1,
@@ -163,10 +166,16 @@ const Global = injectGlobal`
 	}
 `
 
+const modes = ['light', 'dark']
 
-export const Theme = ({children}) => {
+const getTheme = mode =>
+	merge({}, theme, {
+		colors: get(theme.colors.modes, mode, theme.colors)
+	})
+
+export const Theme = ({theme, children}) => {
 	return (
-		<ThemeProvider theme={theme}>
+		<ThemeProvider theme={getTheme(theme)}>
 			<>
 			{Global}
 			{children}
