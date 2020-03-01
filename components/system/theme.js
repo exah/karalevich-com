@@ -31,29 +31,9 @@ const space = [
 	'8rem',		// 10: 128px
 ]
 
-/*const colors = {
-	transparent: 'rgba(0,0,0,.0)',
-	black: '#000',
-	blacks: [
-		'rgba(0,0,0,.04)',
-		'rgba(0,0,0,.16)',
-		'rgba(0,0,0,.32)',
-		'rgba(0,0,0,.56)',
-		'rgba(0,0,0,.88)',
-		],
-	white: '#FFF',
-	whites: [
-		'rgba(255,255,255,.04)',
-		'rgba(255,255,255,.16)',
-		'rgba(255,255,255,.32)',
-		'rgba(255,255,255,.56)',
-		'rgba(255,255,255,.88)',
-	],
-}*/
-
 const colors = {
 	text: '#000',
-	bg: 'FFF',
+	bg: '#FFF',
 	tinted: 'rgba(0,0,0,.56)',
 	ui: 'rgba(0,0,0,.16)',
 	modes: {
@@ -93,7 +73,7 @@ const styling = {
 }
 
 const links = {
-	underline: {
+	line: {
 		borderBottom: '1px solid',
 		borderColor: 'ui',
 	},
@@ -107,6 +87,8 @@ const links = {
 
 const variants = {
 	flexes,
+	styling,
+	links,
 }
 
 const theme = {

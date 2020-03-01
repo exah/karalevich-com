@@ -14,9 +14,9 @@ const Nav = () =>
 				zIndex: 2,
 			}}
 		>
-			<Link href='/' variant='x' link='underline'>Maksim</Link>
-			<Link href='/about' variant='x' link='underline'>About</Link>
-			<Link href='/enties' variant='x' link='underline'>Entries</Link>
+			<Link href='/' variant='x' link='line'>Maksim</Link>
+			<Link href='/about' variant='x' link='line'>About</Link>
+			<Link href='/enties' variant='x' link='line'>Entries</Link>
 		</Flex>
 
 	export default Nav
