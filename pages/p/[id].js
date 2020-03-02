@@ -1,3 +1,14 @@
+/* TODO:
+- remove '../public/project-name/' from img urls inside projects so images show up in iAWriter
+- OR, move .md files inside public and have folder for each project containing imgs + md
+- add project cover path by using project url; store image in project folder
+- translate sm, md, lg project card sizes into grid values
+- add black bg to ::root
+- add placeholder for not loaded images using file prefixes
+- add lazy load
+- add 'playsinline' 'muted' 'loop' options for videos via url prefixes
+*/
+
 import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
 import { renderers } from '../../components/MarkdownRenderers'

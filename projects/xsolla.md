@@ -2,13 +2,13 @@
 title: Xsolla, Inc
 lead: Design system for game platform
 role: (Consultant)
-cover: /covers/c-the-new-normal.png
 description: Systematizing and developing design system for an indie game publishing platform during the major redesign.
 service: Product design, user flow prototyping, user interface
 info: 2019. Art direction Wednesday Studio, development Xsolla, Inc.
-# layout
-position: 1
-width: 3/11
+# project card
+img: /covers/c-the-new-normal.png
+size: md
+position: 5
 ---
 
 ![Various block combinations for different types of information](/projects/the-new-normal/pages--r169.jpg)

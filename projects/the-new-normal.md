@@ -2,13 +2,13 @@
 title: The New Normal
 lead: Interactive narrative for research programme
 client: (In-house)
-cover: /covers/c-the-new-normal.png
 description: Visual language and interactive website for the theme of the 7th academic year at Strelka Institute.
 role: Identity, visual design, UX prototyping
 info: 2017, Strelka Studio. Identity together with Anna Kulachek, web development by John Grishin, imagery by Vladimir Shlygin
-# layout
-position: 1
-column: 1/-1
+# project card
+img: /covers/c-the-new-normal.png
+size: lg
+position: 6
 ---
 
 The research focuses on the new contemporary condition, which has emerged with the rapid development of technology, including machine intelligence, biotechnology, automation, and alternative spaces created in VR and AR.
