@@ -55,7 +55,7 @@ export default function Project(props) {
 		 				width={1/3}
 		 				variant='x'
 	 				>
-		 				{meta.client}
+		 				{meta.role}
 		 			</Text>
 		 		</Flex>
 
