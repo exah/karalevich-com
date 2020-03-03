@@ -1,5 +1,11 @@
 import ReactMarkdown from 'react-markdown'
-import { MarkdownParagraph, MarkdownText, MarkdownLink, MarkdownImage, MarkdownVideo } from './ReactMarkdownComponents'
+import {
+	MarkdownParagraph,
+	MarkdownText,
+	MarkdownLink,
+	MarkdownImage,
+	MarkdownVideo,
+} from './MarkdownComponents'
 
 export const ReactMarkdownContainer = props => {
 

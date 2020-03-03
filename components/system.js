@@ -13,17 +13,23 @@ export const Text = forwardRef((props, ref) =>
   />
 )
 
-export const Link = forwardRef((props, ref) =>
-  <NextLink
-    href={props.href}
-    as={props.nextAs}
-    passHref={true}
-  >
-    <Text
-      as='a'
-      {...props}
-  />
-  </NextLink>
+
+export const Link = forwardRef((props, ref) => {
+  const isExternal = props.href.match('/\http|https|mailto/i')
+  return (
+    <NextLink
+      href={isExternal ? '' : props.href}
+      as={props.nextAs}
+      passHref={true}
+    >
+      <Text
+        as='a'
+        href={props.href}
+        {...props}
+    />
+    </NextLink>
+    )
+}
 )
 
 export const Button = forwardRef((props, ref) =>
@@ -89,7 +95,7 @@ export const Video = forwardRef((props, ref) =>
     as='video'
     type="video/mp4"
     {...props}
-    controls='true'
+    controls={true}
     __css={{
       maxWidth: '100%',
       height: 'auto',

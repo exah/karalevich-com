@@ -19,11 +19,21 @@ export default function Project(props) {
 	const markdown = props.content
 	const meta = props.data
 
-	const isImage = meta.img.match(/\.jpg/i)
-	const isVideo = meta.img.match(/\.mp4/i)
+	const isImage = meta.thumb.match(/\.jpg/i)
+	const isVideo = meta.thumb.match(/\.mp4/i)
 
 	const router = useRouter()
   const { slug } = router.query
+  let path = `/projects/${slug}/`
+  
+  const poster = props => {
+  	if (isVideo) {
+  		let thumb = slug
+  		let poster
+  		return poster = thumb.replace(/\.mp4/i, '.jpg')
+  		console.log(poster)
+  	}
+  }
 
 	return (
 		<Theme theme='dark'>
@@ -70,13 +80,13 @@ export default function Project(props) {
 		 				width={1/3}
 		 				variant='x'
 	 				>
-		 				{meta.role}
+		 				{meta.client}
 		 			</Text>
 		 		</Flex>
 
 		 		{isImage
-	 				? <Image width='100%' pb={6} src={meta.img} />
-		 			: <Video width='100%' pb={6} src={meta.img} loop playsinline muted />
+	 				? <Image width='100%' pb={6} src={`${path}${meta.thumb}`} />
+		 			: <Video width='100%' pb={6} poster={`${path}`} src={`${path}${meta.thumb}`} loop playsinline muted />
 	 			}
 		 		
 		 			<ReactMarkdownContainer

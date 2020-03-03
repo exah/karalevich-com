@@ -23,6 +23,9 @@ const setCaptionAlignment = ({layout}) => {
 
 // Markdown components
 
+export const MarkdownParagraph = props =>
+	<Fragment {...props} />
+
 export const MarkdownText = props =>
 	<Text
 		variant='p'
@@ -36,14 +39,12 @@ export const MarkdownText = props =>
 export const MarkdownLink = props =>
 	<Link
 		variant='x'
+		link='line'
 		width={1/3}
 		href={props.href}
 	>
 		{props.children}
 	</Link>
-
-export const MarkdownParagraph = props =>
-	<Fragment {...props} />
 
 const MarkdownCaption = props =>
 	<Text
