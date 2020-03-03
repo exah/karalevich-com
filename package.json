@@ -17,7 +17,6 @@
     "emotion-theming": "^10.0.19",
     "glob": "^7.1.6",
     "gray-matter": "^4.0.2",
-    "lodash": "^4.17.15",
     "lodash.get": "^4.4.2",
     "lodash.merge": "^4.6.2",
     "next": "9.1.4",

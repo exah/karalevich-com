@@ -1,3 +1,14 @@
+/* TODO:
+- remove '../public/project-name/' from img urls inside projects so images show up in iAWriter
+- OR, move .md files inside public and have folder for each project containing imgs + md
+- add project cover path by using project url; store image in project folder
+- translate sm, md, lg project card sizes into grid values
+- add black bg to ::root
+- add placeholder for not loaded images using file prefixes
+- add lazy load
+- add 'playsinline' 'muted' 'loop' options for videos via url prefixes
+*/
+
 import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
 import { renderers } from '../../components/MarkdownRenderers'
@@ -11,8 +22,15 @@ export default function Project(props) {
 	const markdown = props.content
 	const meta = props.data
 
-	const isImage = meta.cover.match(/\.jpg/i)
-	const isVideo = meta.cover.match(/\.mp4/i)
+	const ProjectList = props.projects.map(prj =>
+			<Flex as='ul' width='100%'>
+		 			<Layout as='li'>
+		 				<Text width='1/5' variant='x'>{prj.title}</Text>
+		 				<Text width='5/9' variant='x'>{prj.lead}</Text>
+		 				<Text width='9/-1' variant='x'>{prj.role}</Text>
+	 				</Layout>
+		 		</Flex>
+			)
 
 	return (
 		<Theme theme='dark'>
@@ -59,7 +77,7 @@ export default function Project(props) {
 		 				width={1/3}
 		 				variant='x'
 	 				>
-		 				{meta.client}
+		 				{meta.role}
 		 			</Text>
 		 		</Flex>
 
@@ -74,6 +92,8 @@ export default function Project(props) {
 		 				escapeHtml={false}
 		 			/>
 		 		</Flex>
+
+		 		{ProjectList}
  			
  		</Theme>
 	)
@@ -83,6 +103,28 @@ Project.getInitialProps = async ctx => {
 	const { id } = ctx.query
 	const content = await import(`../../projects/${id}.md`)
 	const data = matter(content.default)
+
+	const projects = (context => {
+    const keys = context.keys()
+    const values = keys.map(context)
+    const projectData = keys.map((key, index) => {
+      const slug = key
+        .replace(/^.*[\\\/]/, '')
+        .split('.')
+        .slice(0, -1)
+        .join('.')
+      const value = values[index]
+      const document = matter(value.default)
+      return {
+        document,
+        slug,
+      }
+    })
+    return projectData
+  })(require.context('../../projects', true, /\.md$/))
 	
-	return { ...data }
+	return {
+		...data,
+		projects,
+	}
 }
