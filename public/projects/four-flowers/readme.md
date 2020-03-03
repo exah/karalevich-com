@@ -1,10 +1,10 @@
 ---
-title: Perfect Number
-lead: e-Store for a fashion brand
-role: (Consultant)
-description: Something about fashion brand
-serive: some service
-info: 2019
+title: Four Flowers
+lead: Platform for educaton
+role: (Co-Founder)
+description: Description here
+service: everything
+info: 2020, ongoing
 # project card
 thumb: thumb.png
 size: md

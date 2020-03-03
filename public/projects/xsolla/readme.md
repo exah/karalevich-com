@@ -6,7 +6,7 @@ description: Systematizing and developing design system for an indie game publis
 service: Product design, user flow prototyping, user interface
 info: 2019. Art direction Wednesday Studio, development Xsolla, Inc.
 # project card
-img: /covers/c-the-new-normal.png
+thumb: thumb.png
 size: md
 position: 5
 ---

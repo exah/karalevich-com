@@ -29,7 +29,7 @@ export const MarkdownParagraph = props =>
 export const MarkdownText = props =>
 	<Text
 		variant='p'
-		width={1/3}
+		width={'33.34%'}
 		pl={2}
 		mb={6}
 	>

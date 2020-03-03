@@ -6,7 +6,7 @@ description: Open platform that helps interconnect environmental events and trac
 service: everything
 info: 2020
 # project card
-img: /covers/c-rill.png
+thumb: thumb.png
 size: lg
 position: 3
 ---

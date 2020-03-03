@@ -1,9 +1,9 @@
 ---
-title: Perfect Number
-lead: e-Store for a fashion brand
-role: (Consultant)
-description: Something about fashion brand
-serive: some service
+title: OS improvement
+lead: something for someone
+role: (B-Reel)
+description: description goes here
+service: service goes here
 info: 2019
 # project card
 thumb: thumb.png
