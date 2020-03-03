@@ -1,6 +1,4 @@
 /* TODO:
-- remove '../public/project-name/' from img urls inside projects so images show up in iAWriter
-- OR, move .md files inside public and have folder for each project containing imgs + md
 - add project cover path by using project url; store image in project folder
 - translate sm, md, lg project card sizes into grid values
 - add black bg to ::root
@@ -10,13 +8,12 @@
 */
 
 import matter from 'gray-matter'
-import { ReactMarkdownContainer } from '../../components/MarkdownRenderers'
 import { useRouter } from 'next/router'
 
 import { Theme } from '../../components/system/theme'
-import { Flex, Text, Link, Image, Video } from '../../components/system'
-import { Layout } from '../../components/Layout'
+import { Flex, Text, Image, Video } from '../../components/system'
 import { Meta, Nav } from '../../components/bridge'
+import { ReactMarkdownContainer } from '../../components/MarkdownRenderers'
 
 export default function Project(props) {
 	const markdown = props.content
@@ -85,7 +82,6 @@ export default function Project(props) {
 		 			<ReactMarkdownContainer
 		 				source={markdown}
 		 				slug={slug}
-
 		 			/>
 		 		</Flex>
  			
