@@ -21,6 +21,17 @@ import { Meta, Nav } from '../../components/bridge'
 export default function Project(props) {
 	const markdown = props.content
 	const meta = props.data
+
+	const ProjectList = props.projects.map(prj =>
+			<Flex as='ul' width='100%'>
+		 			<Layout as='li'>
+		 				<Text width='1/5' variant='x'>{prj.title}</Text>
+		 				<Text width='5/9' variant='x'>{prj.lead}</Text>
+		 				<Text width='9/-1' variant='x'>{prj.role}</Text>
+	 				</Layout>
+		 		</Flex>
+			)
+
 	return (
 		<Theme theme='dark'>
 			<Meta title={meta.title} />
@@ -78,6 +89,8 @@ export default function Project(props) {
 		 				escapeHtml={false}
 		 			/>
 		 		</Flex>
+
+		 		{ProjectList}
  			
  		</Theme>
 	)
@@ -87,6 +100,28 @@ Project.getInitialProps = async ctx => {
 	const { id } = ctx.query
 	const content = await import(`../../projects/${id}.md`)
 	const data = matter(content.default)
+
+	const projects = (context => {
+    const keys = context.keys()
+    const values = keys.map(context)
+    const projectData = keys.map((key, index) => {
+      const slug = key
+        .replace(/^.*[\\\/]/, '')
+        .split('.')
+        .slice(0, -1)
+        .join('.')
+      const value = values[index]
+      const document = matter(value.default)
+      return {
+        document,
+        slug,
+      }
+    })
+    return projectData
+  })(require.context('../../projects', true, /\.md$/))
 	
-	return { ...data }
+	return {
+		...data,
+		projects,
+	}
 }
