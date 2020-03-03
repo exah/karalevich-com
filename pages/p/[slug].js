@@ -24,16 +24,11 @@ export default function Project(props) {
 
 	const router = useRouter()
   const { slug } = router.query
-  let path = `/projects/${slug}/`
   
-  const poster = props => {
-  	if (isVideo) {
-  		let thumb = slug
-  		let poster
-  		return poster = thumb.replace(/\.mp4/i, '.jpg')
-  		console.log(poster)
-  	}
-  }
+  let path = `/projects/${slug}/`
+  let poster = ''
+  
+  if (isVideo) poster = meta.thumb.replace(/\.mp4/i, '.jpg')
 
 	return (
 		<Theme theme='dark'>
@@ -86,7 +81,7 @@ export default function Project(props) {
 
 		 		{isImage
 	 				? <Image width='100%' pb={6} src={`${path}${meta.thumb}`} />
-		 			: <Video width='100%' pb={6} poster={`${path}`} src={`${path}${meta.thumb}`} loop playsinline muted />
+		 			: <Video width='100%' pb={6} poster={`${path}${poster}`} src={`${path}${meta.thumb}`} loop playsinline muted />
 	 			}
 		 		
 		 			<ReactMarkdownContainer

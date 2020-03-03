@@ -6,7 +6,7 @@ description: Visual language and interactive website for the theme of the 7th ac
 service: Identity, visual design, UX prototyping
 info: 2017, Strelka Studio. Identity together with Anna Kulachek, web development by John Grishin, imagery by Vladimir Shlygin
 # project card
-thumb: --cover--r169.mp4
+thumb: thumb--r169.mp4
 size: lg
 position: 6
 ---
