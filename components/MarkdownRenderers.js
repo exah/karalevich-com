@@ -45,7 +45,7 @@ const MarkdownParagraph = props =>
 // Set media layout
 
 const setMediaSize = ({layout}) => {
-	if (layout === 'isHalf') { return '33.33%' }
+	if (layout === 'isHalf') { return '33.34%' }
 	else if (layout === 'isFullscreen') { return '100%' }
 	else return '66.68%'
 }
@@ -62,6 +62,20 @@ const setCaptionAlignment = ({layout}) => {
 	else return 'start'
 }
 
+const MarkdownCaption = props =>
+	<Text
+		as='figcaption'
+		width={setCaptionSize(props)}
+		alignSelf={setCaptionAlignment(props)}
+		pt={2}
+		pl={ props.layout !== 'isHalf' && 2 }
+
+		variant='p'
+		color='tinted'
+	>
+		{props.alt}
+	</Text>
+
 const MarkdownImage = props =>
 	<Flex
 		as='figure'
@@ -69,38 +83,27 @@ const MarkdownImage = props =>
 		flexes='cse'
 		pb={6}
 		pl={ props.layout !== 'isFullscreen' && 2 }
-	>  
-
+	>
 		<Image width='100%' src={props.src} />
 		{ props.alt === ' ' ? null
-			: <Text
-					as='figcaption'
-					width={setCaptionSize(props)}
-					alignSelf={setCaptionAlignment(props)}
-					pt={2}
-					pl={ props.layout !== 'isHalf' && 2 }
-
-					variant='p'
-					color='tinted'
-				>
-					{props.alt}
-				</Text>
+			: <MarkdownCaption {...props} />
 		}
 
 	</Flex>
 
-const InlineVideo = props =>
-	<>
-		<Video src={props.src} playsinline autoplay mute />
-		<Text
-			as='figcaption'
-			width={setCaptionSize(props)}
-			variant='p'
-			mt={2}
-		>
-			{props.alt}
-		</Text>
-	</>
+const MarkdownVideo = props =>
+	<Flex
+		as='figure'
+		width={setMediaSize(props)}
+		flexes='cse'
+		pb={6}
+		pl={ props.layout !== 'isFullscreen' && 2 }
+	>
+		<Video src={props.src} autoplay loop muted playsinline />
+		{ props.alt === ' ' ? null
+			: <MarkdownCaption {...props} />
+		}
+	</Flex>
 
 // Switch Components
 
