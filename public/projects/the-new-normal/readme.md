@@ -6,7 +6,7 @@ description: Visual language and interactive website for the theme of the 7th ac
 role: Identity, visual design, UX prototyping
 info: 2017, Strelka Studio. Identity together with Anna Kulachek, web development by John Grishin, imagery by Vladimir Shlygin
 # project card
-img: /covers/c-the-new-normal.png
+img: /projects/the-new-normal/--cover--r169.mp4
 size: lg
 position: 6
 ---
@@ -15,16 +15,16 @@ The research focuses on the new contemporary condition, which has emerged with t
 
 [thenewnormal.strelka.com](https://thenewnormal.strelka.com)
 
-![Various block combinations for different types of information](/projects/the-new-normal/pages--r169.jpg)
+![Various block combinations for different types of information](pages--r169.jpg)
 
-![Index page with draggable popups](/projects/the-new-normal/index-screencast.mp4)
+![Index page with draggable popups](index-screencast.mp4)
 
-![ ](/projects/the-new-normal/adaptive-01--r11.jpg?size=half)
+![ ](adaptive-01--r11.jpg?size=half)
 
-![ ](/projects/the-new-normal/adaptive-02--r11.jpg?size=half)
+![ ](adaptive-02--r11.jpg?size=half)
 
-![Fugue Tails by Radim Peško and William Pro by Maria Doreuli](/projects/the-new-normal/type--r169.jpg?size=fullscreen)
+![Fugue Tails by Radim Peško and William Pro by Maria Doreuli](type--r169.jpg?size=fullscreen)
 
-![ ](/projects/the-new-normal/adaptive-04--r11.jpg?size=half)
+![ ](adaptive-04--r11.jpg?size=half)
 
-![ ](/projects/the-new-normal/adaptive-03--r11.mp4?size=half)
+![ ](adaptive-03--r11.mp4?size=half)

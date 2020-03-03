@@ -10,8 +10,8 @@
 */
 
 import matter from 'gray-matter'
-import ReactMarkdown from 'react-markdown'
-import { renderers } from '../../components/MarkdownRenderers'
+import { ReactMarkdownContainer } from '../../components/MarkdownRenderers'
+import { useRouter } from 'next/router'
 
 import { Theme } from '../../components/system/theme'
 import { Flex, Text, Link, Image, Video } from '../../components/system'
@@ -22,15 +22,11 @@ export default function Project(props) {
 	const markdown = props.content
 	const meta = props.data
 
-	const ProjectList = props.projects.map(prj =>
-			<Flex as='ul' width='100%'>
-		 			<Layout as='li'>
-		 				<Text width='1/5' variant='x'>{prj.title}</Text>
-		 				<Text width='5/9' variant='x'>{prj.lead}</Text>
-		 				<Text width='9/-1' variant='x'>{prj.role}</Text>
-	 				</Layout>
-		 		</Flex>
-			)
+	const isImage = meta.img.match(/\.jpg/i)
+	const isVideo = meta.img.match(/\.mp4/i)
+
+	const router = useRouter()
+  const { slug } = router.query
 
 	return (
 		<Theme theme='dark'>
@@ -82,49 +78,27 @@ export default function Project(props) {
 		 		</Flex>
 
 		 		{isImage
-	 				? <Image width='100%' pb={6} src={meta.cover} />
-		 			: <Video width='100%' pb={6} src={meta.cover} loop playsinline muted />
+	 				? <Image width='100%' pb={6} src={meta.img} />
+		 			: <Video width='100%' pb={6} src={meta.img} loop playsinline muted />
 	 			}
 		 		
-					<ReactMarkdown
+		 			<ReactMarkdownContainer
 		 				source={markdown}
-		 				renderers={renderers}
-		 				escapeHtml={false}
+		 				slug={slug}
+
 		 			/>
 		 		</Flex>
-
-		 		{ProjectList}
  			
  		</Theme>
 	)
 }
 
 Project.getInitialProps = async ctx => {
-	const { id } = ctx.query
-	const content = await import(`../../projects/${id}.md`)
+	const { slug } = ctx.query
+	const content = await import(`../../public/projects/${slug}/readme.md`)
 	const data = matter(content.default)
 
-	const projects = (context => {
-    const keys = context.keys()
-    const values = keys.map(context)
-    const projectData = keys.map((key, index) => {
-      const slug = key
-        .replace(/^.*[\\\/]/, '')
-        .split('.')
-        .slice(0, -1)
-        .join('.')
-      const value = values[index]
-      const document = matter(value.default)
-      return {
-        document,
-        slug,
-      }
-    })
-    return projectData
-  })(require.context('../../projects', true, /\.md$/))
-	
 	return {
 		...data,
-		projects,
 	}
 }
