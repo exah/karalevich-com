@@ -30,8 +30,8 @@ export const Project = (props) =>
 				{props.role}
 			</Text>
 			<Image
-				src={props.cover}
-				gridColumn={props.column}
+				src={`/public/${props.href}/${props.cover}`}
+				gridColumn='1/-1'
 				width='100%'
 				height='auto'
 				mt={1}

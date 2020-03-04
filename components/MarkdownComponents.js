@@ -94,7 +94,7 @@ export const MarkdownVideo = props =>
 export const MarkdownTitle = props =>
 	<Text
 		variant='h2'
-		width={'33.38%'}
+		width={'66.68%'}
 		pl={2}
 		mb={2}
 		as='h2'

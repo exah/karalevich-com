@@ -9,6 +9,7 @@
 
 import matter from 'gray-matter'
 import { useRouter } from 'next/router'
+import { Global, css } from '@emotion/core'
 
 import { Theme } from '../../components/system/theme'
 import { Flex, Text, Image, Video } from '../../components/system'
@@ -19,7 +20,7 @@ export default function Project(props) {
 	const markdown = props.content
 	const meta = props.data
 
-	const isImage = meta.thumb.match(/\.jpg/i)
+	const isImage = meta.thumb.match(/\.jpg|png/i)
 	const isVideo = meta.thumb.match(/\.mp4/i)
 
 	const router = useRouter()
@@ -32,12 +33,19 @@ export default function Project(props) {
 
 	return (
 		<Theme theme={meta.theme}>
+
+			<Global
+	      styles={css`
+	        :root { background-color: ${meta.theme} }
+	      `}
+	    />
+
 			<Meta title={meta.title} />
 				<Nav />
 
 				<Flex
 		 			as='article'
-		 			width='100%'
+		 			width='80%'
 		 			flexes='rss'
 					bg='bg'
 	 			>

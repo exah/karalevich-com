@@ -15,6 +15,8 @@
     "@styled-system/should-forward-prop": "^5.1.5",
     "emotion": "^10.0.23",
     "emotion-theming": "^10.0.19",
+    "fs": "0.0.1-security",
+    "fs.realpath": "^1.0.0",
     "glob": "^7.1.6",
     "gray-matter": "^4.0.2",
     "lodash.get": "^4.4.2",

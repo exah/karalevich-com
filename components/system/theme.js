@@ -39,7 +39,7 @@ const colors = {
 	tinted: 'rgba(0,0,0,.56)',
 	ui: 'rgba(0,0,0,.16)',
 	modes: {
-		dark: {
+		black: {
 			text: '#FFF',
 			bg: '#000',
 			tinted: 'rgba(255,255,255,.56)',

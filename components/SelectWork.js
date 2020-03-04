@@ -2,7 +2,11 @@ import { Flex, Grid, Text, Link } from './system'
 import { Layout } from './Layout'
 import { Project } from './SelectWorkEls'
 
-const SelectWork = () =>
+const SelectWork = (props) => {
+const data = props.data
+console.log(props)
+
+return (
 	<>
 		<Layout
 			pt='56vh'
@@ -19,13 +23,15 @@ const SelectWork = () =>
 		</Layout>
 		
 		<Project
-			href='/p/the-new-normal'
-			title='Four Flowers School · Family Education'
-			lead='Platform for self-directed education'
-			role='(Co-Founder)'
-			cover='/covers/c-four-flowers.png'
+			href={`/p/${props.slug}`}
+			title={data.title}
+			lead={data.lead}
+			role={data.role}
+			cover={data.thumb}
 			column='1/-1'
 		/>
 	</>
+	)
+	}
 
 	export default SelectWork

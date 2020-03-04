@@ -1,18 +1,28 @@
+import matter from 'gray-matter'
 import { Theme } from '../components/system/theme'
 import { Link } from '../components/system'
 
-const Project = props =>
-  <Link
-     variant='x' link='underline'
-     href='/p/[id]' nextAs={`/p/${props.id}`}
-  >
-    Title: {props.id}
-  </Link>
+import { Intro, SelectWork } from '../components/bridge'
 
-export default function App() {
+export default function App(props) {
+  // console.log(props.data)
+
   return (
     <Theme>
-       <Project id='the-new-normal' />
+      <Intro />
+      <SelectWork
+        data={props.data}
+      />
     </Theme>
   )
+}
+
+App.getInitialProps = async () => {
+  const slug = 'the-new-normal'
+  const content = await import(`../public/projects/${slug}/readme.md`)
+  const data = matter(content.default)
+
+  return {
+    ...data,
+  }
 }
