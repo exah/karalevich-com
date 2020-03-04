@@ -49,7 +49,7 @@ const colors = {
 }
 
 const fonts = 'Helvetica Neue, -system, Sans-Serif'
-const fontSizes = ['1rem', '1.5rem']
+const fontSizes = ['1rem', '1.25rem']
 const lineHeights = '1.15'
 
 const text = {
@@ -66,8 +66,15 @@ const text = {
 		':last-child': {
 			pb: 0,
 		},
-		textIndent: '2rem'
+		// textIndent: '2rem'
 	},
+	h2: {
+		fontSize: [0, null, null, null, 1],
+		lineHeight: lineHeights,
+		color: 'text',
+		// fontWeight: 400,
+		textTransform: 'uppercase',
+	}
 }
 
 const styling = {

@@ -15,10 +15,10 @@ export const Text = forwardRef((props, ref) =>
 
 
 export const Link = forwardRef((props, ref) => {
-  const isExternal = props.href.match('/\http|https|mailto/i')
+  // const isExternal = props.href.match('/\http|https|mailto/i')
   return (
     <NextLink
-      href={isExternal ? '' : props.href}
+      href={props.href}
       as={props.nextAs}
       passHref={true}
     >
@@ -95,7 +95,7 @@ export const Video = forwardRef((props, ref) =>
     as='video'
     type="video/mp4"
     {...props}
-    controls={true}
+    controls={false}
     __css={{
       maxWidth: '100%',
       height: 'auto',

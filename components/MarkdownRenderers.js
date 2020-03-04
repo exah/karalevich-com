@@ -5,6 +5,8 @@ import {
 	MarkdownLink,
 	MarkdownImage,
 	MarkdownVideo,
+	setMarkdownTitle,
+	MarkdownTitle,
 } from './MarkdownComponents'
 
 export const ReactMarkdownContainer = props => {
@@ -39,6 +41,7 @@ export const ReactMarkdownContainer = props => {
 		paragraph: MarkdownParagraph,
 		image: ({src, alt}) => setMediaComponent({src, alt}),
 		link: MarkdownLink,
+		heading: MarkdownTitle
 	}
 
 	return (

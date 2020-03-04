@@ -23,9 +23,6 @@ const setCaptionAlignment = ({layout}) => {
 
 // Markdown components
 
-export const MarkdownParagraph = props =>
-	<Fragment {...props} />
-
 export const MarkdownText = props =>
 	<Text
 		variant='p'
@@ -93,3 +90,31 @@ export const MarkdownVideo = props =>
 			: <MarkdownCaption {...props} />
 		}
 	</Flex>
+
+export const MarkdownTitle = props =>
+	<Text
+		variant='h2'
+		width={'33.38%'}
+		pl={2}
+		mb={2}
+		as='h2'
+	>
+		{props.children[0].props.children}
+	</Text>
+
+export const setMarkdownTitle = props => {
+	const element = props.children[0]
+	// console.log(element)
+	
+	if (element.level === 3) return <MarkdownTitle />
+	else return <MarkdownText {...props} />
+}
+
+
+export const MarkdownParagraph = props => {
+	const notWrappedElements = ['MarkdownText', 'image', 'video']
+	const element = props.children[0]
+
+	if (notWrappedElements.indexOf(element.type.name) >= 0) return element
+	 else return <MarkdownText>{element}</MarkdownText>
+}

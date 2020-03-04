@@ -31,7 +31,7 @@ export default function Project(props) {
   if (isVideo) poster = meta.thumb.replace(/\.mp4/i, '.jpg')
 
 	return (
-		<Theme theme='dark'>
+		<Theme theme={meta.theme}>
 			<Meta title={meta.title} />
 				<Nav />
 
@@ -75,7 +75,7 @@ export default function Project(props) {
 		 				width={1/3}
 		 				variant='x'
 	 				>
-		 				{meta.client}
+		 				{meta.role}
 		 			</Text>
 		 		</Flex>
 
