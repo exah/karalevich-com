@@ -9,9 +9,13 @@ export const Project = (props) => {
   if (isVideo) poster = props.data.thumb.replace(/\.mp4/i, '.jpg')
 
 	return (
-		<Link href={`/p/${props.slug}`} flexes='ccc' width='100%'>
+		<Link href={`/p/${props.slug}`} width='100%'
+			sx={{
+				display: 'grid',
+				gridTemplateColumns: 'repeat(12, 1fr)',
+			}}>
 
-			<Flex as='article' px='10%' flexes='rss' bg='bg'>
+			<Flex as='article' gridColumn='2/-2' flexes='rss' bg='bg'>
 			
 				<Flex pb={2} width='100%' flexes='rss'>
 					<Text width={1/3} variant='x'>{props.data.title}</Text>

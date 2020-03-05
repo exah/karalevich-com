@@ -19,6 +19,6 @@ export const Layout = forwardRef((props, ref) =>
 
 Layout.defaultProps = {
 	gridTemplateColumns: 'repeat(12, 1fr)',
-	gridColumnGap: 1,
+	gridColumnGap: 0,
 	width: '100%',
 }

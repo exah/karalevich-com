@@ -12,8 +12,8 @@ import { useRouter } from 'next/router'
 import { Global, css } from '@emotion/core'
 
 import { Theme } from '../../components/system/theme'
-import { Flex, Text, Image, Video } from '../../components/system'
-import { Meta, Nav } from '../../components/bridge'
+import { Flex, Grid, Text, Image, Video } from '../../components/system'
+import { Meta, Nav, Layout } from '../../components/bridge'
 import { ReactMarkdownContainer } from '../../components/MarkdownRenderers'
 
 export default function Project(props) {
@@ -41,20 +41,26 @@ export default function Project(props) {
 
 			<Meta title={meta.title} />
 				<Nav />
-	 			<Text
-	 				width={1/3}
-	 				height='56vh'
-	 				pl={2}
-	 				pt={5}
-	 				variant='p'
-	 				color='text'
-					>
-		 				{meta.description}
-		 			</Text>
 
-				<Flex as='article' px='10%' flexes='rss' bg='bg'>
+				<Layout
+					px={2}
+					width='100%'
+					sx={{
+						position: 'absolute',
+						top: 0,
+						left: 0,
+					}}
+				>
+
+					<Flex gridColumn='1/5' pt={5}>
+						<Text variant='p'>{meta.description}</Text>
+					</Flex>
+				
+				</Layout>
+
+				<Grid as='article' bg='bg' pt='56vh' gridTemplateColumns='repeat(12, 1fr)'>
 	 			
-		 			<Flex pb={2} width='100%' flexes='rss'>
+		 			<Flex pb={2} width='100%' flexes='rss' gridColumn='2/-2'>
 
 			 			<Text width={1/3} variant='x'>{meta.title}</Text>
 			 			<Text width={1/3} variant='x'>{meta.lead}</Text>
@@ -63,11 +69,11 @@ export default function Project(props) {
 			 		</Flex>
 
 			 		{isImage
-		 				? <Image width='100%' pb={6} src={`${path}${meta.thumb}`} />
-			 			: <Video width='100%' pb={6} poster={`${path}${poster}`} src={`${path}${meta.thumb}`} loop playsinline muted />
+		 				? <Image gridColumn='2/-2' pb={6} src={`${path}${meta.thumb}`} />
+			 			: <Video gridColumn='2/-2' pb={6} poster={`${path}${poster}`} src={`${path}${meta.thumb}`} loop playsinline muted />
 		 			}
 	 			
-	 			</Flex>
+	 			</Grid>
 		 		
 		 		<Flex as='article' width='80%' flexes='rss' bg='bg'>
 		 			
