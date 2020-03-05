@@ -69,8 +69,8 @@ export default function Project(props) {
 			 		</Flex>
 
 			 		{isImage
-		 				? <Image gridColumn='2/-2' pb={6} src={`${path}${meta.thumb}`} />
-			 			: <Video gridColumn='2/-2' pb={6} poster={`${path}${poster}`} src={`${path}${meta.thumb}`} loop playsinline muted />
+		 				? <Image width='100%' gridColumn='2/-2' pb={6} src={`${path}${meta.thumb}`} />
+			 			: <Video width='100%' gridColumn='2/-2' pb={6} poster={`${path}${poster}`} src={`${path}${meta.thumb}`} loop playsinline muted />
 		 			}
 	 			
 	 			</Grid>
