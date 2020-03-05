@@ -38,6 +38,7 @@ const colors = {
 	bg: '#FFF',
 	tinted: 'rgba(0,0,0,.56)',
 	ui: 'rgba(0,0,0,.16)',
+	none: 'rgba(0,0,0,.00)',
 	modes: {
 		black: {
 			text: '#FFF',
@@ -158,7 +159,7 @@ const Global = injectGlobal`
 		text-decoration: none;
 		color: inherit;
 		cursor: pointer;
-		border-bottom: 1px solid ${colors.transparent};
+		border-bottom: 1px solid ${colors.none};
 	}
 
 	h1, h2, h3, h4, p, a, span {

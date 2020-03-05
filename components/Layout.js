@@ -5,16 +5,20 @@ import styled from '@emotion/styled'
 export const Layout = forwardRef((props, ref) =>
 	<Grid
 		ref={ref}
-		width='100%'
+		width={props.width}
 		maxHeight={props.maxHeight}
 		overflow='hidden'
 		gridTemplateColumns={`repeat(${props.columns}, 1fr)`}
 		gridColumnGap={props.gap}
+		sx={{
+			position: 'relative',
+			}}
 		{...props}
 	/>
 )
 
 Layout.defaultProps = {
 	gridTemplateColumns: 'repeat(12, 1fr)',
-	gridColumnGap: 1
+	gridColumnGap: 1,
+	width: '100%',
 }

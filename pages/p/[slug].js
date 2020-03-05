@@ -42,17 +42,9 @@ export default function Project(props) {
 
 			<Meta title={meta.title} />
 				<Nav />
-
-				<Flex
-		 			as='article'
-		 			width='80%'
-		 			flexes='rss'
-					bg='bg'
-	 			>
-	 			
 	 			<Text
 	 				width={1/3}
-	 				height='52vh'
+	 				height='56vh'
 	 				pl={2}
 	 				pt={5}
 	 				variant='p'
@@ -60,9 +52,17 @@ export default function Project(props) {
 					>
 		 				{meta.description}
 		 			</Text>
+
+				<Flex
+		 			as='article'
+		 			px='10%'
+		 			flexes='rss'
+					bg='bg'
+	 			>
+	 			
 	 			
 	 			<Flex
-	 				px={2}
+	 				// px={2}
 	 				pb={2}
 	 				width='100%'
 	 				flexes='rss'
@@ -91,11 +91,18 @@ export default function Project(props) {
 	 				? <Image width='100%' pb={6} src={`${path}${meta.thumb}`} />
 		 			: <Video width='100%' pb={6} poster={`${path}${poster}`} src={`${path}${meta.thumb}`} loop playsinline muted />
 	 			}
-		 		
+	 			</Flex>
+		 		<Flex
+		 			as='article'
+		 			width='80%'
+		 			flexes='rss'
+					bg='bg'
+	 			>
 		 			<ReactMarkdownContainer
 		 				source={markdown}
 		 				slug={slug}
 		 			/>
+
 		 		</Flex>
  			
  		</Theme>

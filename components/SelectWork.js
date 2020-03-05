@@ -7,30 +7,36 @@ const data = props.data
 console.log(props)
 
 return (
-	<>
+	<Flex
+		width='100%'
+		flexes='ccc'
+	>
 		<Layout
 			pt='56vh'
 			px={2}
 		>
 			<Text
-				gridColumn='1/-1'
-				textAlign='center'
 				variant='x'
 				pb={6}
+				sx={{
+					position: 'absolute',
+					bottom: 0,
+					left: 0,
+					right: 0,
+					mx: 'auto',
+					textAlign: 'center',
+					}}
 			>
 				Select work (7)
 			</Text>
+			
 		</Layout>
 		
 		<Project
-			href={`/p/${props.slug}`}
-			title={data.title}
-			lead={data.lead}
-			role={data.role}
-			cover={data.thumb}
-			column='1/-1'
+			slug='the-new-normal'
+			data={data}
 		/>
-	</>
+	</Flex>
 	)
 	}
 

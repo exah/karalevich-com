@@ -1,44 +1,77 @@
-import { Flex, Grid, Text, Link, Image } from './system'
+import { Flex, Grid, Text, Link, Image, Video } from './system'
 import { Layout } from './Layout'
 
-export const Project = (props) =>
+export const Project = (props) => {
+	const isImage = props.data.thumb.match(/\.jpg|png/i)
+	const isVideo = props.data.thumb.match(/\.mp4/i)
+
+	let poster = ''
+  if (isVideo) poster = props.data.thumb.replace(/\.mp4/i, '.jpg')
+
+	return (
 	<Link
-		href={props.href}
+		href={`/p/${props.slug}`}
+		flexes='ccc'
+		width='100%'
 	>
-		<Layout
-			gridColumn='1/-1'
-		>
+
+
+	<Flex
+		as='article'
+		px='10%'
+		flexes='rss'
+		bg='bg'
+	>
+	
+		<Flex
+			pb={2}
+			width='100%'
+			flexes='rss'
+	>
 			<Text
-				px={2}
-				gridColumn='1/5'
+				width={1/3}
 				variant='x'
 			>
-				{props.title}
+				{props.data.title}
 			</Text>
 			<Text
-				px={2}
-				gridColumn='5/9'
+				width={1/3}
 				variant='x'
 			>
-				{props.lead}
+				{props.data.lead}
 			</Text>
 			<Text
-				px={2}
-				gridColumn='9/-1'
+				width={1/3}
 				variant='x'
 			>
-				{props.role}
+				{props.data.role}
 			</Text>
-			<Image
-				src={`/public/${props.href}/${props.cover}`}
-				gridColumn='1/-1'
-				width='100%'
-				height='auto'
-				mt={1}
-				pb={6}
-				flexes='ccc'
-			/>
-	</Layout>
+		</Flex>
+
+		{isImage
+				? <Image
+						src={`/projects/${props.slug}/${props.data.thumb}`}
+						gridColumn='1/-1'
+						width='100%'
+						height='auto'
+						pb={6}
+						flexes='ccc'
+					/>
+				: <Video
+						src={`/projects/${props.slug}/${props.data.thumb}`}
+						poster={`/projects/${props.slug}/${poster}`}
+						gridColumn='1/-1'
+						width='100%'
+						height='auto'
+						pb={6}
+						flexes='ccc'
+					/>
+		}
+		</Flex>
+
+
 </Link>
+)
+}
 
 	export default Project

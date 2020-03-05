@@ -1,18 +1,18 @@
 import matter from 'gray-matter'
 import { Theme } from '../components/system/theme'
-import { Link } from '../components/system'
-
-import { Intro, SelectWork } from '../components/bridge'
+import { Flex, Link } from '../components/system'
+import { Nav, Intro, SelectWork } from '../components/bridge'
 
 export default function App(props) {
   // console.log(props.data)
 
   return (
     <Theme>
-      <Intro />
-      <SelectWork
-        data={props.data}
-      />
+      <Nav />
+        <Intro />
+        <SelectWork
+          data={props.data}
+        />
     </Theme>
   )
 }
