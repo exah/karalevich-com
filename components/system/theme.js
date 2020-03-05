@@ -35,7 +35,6 @@ const space = [
 
 const colors = {
 	text: '#FFF',
-	// bg: 'rgba(0,0,0,.88)',
 	tinted: 'rgba(255,255,255,.56)',
 	ui: 'rgba(255,255,255,.16)',
 	none: 'rgba(0,0,0,.00)',

@@ -75,7 +75,7 @@ export const MarkdownImage = props =>
 		width={setMediaSize(props)}
 		pr={setMediaClearance(props)}
 		flexes='cse'
-		pb={6}
+		pb={ props.alt === ' ' ? 2 : 6 }
 		pl={ props.layout !== 'isFullscreen' && 2 }
 	>
 		<Image width='100%' src={props.src} />
