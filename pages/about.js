@@ -1,11 +1,24 @@
 import matter from 'gray-matter'
 import { Theme } from '../components/system/theme'
 import { Flex, Text, Link } from '../components/system'
-import { Nav, Intro, SelectWork, Layout } from '../components/bridge'
+import { Nav, Intro, SelectWork, Layout, GlobalBg } from '../components/bridge'
+
+const ListItem = props =>
+	<Layout
+		as='ul' gridColumn='1/-1' py={1}
+		sx={{':hover': {opacity: '.64'}}}
+	>
+		<Text as='li' variant='x' gridColumn='1/5'>{props.subject}</Text>
+		<Text as='li' variant='x' gridColumn='5/8'>
+			{props.press}
+		</Text>
+		<Text as='li' variant='x' gridColumn='8/-1'>{props.type}</Text>
+	</Layout>
 
 export default function About(props) {
   return (
-    <Theme>
+    <Theme theme='palegrey'>
+    	<GlobalBg bg='palegrey' />
       <Nav />
 		  <Layout
 				px={2}
@@ -37,77 +50,81 @@ export default function About(props) {
 			
 				<Layout as='ul' gridColumn='1/-1' mb={6}>
 					<Text as='li' variant='x' gridColumn='1/5'>Subject</Text>
-					<Text as='li' variant='x' gridColumn='5/9'>Press</Text>
-					<Text as='li' variant='x' gridColumn='9/-1'>Type</Text>
+					<Text as='li' variant='x' gridColumn='5/8'>Press</Text>
+					<Text as='li' variant='x' gridColumn='8/-1'>Type</Text>
 				</Layout>
 
-				<Layout as='ul' gridColumn='1/-1' mb={2}>
-					<Text as='li' variant='x' gridColumn='1/5'>The New Normal</Text>
-					<Text as='li' variant='x' gridColumn='5/9'>SiteInspire<br />
-																										Hover States</Text>
-					<Text as='li' variant='x' gridColumn='9/-1'>Feature</Text>
-				</Layout>
+				<ListItem
+					subject='The New Normal'
+					press='SiteInspire, Hover States'
+					type='Feature'
+				/>
 
-				<Layout as='ul' gridColumn='1/-1' mb={2}>
-					<Text as='li' variant='x' gridColumn='1/5'>Hybrid Urbanism</Text>
-					<Text as='li' variant='x' gridColumn='5/9'>SiteInspire<br />
-																										Hover States</Text>
-					<Text as='li' variant='x' gridColumn='9/-1'>Feature</Text>
-				</Layout>
+				<ListItem
+					subject='Hybrid Urbanism'
+					press='SiteInspire, Hover States'
+					type='Feature'
+				/>
 
-				<Layout as='ul' gridColumn='1/-1' mb={2}>
-					<Text as='li' variant='x' gridColumn='1/5'>Hybrid Urbanism: Final Projects</Text>
-					<Text as='li' variant='x' gridColumn='5/9'>SiteInspire</Text>
-					<Text as='li' variant='x' gridColumn='9/-1'>Feature</Text>
-				</Layout>
+				<ListItem
+					subject='Hybrid Urbanism: Final Projects'
+					press='SiteInspire'
+					type='Feature'
+				/>
 
-				<Layout as='ul' gridColumn='1/-1' mb={2}>
-					<Text as='li' variant='x' gridColumn='1/5'>Advanced Urban Design</Text>
-					<Text as='li' variant='x' gridColumn='5/9'>SiteInspire<br />
-																										MinimalMonday</Text>
-					<Text as='li' variant='x' gridColumn='9/-1'>Feature</Text>
-				</Layout>
+				<ListItem
+					subject='Advanced Urban Design'
+					press='SiteInspire, MinimalMonday'
+					type='Feature'
+				/>
 
-				<Layout as='ul' gridColumn='1/-1' mb={2}>
-					<Text as='li' variant='x' gridColumn='1/5'>Disrupt the(m)all</Text>
-					<Text as='li' variant='x' gridColumn='5/9'>Hallointer<br />
-																										Hover States</Text>
-					<Text as='li' variant='x' gridColumn='9/-1'>Feature</Text>
-				</Layout>
+				<ListItem
+					subject='Disrupt the(m)all'
+					press='Hallointer, Hover States'
+					type='Feature'
+				/>
 
-				<Layout as='ul' gridColumn='1/-1' mb={2}>
-					<Text as='li' variant='x' gridColumn='1/5'>On and On</Text>
-					<Text as='li' variant='x' gridColumn='5/9'>Calvert Journal</Text>
-					<Text as='li' variant='x' gridColumn='9/-1'>Feature</Text>
-				</Layout>
+				<ListItem
+					subject='On and On'
+					press='Calvert Journal'
+					type='Feature'
+				/>
 
-				<Layout as='ul' gridColumn='1/-1' mb={2}>
-					<Text as='li' variant='x' gridColumn='1/5'>Apply to Strelka</Text>
-					<Text as='li' variant='x' gridColumn='5/9'>SiteInspire<br />
-																										HoverStates</Text>
-					<Text as='li' variant='x' gridColumn='9/-1'>Feature</Text>
-				</Layout>
+				<ListItem
+					subject='Apply to Strelka'
+					press='SiteInspire, HoverStates'
+					type='Feature'
+				/>
 
-				<Layout as='ul' gridColumn='1/-1' mb={2}>
-					<Text as='li' variant='x' gridColumn='1/5'>Strelka Summer 2016</Text>
-					<Text as='li' variant='x' gridColumn='5/9'>European Design</Text>
-					<Text as='li' variant='x' gridColumn='9/-1'>Award</Text>
-				</Layout>
+				<ListItem
+					subject='Apply to Strelka'
+					press='SiteInspire, HoverStates'
+					type='Feature'
+				/>
 
-				<Layout as='ul' gridColumn='1/-1' mb={2}>
-					<Text as='li' variant='x' gridColumn='1/5'>Norilsk Film</Text>
-					<Text as='li' variant='x' gridColumn='5/9'>Awwwards Site of the Day<br />
-																										Red Dot Award</Text>
-					<Text as='li' variant='x' gridColumn='9/-1'>Award</Text>
-				</Layout>
+				<ListItem
+					subject='Strelka Summer 2016'
+					press='European Design'
+					type='Award'
+				/>
 
-				<Layout as='ul' gridColumn='1/-1' mb={2}>
-					<Text as='li' variant='x' gridColumn='1/5'>Me</Text>
-					<Text as='li' variant='x' gridColumn='5/9'>Spotlight: Maksim Karalevich, HOW Design<br />
-																										The New Normal Design, Strelka Magazine<br />
-																										Lecturer at Design Madison</Text>
-					<Text as='li' variant='x' gridColumn='9/-1'>Interview</Text>
-				</Layout>
+				<ListItem
+					subject='Norilsk Film'
+					press='Awwwards Site of the Day, Red Dot Award'
+					type='Award'
+				/>
+
+				<ListItem
+					subject='Apply to Strelka'
+					press='SiteInspire, HoverStates'
+					type='Feature'
+				/>
+
+				<ListItem
+					subject='Me'
+					press='Spotlight: Maksim Karalevich, HOW Design, The New Normal Design, Strelka Magazine, Lecturer at Design Madison' 
+					type='Interview'
+				/>
 			
 			</Flex>
     </Theme>

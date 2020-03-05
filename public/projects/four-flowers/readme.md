@@ -1,24 +1,19 @@
 ---
-title: Four Flowers
-lead: Platform for educaton
+title: Four Flowers School · Family Education
+lead: Platform for self-directed education
 role: (Co-Founder)
-description: Description here
-service: everything
-info: 2020, ongoing
+description: A personalised learning resource for self‑directed learners.
+service: Identity, user experience, user interface
+info: 2020—ongoing
 # project card
-thumb: thumb.png
+theme: lightyellow
+thumb: thumb.jpg
 size: md
 position: 4
 ---
 
-### Why
+The school helps kids joining into groups and finding teachers to learn topics they the most interested in. The platform provides tools to organize courses, call for teachers and invite other learners.
 
-Some text goes here
+[fourflowers.school](https://freemia.school)
 
-### For
-
-Some text goes here
-
-### Etc
-
-Some text goes here
+More information coming soon.

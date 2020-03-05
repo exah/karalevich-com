@@ -8,18 +8,17 @@
 
 import matter from 'gray-matter'
 import { useRouter } from 'next/router'
-import { Global, css } from '@emotion/core'
 
 import { Theme } from '../../components/system/theme'
 import { Flex, Grid, Text, Image, Video } from '../../components/system'
-import { Meta, Nav, Layout } from '../../components/bridge'
+import { Meta, Nav, Layout, GlobalBg, HelperLayout } from '../../components/bridge'
 import { ReactMarkdownContainer } from '../../components/MarkdownRenderers'
 
 export default function Project(props) {
 	const markdown = props.content
 	const meta = props.data
 
-	const isImage = meta.thumb.match(/\.jpg|png/i)
+	const isImage = meta.thumb.match(/\.jpg|png|gif/i)
 	const isVideo = meta.thumb.match(/\.mp4/i)
 
 	const router = useRouter()
@@ -31,50 +30,39 @@ export default function Project(props) {
 
 	return (
 		<Theme theme={meta.theme}>
-
-			<Global
-	      styles={css`
-	        :root { background-color: ${meta.theme} }
-	      `}
-	    />
-
+			{/* <HelperLayout /> */}
+			<GlobalBg bg={meta.theme} />
 			<Meta title={meta.title} />
-				<Nav />
-
-				<Layout
-					px={2}
-					width='100%'
-					sx={{
-						position: 'absolute',
-						top: 0,
-						left: 0,
-					}}
-				>
-
-					<Flex gridColumn='1/5' pt={5}>
-						<Text variant='p'>{meta.description}</Text>
-					</Flex>
 				
-				</Layout>
+			<Nav />
 
-				<Grid as='article' bg='bg' pt='56vh' gridTemplateColumns='repeat(12, 1fr)'>
-	 			
-		 			<Flex pb={2} width='100%' flexes='rss' gridColumn='2/-2'>
+			<Layout px={2} sx={{ position: 'absolute', top: 0, left: 0 }} >
 
-			 			<Text width={1/3} variant='x'>{meta.title}</Text>
-			 			<Text width={1/3} variant='x'>{meta.lead}</Text>
-			 			<Text width={1/3} variant='x'>{meta.role}</Text>
-			 		
-			 		</Flex>
+				<Flex gridColumn='1/5' pt={5}>
+					<Text variant='p'>{meta.description}</Text>
+				</Flex>
+			
+			</Layout>
 
-			 		{isImage
-		 				? <Image width='100%' gridColumn='2/-2' pb={6} src={`${path}${meta.thumb}`} />
-			 			: <Video width='100%' gridColumn='2/-2' pb={6} poster={`${path}${poster}`} src={`${path}${meta.thumb}`} loop playsinline muted />
-		 			}
-	 			
-	 			</Grid>
+			<Grid as='article' bg='bg' pt='56vh' gridTemplateColumns='repeat(12, 1fr)'>
+ 			
+	 			<Flex pb={2} width='100%' flexes='rss' gridColumn='2/-2'>
+
+		 			<Text width={1/3} variant='x'>{meta.title}</Text>
+		 			<Text width={1/3} variant='x'>{meta.lead}</Text>
+		 			<Text width={1/3} variant='x'>{meta.role}</Text>
 		 		
-		 		<Flex as='article' width='80%' flexes='rss' bg='bg'>
+		 		</Flex>
+
+		 		{isImage
+	 				? <Image width='100%' gridColumn='2/-2' pb={6} src={`${path}${meta.thumb}`} />
+		 			: <Video width='100%' gridColumn='2/-2' pb={6} poster={`${path}${poster}`} src={`${path}${meta.thumb}`} loop playsinline muted />
+	 			}
+ 			
+ 			</Grid>
+		 		
+ 			<Layout as='article'>
+		 		<Flex gridColumn='1/-1' flexes='rss' bg='bg'>
 		 			
 		 			<ReactMarkdownContainer
 		 				source={markdown}
@@ -82,6 +70,21 @@ export default function Project(props) {
 		 			/>
 		 		
 		 		</Flex>
+	 		</Layout>
+
+	 		<Layout py={6}>
+	 		
+	 			<Text variant='x' gridColumn='5/9'>
+	 				<Text as='span' color='tinted' pr={2}>(Info)</Text>
+ 					{meta.info}
+ 				</Text>
+
+ 				<Text variant='x' gridColumn='5/9'>
+	 				<Text as='span' color='tinted' pr={2}>(Service)</Text>
+ 					{meta.service}
+ 				</Text>
+	 		
+	 		</Layout>
  			
  		</Theme>
 	)

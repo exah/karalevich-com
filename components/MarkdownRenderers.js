@@ -17,7 +17,7 @@ export const ReactMarkdownContainer = props => {
 
 	const setMediaComponent = ({src, alt}) => {
 			
-		const isImage = src.match(/\.jpg/i)
+		const isImage = src.match(/\.jpg|png|gif/i)
 		const isVideo = src.match(/\.mp4/i)
 		const isHalf = src.match(/size=half/i)
 		const isFullscreen = src.match(/size=fullscreen/i)

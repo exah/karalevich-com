@@ -5,7 +5,7 @@ role: (Consultant)
 description: Systematizing and developing design system for an indie game publishing platform during the major redesign.
 service: Product design, user flow prototyping, user interface
 info: 2019. Art direction Wednesday Studio, development Xsolla, Inc.
-theme: white
+theme: aliceblue
 # project card
 thumb: thumb.png
 size: md

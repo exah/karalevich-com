@@ -5,7 +5,7 @@ import { Nav, Intro, SelectWork } from '../components/bridge'
 
 export default function App(props) {
   return (
-    <Theme>
+    <Theme theme='white'>
       <Nav />
       <Intro />
       <SelectWork data={props.data} />

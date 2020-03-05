@@ -4,21 +4,25 @@ import { Flex, Text, Link, Image, Video } from './system'
 // Utils
 
 const setMediaSize = ({layout}) => {
-	if (layout === 'isHalf') { return '33.34%' }
-	else if (layout === 'isFullscreen') { return '100%' }
-	else return '66.68%'
+	if (layout === 'isHalf') return '33.33%'
+	else if (layout === 'isFullscreen') return '91.67%'
+	else return '100%'
+}
+
+const setMediaClearance = ({layout}) => {
+	if (layout === 'default') return '33.33%'
 }
 
 const setCaptionSize = ({layout}) => {
-	if (layout === 'isHalf') { return '100%' }
-	else if (layout === 'isFullscreen') { return '33.33%' }
-	else return '50%'
+	if (layout === 'isHalf') return '100%'
+	else if (layout === 'isFullscreen') return '100%'
+	else return {all: 'calc(50% - 8px)'}
 }
 
-const setCaptionAlignment = ({layout}) => {
- if (layout === 'default') { return 'right' }
- else if (layout === 'isFullscreen') { return 'center' }
-	else return 'start'
+const setCaptionOffset = ({layout}) => {
+	if (layout === 'isFullscreen') return 'calc(36.36% + 16px)'
+	else if (layout === 'isHalf') return '33.33%'
+	else return '0'
 }
 
 // Markdown components
@@ -26,8 +30,10 @@ const setCaptionAlignment = ({layout}) => {
 export const MarkdownText = props =>
 	<Text
 		variant='p'
-		width={'33.34%'}
+		width={'100%'}
+		pr={'66.66%'}
 		pl={2}
+		
 		mb={6}
 	>
 		{props.children}
@@ -37,17 +43,15 @@ export const MarkdownLink = props =>
 	<Link
 		variant='x'
 		color='tinted'
-		width={1/3}
+		width={'33.33%'}
 		href={props.href}
 		sx={{
 			position: 'relative',
 			'::before': {
 				content: '"·"',
 				pr: 1,
-				// left: 0,
-				// right: 0,
 			}
-			}}
+		}}
 	>
 		{props.children[0].props.value}
 	</Link>
@@ -56,11 +60,10 @@ const MarkdownCaption = props =>
 	<Text
 		as='figcaption'
 		width={setCaptionSize(props)}
-		alignSelf={setCaptionAlignment(props)}
 		pt={2}
-		pl={ props.layout !== 'isHalf' && 2 }
+		pl={setCaptionOffset(props)}
 
-		variant='p'
+		variant='cap'
 		color='tinted'
 	>
 		{props.alt}
@@ -70,14 +73,13 @@ export const MarkdownImage = props =>
 	<Flex
 		as='figure'
 		width={setMediaSize(props)}
+		pr={setMediaClearance(props)}
 		flexes='cse'
 		pb={6}
 		pl={ props.layout !== 'isFullscreen' && 2 }
 	>
 		<Image width='100%' src={props.src} />
-		{ props.alt === ' ' ? null
-			: <MarkdownCaption {...props} />
-		}
+		{ props.alt === ' ' ? null : <MarkdownCaption {...props} /> }
 
 	</Flex>
 
@@ -85,6 +87,7 @@ export const MarkdownVideo = props =>
 	<Flex
 		as='figure'
 		width={setMediaSize(props)}
+		pr={setMediaClearance(props)}
 		flexes='cse'
 		pb={6}
 		pl={ props.layout !== 'isFullscreen' && 2 }
@@ -95,17 +98,16 @@ export const MarkdownVideo = props =>
 			muted={true}
 			playsinline={true}
 		/>
-		{ props.alt === ' ' ? null
-			: <MarkdownCaption {...props} />
-		}
+		{ props.alt === ' ' ? null : <MarkdownCaption {...props} /> }
 	</Flex>
 
 export const MarkdownTitle = props =>
 	<Text
 		variant='h2'
-		width={'66.68%'}
+		width={1}
+		pr={'33.33%'}
 		pl={2}
-		mb={2}
+		mb={1}
 		as='h2'
 	>
 		{props.children[0].props.children}
@@ -113,17 +115,14 @@ export const MarkdownTitle = props =>
 
 export const setMarkdownTitle = props => {
 	const element = props.children[0]
-	// console.log(element)
-	
 	if (element.level === 3) return <MarkdownTitle />
 	else return <MarkdownText {...props} />
 }
-
 
 export const MarkdownParagraph = props => {
 	const notWrappedElements = ['MarkdownText', 'image', 'video']
 	const element = props.children[0]
 
 	if (notWrappedElements.indexOf(element.type.name) >= 0) return element
-	 else return <MarkdownText>{element}</MarkdownText>
+	else return <MarkdownText>{element}</MarkdownText>
 }

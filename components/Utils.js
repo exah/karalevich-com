@@ -1,28 +1,34 @@
 import React, { useEffect, useState } from 'react'
+import { Global, css } from '@emotion/core'
 import styled from '@emotion/styled'
 import { Flex } from './system'
+
+export const GlobalBg = props =>
+<Global
+  styles={css`
+    :root { background-color: ${props.bg} }
+  `}
+/>
 
 const HelperGrid = styled(Flex)`
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding-left: 16px;
-  padding-right: 16px;
   height: 100%;
   z-index: 9999;
   pointer-events: none;
-`;
+`
 
 const HelperColumn = styled(Flex)`
   width: calc(100% / 12);
-  border-right: 1px solid rgba(0, 0, 255, 0.16);
+  border-right: 1px solid rgba(0, 0, 255, 0.32);
   &:first-of-type {
-    border-left: 1px solid rgba(0, 0, 255, 0.16);
-  };
+    border-left: 1px solid rgba(0, 0, 255, 0.32);
+  }
 `
 
-export default () => {
+export const HelperLayout = () => {
   const [active, setActive] = useState(true)
   useEffect(() => {
     window.addEventListener('keydown', toggleActive)

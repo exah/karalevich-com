@@ -1,7 +1,8 @@
 import { Flex, Link } from './system'
 import { Layout } from './Layout'
 
-const Nav = () =>
+export default function() {
+	return (
 		<Flex
 			as='nav'
 			gridColumn='1/-1'
@@ -18,5 +19,5 @@ const Nav = () =>
 			<Link href='/about' variant='x' link='line'>About</Link>
 			<Link href='/enties' variant='x' link='line'>Entries</Link>
 		</Flex>
-
-	export default Nav
+	)
+}

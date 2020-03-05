@@ -34,23 +34,36 @@ const space = [
 ]
 
 const colors = {
-	text: '#000',
-	bg: '#FFF',
-	tinted: 'rgba(0,0,0,.56)',
-	ui: 'rgba(0,0,0,.16)',
+	text: '#FFF',
+	// bg: 'rgba(0,0,0,.88)',
+	tinted: 'rgba(255,255,255,.56)',
+	ui: 'rgba(255,255,255,.16)',
 	none: 'rgba(0,0,0,.00)',
 	modes: {
-		black: {
-			text: '#FFF',
-			bg: '#000',
-			tinted: 'rgba(255,255,255,.56)',
-			ui: 'rgba(255,255,255,.16)',
+		white: {
+			text: 'rgba(0,0,0,.88)',
+			bg: '#FFF',
+			tinted: 'rgba(0,0,0,.56)',
+			ui: 'rgba(0,0,0,.16)',
+			none: 'rgba(0,0,0,.00)',
 		},
 		grey: {
 			text: '#FFF',
 			bg: 'grey',
 			tinted: 'rgba(255,255,255,.56)',
 			ui: 'rgba(255,255,255,.16)',
+		},
+		lightyellow: {
+			text: 'rgba(0,0,0,.88)',
+			tinted: 'rgba(0,0,0,.56)',
+			ui: 'rgba(0,0,0,.16)',
+			none: 'rgba(0,0,0,.00)',
+		},
+		aliceblue: {
+			text: 'rgba(0,0,0,.88)',
+			tinted: 'rgba(0,0,0,.56)',
+			ui: 'rgba(0,0,0,.16)',
+			none: 'rgba(0,0,0,.00)',
 		},
 	},
 }
@@ -69,17 +82,18 @@ const text = {
 		fontSize: [0, null, null, null, 1],
 		lineHeight: lineHeights,
 		color: 'text',
-		pb: 2,
-		':last-child': {
-			pb: 0,
-		},
 		// textIndent: '2rem'
 	},
-	h2: {
+	cap: {
 		fontSize: [0, null, null, null, 1],
 		lineHeight: lineHeights,
 		color: 'text',
-		// fontWeight: 400,
+	},
+	h2: {
+		fontSize: [0, null, null, null, 0],
+		letterSpacing: '.025rem',
+		lineHeight: lineHeights,
+		color: 'text',
 		textTransform: 'uppercase',
 	}
 }
