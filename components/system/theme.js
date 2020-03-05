@@ -46,6 +46,12 @@ const colors = {
 			tinted: 'rgba(255,255,255,.56)',
 			ui: 'rgba(255,255,255,.16)',
 		},
+		grey: {
+			text: '#FFF',
+			bg: 'grey',
+			tinted: 'rgba(255,255,255,.56)',
+			ui: 'rgba(255,255,255,.16)',
+		},
 	},
 }
 

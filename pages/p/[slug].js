@@ -1,7 +1,6 @@
 /* TODO:
 - add project cover path by using project url; store image in project folder
 - translate sm, md, lg project card sizes into grid values
-- add black bg to ::root
 - add placeholder for not loaded images using file prefixes
 - add lazy load
 - add 'playsinline' 'muted' 'loop' options for videos via url prefixes
