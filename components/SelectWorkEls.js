@@ -9,69 +9,39 @@ export const Project = (props) => {
   if (isVideo) poster = props.data.thumb.replace(/\.mp4/i, '.jpg')
 
 	return (
-	<Link
-		href={`/p/${props.slug}`}
-		flexes='ccc'
-		width='100%'
-	>
+		<Link href={`/p/${props.slug}`} flexes='ccc' width='100%'>
 
+			<Flex as='article' px='10%' flexes='rss' bg='bg'>
+			
+				<Flex pb={2} width='100%' flexes='rss'>
+					<Text width={1/3} variant='x'>{props.data.title}</Text>
+					<Text width={1/3} variant='x'>{props.data.lead}</Text>
+					<Text width={1/3} variant='x'>{props.data.role}</Text>
+				</Flex>
 
-	<Flex
-		as='article'
-		px='10%'
-		flexes='rss'
-		bg='bg'
-	>
-	
-		<Flex
-			pb={2}
-			width='100%'
-			flexes='rss'
-	>
-			<Text
-				width={1/3}
-				variant='x'
-			>
-				{props.data.title}
-			</Text>
-			<Text
-				width={1/3}
-				variant='x'
-			>
-				{props.data.lead}
-			</Text>
-			<Text
-				width={1/3}
-				variant='x'
-			>
-				{props.data.role}
-			</Text>
-		</Flex>
+				{isImage
+						? <Image
+								src={`/projects/${props.slug}/${props.data.thumb}`}
+								gridColumn={props.data.size}
+								width='100%'
+								height='auto'
+								pb={6}
+								flexes='ccc'
+							/>
+						: <Video
+								src={`/projects/${props.slug}/${props.data.thumb}`}
+								poster={`/projects/${props.slug}/${poster}`}
+								gridColumn={props.data.size}
+								width='100%'
+								height='auto'
+								pb={6}
+								flexes='ccc'
+							/>
+				}
+			</Flex>
 
-		{isImage
-				? <Image
-						src={`/projects/${props.slug}/${props.data.thumb}`}
-						gridColumn='1/-1'
-						width='100%'
-						height='auto'
-						pb={6}
-						flexes='ccc'
-					/>
-				: <Video
-						src={`/projects/${props.slug}/${props.data.thumb}`}
-						poster={`/projects/${props.slug}/${poster}`}
-						gridColumn='1/-1'
-						width='100%'
-						height='auto'
-						pb={6}
-						flexes='ccc'
-					/>
-		}
-		</Flex>
-
-
-</Link>
-)
+		</Link>
+	)
 }
 
 	export default Project

@@ -4,15 +4,11 @@ import { Flex, Link } from '../components/system'
 import { Nav, Intro, SelectWork } from '../components/bridge'
 
 export default function App(props) {
-  // console.log(props.data)
-
   return (
     <Theme>
       <Nav />
-        <Intro />
-        <SelectWork
-          data={props.data}
-        />
+      <Intro />
+      <SelectWork data={props.data} />
     </Theme>
   )
 }

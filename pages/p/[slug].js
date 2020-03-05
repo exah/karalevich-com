@@ -28,7 +28,6 @@ export default function Project(props) {
   
   let path = `/projects/${slug}/`
   let poster = ''
-  
   if (isVideo) poster = meta.thumb.replace(/\.mp4/i, '.jpg')
 
 	return (
@@ -53,56 +52,30 @@ export default function Project(props) {
 		 				{meta.description}
 		 			</Text>
 
-				<Flex
-		 			as='article'
-		 			px='10%'
-		 			flexes='rss'
-					bg='bg'
-	 			>
+				<Flex as='article' px='10%' flexes='rss' bg='bg'>
 	 			
-	 			
-	 			<Flex
-	 				// px={2}
-	 				pb={2}
-	 				width='100%'
-	 				flexes='rss'
-				>
-		 			<Text
-		 				width={1/3}
-		 				variant='x'
-	 				>
-		 				{meta.title}
-		 			</Text>
-		 			<Text
-		 				width={1/3}
-		 				variant='x'
-	 				>
-		 				{meta.lead}
-		 			</Text>
-		 			<Text
-		 				width={1/3}
-		 				variant='x'
-	 				>
-		 				{meta.role}
-		 			</Text>
-		 		</Flex>
+		 			<Flex pb={2} width='100%' flexes='rss'>
 
-		 		{isImage
-	 				? <Image width='100%' pb={6} src={`${path}${meta.thumb}`} />
-		 			: <Video width='100%' pb={6} poster={`${path}${poster}`} src={`${path}${meta.thumb}`} loop playsinline muted />
-	 			}
+			 			<Text width={1/3} variant='x'>{meta.title}</Text>
+			 			<Text width={1/3} variant='x'>{meta.lead}</Text>
+			 			<Text width={1/3} variant='x'>{meta.role}</Text>
+			 		
+			 		</Flex>
+
+			 		{isImage
+		 				? <Image width='100%' pb={6} src={`${path}${meta.thumb}`} />
+			 			: <Video width='100%' pb={6} poster={`${path}${poster}`} src={`${path}${meta.thumb}`} loop playsinline muted />
+		 			}
+	 			
 	 			</Flex>
-		 		<Flex
-		 			as='article'
-		 			width='80%'
-		 			flexes='rss'
-					bg='bg'
-	 			>
+		 		
+		 		<Flex as='article' width='80%' flexes='rss' bg='bg'>
+		 			
 		 			<ReactMarkdownContainer
 		 				source={markdown}
 		 				slug={slug}
 		 			/>
-
+		 		
 		 		</Flex>
  			
  		</Theme>

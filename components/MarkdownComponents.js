@@ -36,11 +36,20 @@ export const MarkdownText = props =>
 export const MarkdownLink = props =>
 	<Link
 		variant='x'
-		link='line'
+		color='tinted'
 		width={1/3}
 		href={props.href}
+		sx={{
+			position: 'relative',
+			'::before': {
+				content: '"·"',
+				pr: 1,
+				// left: 0,
+				// right: 0,
+			}
+			}}
 	>
-		{props.children}
+		{props.children[0].props.value}
 	</Link>
 
 const MarkdownCaption = props =>
