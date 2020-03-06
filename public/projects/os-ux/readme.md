@@ -1,24 +1,15 @@
 ---
-title: OS improvement
-lead: something for someone
+title: Smartphone manufacturer
+lead: Improving mobile OS experience
 role: (B-Reel)
-description: description goes here
-service: service goes here
-info: 2019
+description: This project is under NDA
+service: Product design, user flow prototyping, user interface
+info: 2019, B-Reel.
 # project card
-thumb: thumb.png
+theme: black
+thumb: thumb.jpg
 size: md
 position: 4
 ---
 
-### Why
-
-Some text goes here
-
-### For
-
-Some text goes here
-
-### Etc
-
-Some text goes here
+This project is under NDA.

@@ -17,8 +17,8 @@ const ListItem = props =>
 
 export default function About(props) {
   return (
-    <Theme theme='palegrey'>
-    	<GlobalBg bg='palegrey' />
+    <Theme theme='white'>
+    	<GlobalBg bg='white' />
       <Nav />
 		  <Layout
 				px={2}

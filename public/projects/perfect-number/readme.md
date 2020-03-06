@@ -2,23 +2,16 @@
 title: Perfect Number
 lead: e-Store for a fashion brand
 role: (Consultant)
-description: Something about fashion brand
-serive: some service
-info: 2019
+description: The new brand is dedicated to bringing its unique message to the fashion industry.
+service: Identity, online store experience
+info: 2019. Art direction by Wednesday Studio
 # project card
-thumb: thumb.png
+theme: grey
+thumb: thumb.jpg
 size: md
 position: 4
 ---
 
-### Why
+> is a revolt against the false and the fictional—a withdrawal from the race for perfection in the digital age. It is the rejection of impossible feminine ideals; a refusal to meet the expectations of an artificial standard. Reality is imperfect—why should we be otherwise? Only numbers can be perfect.
 
-Some text goes here
-
-### For
-
-Some text goes here
-
-### Etc
-
-Some text goes here
+[perfectnumber.co](https://perfectnumber.co)
