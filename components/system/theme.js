@@ -81,20 +81,26 @@ const text = {
 		fontSize: [0, null, null, null, 1],
 		lineHeight: lineHeights,
 		color: 'text',
-		// textIndent: '2rem'
+		textIndent: '1rem',
+		pb: 1,
 	},
-	cap: {
+	c: {
 		fontSize: [0, null, null, null, 1],
 		lineHeight: lineHeights,
-		color: 'text',
+		color: 'tinted',
 	},
-	h2: {
+	h: {
 		fontSize: [0, null, null, null, 0],
 		letterSpacing: '.025rem',
 		lineHeight: lineHeights,
 		color: 'text',
 		textTransform: 'uppercase',
-	}
+	},
+	a: {
+		fontSize: [0, null, null, null, 1],
+		lineHeight: lineHeights,
+		color: '#FFF',
+	},
 }
 
 const styling = {

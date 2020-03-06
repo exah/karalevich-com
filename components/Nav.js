@@ -13,11 +13,12 @@ export default function() {
 			sx={{
 				position: 'fixed',
 				zIndex: 2,
+				mixBlendMode: 'difference',
 			}}
 		>
-			<Link href='/' variant='x' link='line'>Maksim</Link>
-			<Link href='/about' variant='x' link='line'>About</Link>
-			<Link href='/enties' variant='x' link='line'>Entries</Link>
+			<Link href='/' variant='x'>Maksim</Link>
+			<Link href='/about' variant='x'>About</Link>
+			<Link href='/enties' variant='x'>Entries</Link>
 		</Flex>
 	)
 }

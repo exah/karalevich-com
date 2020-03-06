@@ -18,7 +18,7 @@ export default function(props) {
 			<meta property="og:url" content={props.url} />
 			<meta property="og:type" content="website" />
 		  <link rel="icon" href="/fav.png" />
-		  <title>{ props.title === "Maksim Karalevich—Designer" ? props.title : "Maksim—" + props.title }</title>
+		  <title>{ props.title === "Maksim (Design)" ? props.title : "(Maksim) " + props.title }</title>
 		</Head>
 	)
 }

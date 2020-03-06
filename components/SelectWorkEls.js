@@ -15,13 +15,20 @@ export const Project = (props) => {
 				gridTemplateColumns: 'repeat(12, 1fr)',
 			}}>
 
-			<Flex as='article' gridColumn='2/-2' flexes='rss'>
-			
-				<Flex pb={2} width='100%' flexes='rss'>
-					<Text width={1/3} variant='x'>{props.data.title}</Text>
-					<Text width={1/3} variant='x'>{props.data.lead}</Text>
-					<Text width={1/3} variant='x'>{props.data.role}</Text>
-				</Flex>
+			<Flex
+	 				gridColumn={{min: '1/-1', sm: '2/-2'}}
+	 				flexes='rss'
+	 				px={{min: 1, sm: 0}}
+ 				>
+ 					<Flex
+ 						width='100%'
+		 				pb={2}
+		 				flexes={{min: 'css', sm: 'rss'}}
+					>
+			 			<Text width={{min: 1, sm: 1/3}} variant='x'>{props.data.title}</Text>
+			 			<Text width={{min: 1, sm: 1/3}} variant='x'>{props.data.lead}</Text>
+			 			<Text width={{min: 1, sm: 1/3}} variant='x'>{props.data.role}</Text>
+		 			</Flex>
 
 				{isImage
 					? <Image
@@ -29,7 +36,7 @@ export const Project = (props) => {
 							gridColumn={props.data.size}
 							width='100%'
 							height='auto'
-							pb={6}
+							pb={{min: 4, sm: 6}}
 							flexes='ccc'
 						/>
 					: <Video
@@ -38,7 +45,7 @@ export const Project = (props) => {
 							gridColumn={props.data.size}
 							width='100%'
 							height='auto'
-							pb={6}
+							pb={{min: 4, sm: 6}}
 							flexes='ccc'
 						/>
 				}

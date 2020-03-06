@@ -30,15 +30,14 @@ export default function Project(props) {
 
 	return (
 		<Theme theme={meta.theme}>
-			{/* <HelperLayout /> */}
 			<GlobalBg bg={meta.theme} />
 			<Meta title={meta.title} />
 				
 			<Nav />
 
-			<Layout px={2} sx={{ position: 'absolute', top: 0, left: 0 }} >
+			<Layout px={{min: 1, sm: 2}} sx={{ position: 'absolute', top: 0, left: 0 }} >
 
-				<Flex gridColumn='1/5' pt={5}>
+				<Flex gridColumn={{min: '1/-2', sm: '1/5'}} pt={5}>
 					<Text variant='p'>{meta.description}</Text>
 				</Flex>
 			
@@ -46,17 +45,36 @@ export default function Project(props) {
 
 			<Grid as='article' bg='bg' pt='56vh' gridTemplateColumns='repeat(12, 1fr)'>
  			
-	 			<Flex pb={2} width='100%' flexes='rss' gridColumn='2/-2'>
+	 			<Flex
+	 				gridColumn={{min: '1/-1', sm: '2/-2'}}
+	 				flexes={{min: 'css', sm: 'rss'}}
+	 				px={{min: 1, sm: 0}}
+	 				pb={2}
+ 				>
 
-		 			<Text width={1/3} variant='x'>{meta.title}</Text>
-		 			<Text width={1/3} variant='x'>{meta.lead}</Text>
-		 			<Text width={1/3} variant='x'>{meta.role}</Text>
+		 			<Text width={{min: 1, sm: 1/3}} variant='x'>{meta.title}</Text>
+		 			<Text width={{min: 1, sm: 1/3}} variant='x'>{meta.lead}</Text>
+		 			<Text width={{min: 1, sm: 1/3}} variant='x'>{meta.role}</Text>
 		 		
 		 		</Flex>
 
 		 		{isImage
-	 				? <Image width='100%' gridColumn='2/-2' pb={6} src={`${path}${meta.thumb}`} />
-		 			: <Video width='100%' gridColumn='2/-2' pb={6} poster={`${path}${poster}`} src={`${path}${meta.thumb}`} loop playsinline muted />
+	 				? <Image
+	 						width='100%'
+	 						gridColumn={{min: '1/-1', sm: '2/-2'}}
+	 						pb={{min: 4, sm: 6}}
+	 						px={{min: 1, sm: 0}}
+	 						src={`${path}${meta.thumb}`}
+ 						/>
+		 			: <Video
+		 					width='100%'
+		 					gridColumn={{min: '1/-1', sm: '2/-2'}}
+		 					pb={{min: 4, sm: 6}}
+		 					px={{min: 1, sm: 0}}
+		 					poster={`${path}${poster}`}
+		 					src={`${path}${meta.thumb}`}
+		 					loop playsinline muted
+	 					/>
 	 			}
  			
  			</Grid>
@@ -72,15 +90,15 @@ export default function Project(props) {
 		 		</Flex>
 	 		</Layout>
 
-	 		<Layout py={6}>
+	 		<Layout py={{min: 4, sm: 6}}>
 	 		
 	 			<Text variant='x' gridColumn='5/9'>
-	 				<Text as='span' color='tinted' pr={2}>(Info)</Text>
+	 				<Text as='span' color='tinted' pr={{min: 1, sm: 2}}>(Info)</Text>
  					{meta.info}
  				</Text>
 
  				<Text variant='x' gridColumn='5/9'>
-	 				<Text as='span' color='tinted' pr={2}>(Service)</Text>
+	 				<Text as='span' color='tinted' pr={{min: 1, sm: 2}}>(Service)</Text>
  					{meta.service}
  				</Text>
 	 		
