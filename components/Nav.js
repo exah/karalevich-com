@@ -18,7 +18,7 @@ export default function() {
 		>
 			<Link href='/' variant='x'>Maksim</Link>
 			<Link href='/about' variant='x'>About</Link>
-			<Link href='/enties' variant='x'>Entries</Link>
+			<Link href='/entries' variant='x'>Entries</Link>
 		</Flex>
 	)
 }

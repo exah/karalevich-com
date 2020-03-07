@@ -11,7 +11,7 @@ export default function SelectWork(props) {
 				
 				<Text
 					variant='x'
-					pb={6}
+					pb={{min: 4, sm: 6}}
 					sx={{
 						position: 'absolute',
 						bottom: 0,

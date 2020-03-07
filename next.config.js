@@ -1,6 +1,7 @@
 const glob = require('glob')
+const path = require('path')
 
-module.exports = ({
+module.exports = {
   webpack: config => {
     config.module.rules.push({
       test: /\.md$/,
@@ -12,15 +13,17 @@ module.exports = ({
     const routes = {
       '/': { page : '/'},
       '/about': { page : '/about'},
+      '/entries': { page : '/entries'},
     }
-    // add /p/*.md
-    // const projects = glob.sync('src/projects/**/*.md')
-    // const projects = projects.map(file => file.split('/')[2].replace(/ /g, '-').slice(0, - 3).trim())
-
-    // projects.forEach(project => {
-      // paths[`/p/${project}`] = { page: '/p/[id]', query: { id: project } }
-    // })
+  },
   
-    // return paths
+  entry: path.resolve(__dirname, 'index.js'),
+  
+  output: {
+    path: path.join(__dirname),
+    filename: 'bundle.js'
+  },
+  node: {
+    __dirname: false
   }
-})
+}

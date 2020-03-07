@@ -4,15 +4,36 @@ import { Flex, Text, Link } from '../components/system'
 import { Nav, Intro, SelectWork, Layout, GlobalBg } from '../components/bridge'
 
 const ListItem = props =>
+
 	<Layout
-		as='ul' gridColumn='1/-1' py={1}
+		as='li' gridColumn='1/-1' py={1}
 		sx={{':hover': {opacity: '.64'}}}
 	>
-		<Text as='li' variant='x' gridColumn='1/5'>{props.subject}</Text>
-		<Text as='li' variant='x' gridColumn='5/8'>
+		<Text
+			gridColumn={{min: '1/-2', sm: '1/5'}}
+			pb={{min: 2, md: 0}}
+			pl={{min: 1, sm: 2}}
+			variant='x'
+			color={props.color}
+		>
+			{props.subject}
+		</Text>
+		<Text
+			gridColumn={{min: '1/-2', sm: '5/10'}}
+			pb={{min: 2, md: 0}}
+			pl={{min: 1, sm: 2}}
+			variant='x'
+		>
 			{props.press}
 		</Text>
-		<Text as='li' variant='x' gridColumn='8/-1'>{props.type}</Text>
+		<Text
+			gridColumn={{min: '1/-2', sm: '10/-1'}}
+			pb={{min: 2, md: 0}}
+			pl={{min: 1, sm: 2}}
+			variant='c'
+		>
+			{props.type}
+		</Text>
 	</Layout>
 
 export default function About(props) {
@@ -20,8 +41,8 @@ export default function About(props) {
     <Theme theme='white'>
     	<GlobalBg bg='white' />
       <Nav />
+		  
 		  <Layout
-				px={2}
 				width='100%'
 				sx={{
 					position: 'absolute',
@@ -30,28 +51,35 @@ export default function About(props) {
 				}}
 			>
 
-					<Text variant='p' gridColumn='1/4' pt={5}>
+					<Text
+						variant='p'
+						gridColumn={{min: '1/-2', sm: '1/4'}}
+						pt={{min: 4, sm: 5}}
+					>
 						<Text as='span' variant='x' color='tinted' pr={2}>(Contact)</Text>
-						maksim@karalevich.com, twitter, arena, github, linkedIn, Los Angeles, California
+						m@karalevich.com, twitter, arena, github, linkedIn, Los Angeles, California
 					</Text>
 				
-					<Text variant='p' gridColumn='5/9' pt={5}>
+					<Text
+						variant='p'
+						gridColumn={{min: '1/-2', sm: '5/9'}}
+						pt={{min: 1, sm: 5}}
+					>
 						<Text as='span' variant='x' color='tinted' pr={2}>(Focus & Experience)</Text>
 						10 years of multidisciplinary experience in design with primary focus on digital interactions. My interests lie in the intersection between environment, systems, and education. I prototype using Figma, After Effects, Cinema4D, React.
 					</Text>
 			
 			</Layout>
-			<Flex
-				pt='56vh'
-				pb={6}
-				width='100%'
-				px={2}
-			>
-			
-				<Layout as='ul' gridColumn='1/-1' mb={6}>
-					<Text as='li' variant='x' gridColumn='1/5'>Subject</Text>
-					<Text as='li' variant='x' gridColumn='5/8'>Press</Text>
-					<Text as='li' variant='x' gridColumn='8/-1'>Type</Text>
+			<Flex pt='56vh' pb={{min: 4, sm: 6}} width='100%'>
+
+				<Layout gridColumn='1/-1' mb={{min: 4, sm: 6}}>
+
+					<ListItem
+						subject='Subject'
+						press='Press'
+						type='Type'
+					/>
+
 				</Layout>
 
 				<ListItem
