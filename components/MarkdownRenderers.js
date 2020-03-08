@@ -20,12 +20,12 @@ export const ReactMarkdownContainer = props => {
 		const isImage = src.match(/\.jpg|png|gif/i)
 		const isVideo = src.match(/\.mp4/i)
 		const isHalf = src.match(/size=half/i)
-		const isFullscreen = src.match(/size=fullscreen/i)
+		const isLarge = src.match(/size=large/i)
 
 		let path = `/projects/${slug}/`
 		let layout = 'default'
 		if (src.match(/size=half/i)) layout = 'isHalf'
-		if (src.match(/size=fullscreen/i)) layout = 'isFullscreen'
+		if (src.match(/size=fullscreen/i)) layout = 'isLarge'
 
 		if (isImage) {
 			return <MarkdownImage src={`${path}${src}`} alt={alt} layout={layout} />

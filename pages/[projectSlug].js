@@ -1,6 +1,4 @@
 /* TODO:
-- add project cover path by using project url; store image in project folder
-- translate sm, md, lg project card sizes into grid values
 - add placeholder for not loaded images using file prefixes
 - add lazy load
 - add 'playsinline' 'muted' 'loop' options for videos via url prefixes
@@ -9,10 +7,10 @@
 import matter from 'gray-matter'
 import { useRouter } from 'next/router'
 
-import { Theme } from '../../components/system/theme'
-import { Flex, Grid, Text, Image, Video } from '../../components/system'
-import { Meta, Nav, Layout, GlobalBg, HelperLayout } from '../../components/bridge'
-import { ReactMarkdownContainer } from '../../components/MarkdownRenderers'
+import { Theme } from '../components/system/theme'
+import { Flex, Grid, Text, Image, Video } from '../components/system'
+import { Meta, Nav, Layout, GlobalBg, HelperLayout } from '../components/bridge'
+import { ReactMarkdownContainer } from '../components/MarkdownRenderers'
 
 export default function Project(props) {
 	const markdown = props.content
@@ -22,9 +20,9 @@ export default function Project(props) {
 	const isVideo = meta.thumb.match(/\.mp4/i)
 
 	const router = useRouter()
-  const { slug } = router.query
+  const { projectSlug } = router.query
   
-  let path = `/projects/${slug}/`
+  let path = `/projects/${projectSlug}/`
   let poster = ''
   if (isVideo) poster = meta.thumb.replace(/\.mp4/i, '.jpg')
 
@@ -84,7 +82,7 @@ export default function Project(props) {
 		 			
 		 			<ReactMarkdownContainer
 		 				source={markdown}
-		 				slug={slug}
+		 				slug={projectSlug}
 		 			/>
 		 		
 		 		</Flex>
@@ -92,12 +90,12 @@ export default function Project(props) {
 
 	 		<Layout py={{min: 4, sm: 6}}>
 	 		
-	 			<Text variant='x' gridColumn='5/9'>
+	 			<Text variant='x' gridColumn={{min: '1/-2', sm: '5/9' }} pl={{min: 1, sm: 2}}>
 	 				<Text as='span' color='tinted' pr={{min: 1, sm: 2}}>(Info)</Text>
  					{meta.info}
  				</Text>
 
- 				<Text variant='x' gridColumn='5/9'>
+ 				<Text variant='x' gridColumn={{min: '1/-2', sm: '5/9' }} pl={{min: 1, sm: 2}}>
 	 				<Text as='span' color='tinted' pr={{min: 1, sm: 2}}>(Service)</Text>
  					{meta.service}
  				</Text>
@@ -109,8 +107,8 @@ export default function Project(props) {
 }
 
 Project.getInitialProps = async ctx => {
-	const { slug } = ctx.query
-	const content = await import(`../../public/projects/${slug}/readme.md`)
+	const { projectSlug } = ctx.query
+	const content = await import(`../public/projects/${projectSlug}/readme.md`)
 	const data = matter(content.default)
 
 	return {

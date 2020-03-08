@@ -1,44 +1,13 @@
 import matter from 'gray-matter'
 import { Theme } from '../components/system/theme'
 import { Flex, Text, Link } from '../components/system'
-import { Nav, Intro, SelectWork, Layout, GlobalBg } from '../components/bridge'
-
-const ListItem = props =>
-
-	<Layout
-		as='li' gridColumn='1/-1' py={1}
-		sx={{':hover': {opacity: '.64'}}}
-	>
-		<Text
-			gridColumn={{min: '1/-2', sm: '1/5'}}
-			pb={{min: 2, md: 0}}
-			pl={{min: 1, sm: 2}}
-			variant='x'
-			color={props.color}
-		>
-			{props.subject}
-		</Text>
-		<Text
-			gridColumn={{min: '1/-2', sm: '5/10'}}
-			pb={{min: 2, md: 0}}
-			pl={{min: 1, sm: 2}}
-			variant='x'
-		>
-			{props.press}
-		</Text>
-		<Text
-			gridColumn={{min: '1/-2', sm: '10/-1'}}
-			pb={{min: 2, md: 0}}
-			pl={{min: 1, sm: 2}}
-			variant='c'
-		>
-			{props.type}
-		</Text>
-	</Layout>
+import { Meta, Nav, Intro, Layout, GlobalBg } from '../components/bridge'
+import { Row } from '../components/ContentViews'
 
 export default function About(props) {
   return (
     <Theme theme='white'>
+    	<Meta title='Maksim (About)' />
     	<GlobalBg bg='white' />
       <Nav />
 		  
@@ -55,6 +24,7 @@ export default function About(props) {
 						variant='p'
 						gridColumn={{min: '1/-2', sm: '1/4'}}
 						pt={{min: 4, sm: 5}}
+						pl={{min: 1, sm: 2}}
 					>
 						<Text as='span' variant='x' color='tinted' pr={2}>(Contact)</Text>
 						m@karalevich.com, twitter, arena, github, linkedIn, Los Angeles, California
@@ -64,9 +34,10 @@ export default function About(props) {
 						variant='p'
 						gridColumn={{min: '1/-2', sm: '5/9'}}
 						pt={{min: 1, sm: 5}}
+						pl={{min: 1, sm: 2}}
 					>
 						<Text as='span' variant='x' color='tinted' pr={2}>(Focus & Experience)</Text>
-						10 years of multidisciplinary experience in design with primary focus on digital interactions. My interests lie in the intersection between environment, systems, and education. I prototype using Figma, After Effects, Cinema4D, React.
+						10 years of multidisciplinary experience in design with primary focus on digital interactions. My interests lie in the intersection between environment, systems, and education. I prototype using Figma, After Effects, Cinema 4D, React.
 					</Text>
 			
 			</Layout>
@@ -74,85 +45,86 @@ export default function About(props) {
 
 				<Layout gridColumn='1/-1' mb={{min: 4, sm: 6}}>
 
-					<ListItem
-						subject='Subject'
-						press='Press'
-						type='Type'
+					<Row
+						href='#'
+						title='Subject'
+						desc='Press'
+						tag='Type'
 					/>
 
 				</Layout>
+				<Layout gridColumn='1/-1' mb={{min: 4, sm: 6}}>
 
-				<ListItem
-					subject='The New Normal'
-					press='SiteInspire, Hover States'
-					type='Feature'
+				<Row
+					href='#'
+					title='The New Normal'
+					desc='SiteInspire, Hover States'
+					tag='Feature'
 				/>
 
-				<ListItem
-					subject='Hybrid Urbanism'
-					press='SiteInspire, Hover States'
-					type='Feature'
+				<Row
+					href='#'
+					title='Hybrid Urbanism'
+					desc='SiteInspire, Hover States'
+					tag='Feature'
 				/>
 
-				<ListItem
-					subject='Hybrid Urbanism: Final Projects'
-					press='SiteInspire'
-					type='Feature'
+				<Row
+					href='#'
+					title='Hybrid Urbanism: Final Projects'
+					desc='SiteInspire'
+					tag='Feature'
 				/>
 
-				<ListItem
-					subject='Advanced Urban Design'
-					press='SiteInspire, MinimalMonday'
-					type='Feature'
+				<Row
+					href='#'
+					title='Advanced Urban Design'
+					desc='SiteInspire, MinimalMonday'
+					tag='Feature'
 				/>
 
-				<ListItem
-					subject='Disrupt the(m)all'
-					press='Hallointer, Hover States'
-					type='Feature'
+				<Row
+					href='#'
+					title='Disrupt the(m)all'
+					desc='Hallointer, Hover States'
+					tag='Feature'
 				/>
 
-				<ListItem
-					subject='On and On'
-					press='Calvert Journal'
-					type='Feature'
+				<Row
+					href='#'
+					title='On and On'
+					desc='Calvert Journal'
+					tag='Feature'
 				/>
 
-				<ListItem
-					subject='Apply to Strelka'
-					press='SiteInspire, HoverStates'
-					type='Feature'
+				<Row
+					href='#'
+					title='Apply to Strelka'
+					desc='SiteInspire, HoverStates'
+					tag='Feature'
 				/>
 
-				<ListItem
-					subject='Apply to Strelka'
-					press='SiteInspire, HoverStates'
-					type='Feature'
+				<Row
+					href='#'
+					title='Strelka Summer 2016'
+					desc='European Design'
+					tag='Award'
 				/>
 
-				<ListItem
-					subject='Strelka Summer 2016'
-					press='European Design'
-					type='Award'
+				<Row
+					href='#'
+					title='Norilsk Film'
+					desc='Awwwards Site of the Day, Red Dot Award'
+					tag='Award'
 				/>
 
-				<ListItem
-					subject='Norilsk Film'
-					press='Awwwards Site of the Day, Red Dot Award'
-					type='Award'
+				<Row
+					href='#'
+					title='Me'
+					desc='Spotlight: Maksim Karalevich, HOW Design, The New Normal Design, Strelka Magazine, Lecturer at Design Madison' 
+					tag='Interview'
 				/>
-
-				<ListItem
-					subject='Apply to Strelka'
-					press='SiteInspire, HoverStates'
-					type='Feature'
-				/>
-
-				<ListItem
-					subject='Me'
-					press='Spotlight: Maksim Karalevich, HOW Design, The New Normal Design, Strelka Magazine, Lecturer at Design Madison' 
-					type='Interview'
-				/>
+			</Layout>
 			
 			</Flex>
     </Theme>

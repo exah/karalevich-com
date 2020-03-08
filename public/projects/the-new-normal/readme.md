@@ -5,8 +5,8 @@ role: (Strelka)
 description: Visual language and interactive website for the theme of the 7th academic year at Strelka Institute.
 service: Identity, visual design, UX prototyping
 info: 2017, Strelka Studio. Identity together with Anna Kulachek, web development by John Grishin, imagery by Vladimir Shlygin
-theme: LightSlateGray
-# project card
+# controls
+theme: lightslategray
 thumb: thumb--r169.mp4
 size: lg
 position: 6
@@ -24,7 +24,7 @@ The research focuses on the new contemporary condition, which has emerged with t
 
 ![ ](mobile-02--r11.jpg?size=half)
 
-![Fugue Tails by Radim Peško and William Pro by Maria Doreuli](type--r169.jpg?size=fullscreen)
+![Fugue Tails by Radim Peško and William Pro by Maria Doreuli](type--r169.jpg?size=large)
 
 ![ ](mobile-04--r11.jpg?size=half)
 

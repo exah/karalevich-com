@@ -5,7 +5,7 @@ role: (Consultant)
 description: The new brand is dedicated to bringing its unique message to the fashion industry.
 service: Identity, online store experience
 info: 2019. Art direction by Wednesday Studio
-# project card
+# controls
 theme: grey
 thumb: thumb.jpg
 size: md

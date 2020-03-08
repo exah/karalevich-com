@@ -1,11 +1,11 @@
 import { Flex, Grid, Text, Link } from './system'
 import { Layout } from './bridge'
-import { Project } from './SelectWorkEls'
+import { Card } from './ContentViews'
 
 export default function SelectWork(props) {
 	
 	const ProjectList = props.data.map(project =>
-		<Project
+		<Card
 			key={project.slug}
 			slug={project.slug}
 			data={project.document.data}

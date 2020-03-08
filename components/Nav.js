@@ -12,8 +12,7 @@ export default function() {
 			px={2}
 			sx={{
 				position: 'fixed',
-				zIndex: 2,
-				mixBlendMode: 'difference',
+				zIndex: 3,
 			}}
 		>
 			<Link href='/' variant='x'>Maksim</Link>

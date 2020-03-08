@@ -1,27 +1,28 @@
 import { Fragment } from 'react'
 import { Flex, Text, Link, Image, Video } from './system'
 
-// Utils
-
+// Utils:
+// Set media width based on url param
 const setMediaSize = ({layout}) => {
-	if (layout === 'isHalf') return 1/3
-	else if (layout === 'isFullscreen') return '91.67%' // -1 column
-	else return 1
+	if (layout === 'isHalf') return {min: '100%', xsm: '50%', sm: '33.33%'}
+	else if (layout === 'isLarge') return {min: '100%', sm: '91.67%'} // -1 column
+	else return '100%'
 }
-
+// Clear from right if next block is 1/3
 const setMediaClearance = ({layout}) => {
-	if (layout === 'default') return {min: 1, sm: 1/3}
+	if (layout === 'default') return {min: 1, sm: '33.33%'}
+	else if (layout === 'isHalf') return {min: 1, sm: 0}
 }
-
+// Set caption width based on media width
 const setCaptionSize = ({layout}) => {
-	if (layout === 'isHalf') return 1
-	else if (layout === 'isFullscreen') return 1
-	else return {all: 'calc(50% - 8px)'}
+	if (layout === 'isHalf') return '100%'
+	else if (layout === 'isLarge') return '100%'
+	else return {min: '100%', sm: 'calc(50% - 8px)'}
 }
-
+// Fix caption paddings
 const setCaptionOffset = ({layout}) => {
-	if (layout === 'isFullscreen') return 'calc(36.36% + 16px)'
-	else if (layout === 'isHalf') return 1/3
+	if (layout === 'isLarge') return {min: '0', sm: 'calc(36.36% + 16px)'}
+	else if (layout === 'isHalf') return {min: '0', sm: '33.33%'}
 	else return '0'
 }
 
@@ -31,7 +32,7 @@ export const MarkdownText = props =>
 	<Text
 		variant='p'
 		width={'100%'}
-		pr={{min: 1, xsm: '50%', sm: '66.66%'}}
+		pr={{min: '8.33%', xsm: '50%', sm: '66.66%'}}
 		pl={{min: 1, sm: 2}}
 		mb={{min: 4, sm: 6}}
 	>
@@ -61,6 +62,7 @@ const MarkdownCaption = props =>
 		width={setCaptionSize(props)}
 		pl={setCaptionOffset(props)}
 		pt={2}
+		textAlign={{min: 'center', sm: 'left'}}
 
 		variant='c'
 		color='tinted'
@@ -75,7 +77,7 @@ export const MarkdownImage = props =>
 		pr={setMediaClearance(props)}
 		flexes='cse'
 		pb={ props.alt === ' ' ? {min: 1, sm: 2} : {min: 4, sm: 6} }
-		pl={ props.layout !== 'isFullscreen' && {min: 1, sm: 2} }
+		pl={ props.layout !== 'isLarge' && {min: 1, sm: 2} }
 	>
 		<Image width='100%' src={props.src} />
 		{ props.alt === ' ' ? null : <MarkdownCaption {...props} /> }
@@ -89,7 +91,7 @@ export const MarkdownVideo = props =>
 		pr={setMediaClearance(props)}
 		flexes='cse'
 		pb={ props.alt === ' ' ? {min: 1, sm: 2} : {min: 4, sm: 6} }
-		pl={ props.layout !== 'isFullscreen' && {min: 1, sm: 2} }
+		pl={ props.layout !== 'isLarge' && {min: 1, sm: 2} }
 	>
 		<Video src={props.src}
 			autoplay={true}

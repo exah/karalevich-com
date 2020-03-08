@@ -6,13 +6,7 @@ import { Meta, Nav, Intro, SelectWork } from '../components/bridge'
 export default function App(props) {
   return (
     <Theme theme='white'>
-      <Meta
-        name={props.name}
-        title={props.title}
-        keywords={props.keywords}
-        description={props.description}
-        url={props.url}
-      />
+      <Meta title='Maksim (Work)'/>
       <Nav />
       <Intro />
       <SelectWork data={props.projects} />
@@ -20,11 +14,11 @@ export default function App(props) {
   )
 }
 
-App.getInitialProps = async function() {
-  const meta = await import('../components/meta.json')
+App.getInitialProps = async () => {
   const projects = (context => {
     const keys = context.keys()
     const values = keys.map(context)
+    
     const data = keys.map((key, index) => {
       const slug = key.split('/')[1]
       const value = values[index]
@@ -37,8 +31,5 @@ App.getInitialProps = async function() {
     return data
   })(require.context('../public/projects', true, /\.md$/))
 
-  return {
-    ...meta,
-    projects,
-  }
+  return { projects }
 }

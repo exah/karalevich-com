@@ -5,8 +5,8 @@ role: (In-house)
 description: Visual language and interactive for South Korea field trip projects which took place during Education programme 2015/16 at Strelka Institute.
 service: Identity, motion design, UX prototyping, visual design
 info: 2015, Strelka Studio. Web development by Valia Fetisov and John Grishin
-# project card
-theme: DimGray
+# controls
+theme: dimgray
 thumb: thumb.jpg
 size: lg
 position: 7

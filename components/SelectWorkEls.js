@@ -9,9 +9,9 @@ export const Project = (props) => {
 	const isVideo = data.thumb.match(/\.mp4/i)
 
 	const setProjectSize = props => {
-		if (props === 'lg') return '2/-2'
-		else if (props === 'md') return '3/-3'
-		else return '4/10'
+		if (props === 'lg') return {min: '1/-1', sm: '2/-2'}
+		else if (props === 'md') return {min: '1/-1', sm: '3/-3'}
+		else return {min: '1/-1', sm: '4/10'}
 	}
 	
 	let poster = ''
@@ -22,13 +22,14 @@ export const Project = (props) => {
 			href={`/p/${slug}`}
 			gridColumn='1/-1'
 			gridRow={data.position}
+			px={{min: 1, sm: 0}}
 			sx={{
 				display: 'grid',
 				gridTemplateColumns: 'repeat(12, 1fr)',
 		}}>
 
 			<Flex
-				gridColumn='2/-2'
+				gridColumn={{min: '1/-1', sm: '2/-2'}}
 				pb={2}
 				flexes={{min: 'css', sm: 'rss'}}
 			>
@@ -45,6 +46,7 @@ export const Project = (props) => {
 							height='auto'
 							pb={{min: 4, sm: 6}}
 							flexes='ccc'
+							sx={{zIndex: 2}}
 						/>
 					: <Video
 							src={`/projects/${slug}/${data.thumb}`}
@@ -54,6 +56,7 @@ export const Project = (props) => {
 							height='auto'
 							pb={{min: 4, sm: 6}}
 							flexes='ccc'
+							sx={{zIndex: 2}}
 						/>
 				}
 

@@ -5,7 +5,7 @@ role: (Co-Founder)
 description: A personalised learning resource for self‑directed learners.
 service: Identity, user experience, user interface
 info: 2020—ongoing
-# project card
+# controls
 theme: lightyellow
 thumb: thumb.jpg
 size: lg
