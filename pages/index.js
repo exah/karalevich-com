@@ -15,22 +15,30 @@ export default function App(props) {
       />
       <Nav />
       <Intro />
-      <SelectWork data={props.data} />
+      <SelectWork data={props.projects} />
     </Theme>
   )
 }
 
-App.getInitialProps = async () => {
-  // let projects = await require.context('../public/projects/', true, /\.md$/)
-  // let keys = projects.keys()
-  
-  const slug = 'the-new-normal'
-  const content = await import(`../public/projects/${slug}/readme.md`)
-  const data = matter(content.default)
+App.getInitialProps = async function() {
   const meta = await import('../components/meta.json')
+  const projects = (context => {
+    const keys = context.keys()
+    const values = keys.map(context)
+    const data = keys.map((key, index) => {
+      const slug = key.split('/')[1]
+      const value = values[index]
+      const document = matter(value.default)
+      return {
+        document,
+        slug,
+      }
+    })
+    return data
+  })(require.context('../public/projects', true, /\.md$/))
 
   return {
-    ...data,
     ...meta,
+    projects,
   }
 }

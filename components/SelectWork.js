@@ -3,7 +3,14 @@ import { Layout } from './bridge'
 import { Project } from './SelectWorkEls'
 
 export default function SelectWork(props) {
-	const data = props.data
+	
+	const ProjectList = props.data.map(project =>
+		<Project
+			key={project.slug}
+			slug={project.slug}
+			data={project.document.data}
+		/>
+	)
 
 	return (
 		<Flex width='100%' flexes='ccc'>
@@ -25,11 +32,8 @@ export default function SelectWork(props) {
 				</Text>
 				
 			</Layout>
-			
-			<Project
-				slug='the-new-normal'
-				data={data}
-			/>
+			<Layout>{ProjectList}</Layout>
+
 		</Flex>
 	)
 }

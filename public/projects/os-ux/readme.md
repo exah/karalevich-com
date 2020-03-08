@@ -8,8 +8,8 @@ info: 2019, B-Reel.
 # project card
 theme: black
 thumb: thumb.jpg
-size: md
-position: 4
+size: sm
+position: 2
 ---
 
 This project is under NDA.

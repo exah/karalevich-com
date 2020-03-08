@@ -8,7 +8,7 @@ info: 2017, Strelka Studio. Identity together with Anna Kulachek, web developmen
 theme: LightSlateGray
 # project card
 thumb: thumb--r169.mp4
-size: 1/-1
+size: lg
 position: 6
 ---
 

@@ -8,8 +8,8 @@ info: 2020—ongoing
 # project card
 theme: lightyellow
 thumb: thumb.jpg
-size: md
-position: 4
+size: lg
+position: 1
 ---
 
 The school helps kids joining into groups and finding teachers to learn topics they the most interested in. The platform provides tools to organize courses, call for teachers and invite other learners.
