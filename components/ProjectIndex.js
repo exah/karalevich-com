@@ -27,6 +27,7 @@ export default function ProjectIndex(props) {
 			if (data.archived === undefined) {
 				return (
 					<Row
+						row={data.position + 1}
 						key={project.slug}
 						slug={project.slug}
 						title={data.title}
@@ -45,6 +46,7 @@ export default function ProjectIndex(props) {
 			<Text
 				variant='x'
 				gridColumn='1/-1'
+				gridRow='1'
 				textAlign='center'
 				pb={{min: 4, sm: 6}}
 			>

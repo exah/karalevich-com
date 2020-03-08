@@ -7,6 +7,7 @@ export const Row = props => {
 	return (
 		<Link
 			gridColumn='1/-1'
+			gridRow={props.row}
 			href={`/${props.slug}`}
 			py={1}
 			sx={{
