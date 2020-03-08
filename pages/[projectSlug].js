@@ -9,7 +9,7 @@ import { useRouter } from 'next/router'
 
 import { Theme } from '../components/system/theme'
 import { Flex, Grid, Text, Image, Video } from '../components/system'
-import { Meta, Nav, Layout, GlobalBg, HelperLayout } from '../components/bridge'
+import { Meta, Nav, Layout, GlobalBg, HelperLayout, ProjectIndex } from '../components/bridge'
 import { ReactMarkdownContainer } from '../components/MarkdownRenderers'
 
 export default function Project(props) {
@@ -101,6 +101,8 @@ export default function Project(props) {
  				</Text>
 	 		
 	 		</Layout>
+
+	 		<ProjectIndex data={props.projects} />
  			
  		</Theme>
 	)
@@ -111,7 +113,24 @@ Project.getInitialProps = async ctx => {
 	const content = await import(`../public/projects/${projectSlug}/readme.md`)
 	const data = matter(content.default)
 
+	const projects = (context => {
+    const keys = context.keys()
+    const values = keys.map(context)
+    
+    const data = keys.map((key, index) => {
+      const slug = key.split('/')[1]
+      const value = values[index]
+      const document = matter(value.default)
+      return {
+        document,
+        slug,
+      }
+    })
+    return data
+  })(require.context('../public/projects', true, /\.md$/))
+
 	return {
 		...data,
+		projects
 	}
 }

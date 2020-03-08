@@ -4,6 +4,7 @@ import Meta from './Meta'
 import Nav from './Nav'
 import Intro from './Intro'
 import SelectWork from './SelectWork'
+import ProjectIndex from './ProjectIndex'
 import { Card, Row } from './ContentViews'
 
 export {
@@ -14,6 +15,7 @@ export {
 	Nav,
 	Intro,
 	SelectWork,
+	ProjectIndex,
 	Card, 
 	Row,
 }

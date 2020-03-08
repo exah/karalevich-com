@@ -1,7 +1,8 @@
 import matter from 'gray-matter'
 import { Theme } from '../components/system/theme'
 import { Flex, Link } from '../components/system'
-import { Meta, Nav, Intro, SelectWork } from '../components/bridge'
+import { Meta, Nav, Intro, SelectWork, ProjectIndex } from '../components/bridge'
+import GetProjects from '../components/GetProjects'
 
 export default function App(props) {
   return (
@@ -10,6 +11,7 @@ export default function App(props) {
       <Nav />
       <Intro />
       <SelectWork data={props.projects} />
+      <ProjectIndex data={props.projects} archived='yes' />
     </Theme>
   )
 }

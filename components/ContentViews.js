@@ -4,14 +4,10 @@ import { Layout } from './bridge'
 // Project row
 export const Row = props => {
 
-	const data = props.data
-	const slug = props.slug
-
 	return (
 		<Link
-			as='li'
 			gridColumn='1/-1'
-			href={`/${slug}`}
+			href={`/${props.slug}`}
 			py={1}
 			sx={{
 				display: 'grid',
