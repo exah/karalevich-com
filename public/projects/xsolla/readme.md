@@ -35,9 +35,9 @@ The foundation of the platform's visual identity. Typography, colors, icons.
 
 ![Graphik LC by Commercial Type](guides-r169.jpg)
 
-![ ](guides-1-r11.jpg?size=half)
+![ ](guides-1-r11.jpg?size=sm)
 
-![20 px working area](guides-2-r11.jpg?size=half)
+![20 px working area](guides-2-r11.jpg?size=sm)
 
 #### Layouts
 
@@ -45,9 +45,9 @@ Main principles of interfaces. Grid, margins, paddings.
 
 ![Welcome screen layout](layouts-r169.jpg)
 
-![Regular table layout](layouts-3-r11.jpg?size=half)
+![Regular table layout](layouts-3-r11.jpg?size=sm)
 
-![Regular table layout](layouts-2-r11.jpg?size=half)
+![Regular table layout](layouts-2-r11.jpg?size=sm)
 
 ![8 px grid in action](layouts-2-r169.jpg)
 
@@ -59,6 +59,6 @@ Reusable elements, from simple buttons to complex list selectors.
 
 ![ ](components-r169.jpg)
 
-![ ](components-1-r11.jpg?size=half)
+![ ](components-1-r11.jpg?size=sm)
 
-![ ](components-2-r11.jpg?size=half)
+![ ](components-2-r11.jpg?size=sm)

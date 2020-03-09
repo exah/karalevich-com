@@ -16,16 +16,16 @@ Strelka Institute students developed six proposals that could change the mall as
 
 [the-m-all.com](https://the-m-all.com/en)
 
-![3D mall and Seoul Trip image gallery](screencast-r169.mp4)
+![3D mall and Seoul Trip image gallery](screencast.mp4)
 
-![Combining Russian, English and Korean experience](index-r169.jpg)
+![Combining Russian, English and Korean experience](index.jpg)
 
-![Flat pano on mobile](mobile-r169.jpg)
+![ ](mobile.jpg)
 
-![ ](id-01-r169.jpg?size=half)
+![ ](id-team-boids.jpg?size=sm)
 
-![ ](id-02-r169.jpg?size=half)
+![ ](id-team-phare.jpg?size=sm)
 
-![ ](id-03-r169.jpg?size=half)
+![ ](id-team-track-the-mall.jpg?size=sm)
 
-![ ](id-04-r169.jpg?size=half)
+![ ](id-titles.jpg?size=sm)

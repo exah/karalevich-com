@@ -3,14 +3,21 @@ import { Layout } from './bridge'
 import { Card } from './ContentViews'
 
 export default function SelectWork(props) {
-	
-	const ProjectList = props.data.map(project =>
-		<Card
-			key={project.slug}
-			slug={project.slug}
-			data={project.document.data}
-		/>
-	)
+
+	const List = props.data.map(project => {
+		const data = project.document.data
+
+		if (data.archived === undefined) {
+			return (
+				<Card
+					key={project.slug}
+					slug={project.slug}
+					data={project.document.data}
+				/>
+			)
+		}
+		else return null
+	})
 
 	return (
 		<Flex width='100%' flexes='ccc'>
@@ -32,7 +39,7 @@ export default function SelectWork(props) {
 				</Text>
 				
 			</Layout>
-			<Layout>{ProjectList}</Layout>
+			<Layout>{List}</Layout>
 
 		</Flex>
 	)

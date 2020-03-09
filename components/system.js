@@ -93,9 +93,8 @@ export const Video = forwardRef((props, ref) =>
   <Box
     ref={ref}
     as='video'
-    type="video/mp4"
+    type="video"
     {...props}
-    controls={false}
     __css={{
       maxWidth: '100%',
       height: 'auto',

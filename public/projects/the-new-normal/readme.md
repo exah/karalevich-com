@@ -21,12 +21,12 @@ The research focuses on the new contemporary condition, which has emerged with t
 
 ![Index page with draggable popups](index-screencast.mp4)
 
-![ ](mobile-01--r11.jpg?size=half)
+![ ](mobile-01--r11.jpg?size=sm)
 
-![ ](mobile-02--r11.jpg?size=half)
+![ ](mobile-02--r11.jpg?size=sm)
 
-![Fugue Tails by Radim Peško and William Pro by Maria Doreuli](type--r169.jpg?size=large)
+![Fugue Tails by Radim Peško and William Pro by Maria Doreuli](type--r169.jpg?size=lg)
 
-![ ](mobile-04--r11.jpg?size=half)
+![ ](mobile-04--r11.jpg?size=sm)
 
-![ ](mobile-03--r11.mp4?size=half)
+![ ](mobile-03--r11.mp4?size=sm)

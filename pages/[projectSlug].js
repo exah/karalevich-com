@@ -24,12 +24,12 @@ export default function Project(props) {
   
   let path = `/projects/${projectSlug}/`
   let poster = ''
-  if (isVideo) poster = meta.thumb.replace(/\.mp4/i, '.jpg')
+  poster = meta.thumb.replace('mp4', 'jpg')
 
 	return (
 		<Theme theme={meta.theme}>
 			<GlobalBg bg={meta.theme} />
-			<Meta title={meta.title} />
+			<Meta title={`(Maksim) ${meta.title}`} />
 				
 			<Nav />
 

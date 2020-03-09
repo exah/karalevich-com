@@ -7,18 +7,22 @@ export default function ProjectIndex(props) {
 
 	const List = props.data.map(project => {
 		const data = project.document.data
-		console.log(data.archived)
 
 		if (props.archived === 'yes') {
 			if (data.archived === 'yes') {
 				return (
-					<Row
+					<Link
 						key={project.slug}
-						slug={project.slug}
-						title={data.title}
-						desc={data.lead}
-						tag={data.role}
-					/>
+						href={`/${project.slug}`}
+						gridRow={data.position}
+						gridColumn='1/-1'
+					>
+						<Row
+							title={data.title}
+							desc={data.lead}
+							tag={data.role}
+						/>
+					</Link>
 				)
 			}
 			else return null
@@ -26,14 +30,18 @@ export default function ProjectIndex(props) {
 		else {
 			if (data.archived === undefined) {
 				return (
-					<Row
-						row={data.position + 1}
+					<Link
 						key={project.slug}
-						slug={project.slug}
-						title={data.title}
-						desc={data.lead}
-						tag={data.role}
-					/>
+						href={`/${project.slug}`}
+						gridRow={data.position + 1}
+						gridColumn='1/-1'
+					>
+						<Row
+							title={data.title}
+							desc={data.lead}
+							tag={data.role}
+						/>
+					</Link>
 				)
 			}
 			else return null

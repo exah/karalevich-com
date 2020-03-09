@@ -4,25 +4,25 @@ import { Flex, Text, Link, Image, Video } from './system'
 // Utils:
 // Set media width based on url param
 const setMediaSize = ({layout}) => {
-	if (layout === 'isHalf') return {min: '100%', xsm: '50%', sm: '33.33%'}
+	if (layout === 'isSmall') return {min: '100%', xsm: '50%', sm: '33.33%'}
 	else if (layout === 'isLarge') return {min: '100%', sm: '91.67%'} // -1 column
 	else return '100%'
 }
 // Clear from right if next block is 1/3
 const setMediaClearance = ({layout}) => {
 	if (layout === 'default') return {min: 1, sm: '33.33%'}
-	else if (layout === 'isHalf') return {min: 1, sm: 0}
+	else if (layout === 'isSmall') return {min: 1, sm: 0}
 }
 // Set caption width based on media width
 const setCaptionSize = ({layout}) => {
-	if (layout === 'isHalf') return '100%'
+	if (layout === 'isSmall') return '100%'
 	else if (layout === 'isLarge') return '100%'
 	else return {min: '100%', sm: 'calc(50% - 8px)'}
 }
 // Fix caption paddings
 const setCaptionOffset = ({layout}) => {
 	if (layout === 'isLarge') return {min: '0', sm: 'calc(36.36% + 16px)'}
-	else if (layout === 'isHalf') return {min: '0', sm: '33.33%'}
+	else if (layout === 'isSmall') return {min: '0', sm: '33.33%'}
 	else return '0'
 }
 
@@ -37,6 +37,36 @@ export const MarkdownText = props =>
 		mb={{min: 4, sm: 6}}
 	>
 		{props.children}
+	</Text>
+
+export const MarkdownList = props =>
+	<Text
+		as='ul'
+		variant='x'
+		width={'100%'}
+		pr={{min: '8.33%', xsm: '50%', sm: '66.66%'}}
+		pl={{min: 1, sm: 2}}
+		mb={{min: 4, sm: 6}}
+		sx={{
+			listStyle: 'square'
+		}}
+	>
+		{props.children}
+	</Text>
+
+export const MarkdownListItem = props =>
+	<Text
+		as='li'
+		variant='x'
+		width={'100%'}
+		pr={{min: 1, sm: 0}}
+		ml={{min: 1, sm: 2}}
+		my={{min: 1, sm: 1}}
+		sx={{
+			listStyle: 'square'
+		}}
+	>
+		{props.children[0].props.children}
 	</Text>
 
 export const MarkdownLink = props =>
@@ -93,7 +123,9 @@ export const MarkdownVideo = props =>
 		pb={ props.alt === ' ' ? {min: 1, sm: 2} : {min: 4, sm: 6} }
 		pl={ props.layout !== 'isLarge' && {min: 1, sm: 2} }
 	>
-		<Video src={props.src}
+		<Video
+			src={props.src}
+			poster={props.src.replace('mp4', 'jpg')}
 			autoplay={true}
 			loop={true}
 			muted={true}

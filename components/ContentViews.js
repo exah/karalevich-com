@@ -5,16 +5,10 @@ import { Layout } from './bridge'
 export const Row = props => {
 
 	return (
-		<Link
+		<Layout
 			gridColumn='1/-1'
-			gridRow={props.row}
-			href={`/${props.slug}`}
 			py={1}
-			sx={{
-				display: 'grid',
-				gridTemplateColumns: 'repeat(12, 1fr)',
-				':hover': {opacity: '.64'},
-			}}
+			sx={{ ':hover': {opacity: '.64'} }}
 		>
 			<Text
 				gridColumn={{min: '1/-2', sm: '1/5'}}
@@ -41,7 +35,7 @@ export const Row = props => {
 			>
 				{props.tag}
 			</Text>
-		</Link>
+		</Layout>
 		)
 }
 
