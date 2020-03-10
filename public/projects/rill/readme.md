@@ -15,17 +15,3 @@ position: 3
 A web application which helps interconnect environmental events and track updates on a given subject in a specific region. The platform unites a wide audience of researchers by building connections between topics they study. The public part of the platform gives everyone the ability to discover and follow topics of interest.
 
 [rill.cc](https://rill-site.now.sh/)
-
-Researchers:
-
-- employees of research centers and universities,
-- companies operating in the field,
-- faculty and students of relevant institutions.
-
-### For
-
-Some text goes here
-
-### Etc
-
-Some text goes here

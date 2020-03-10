@@ -6,7 +6,14 @@ import { Flex } from './system'
 export const GlobalBg = props =>
 <Global
   styles={css`
-    :root { background-color: ${props.bg} }
+    :root {
+      background-color: ${props.bg};
+      /*animation: fadein .25s;
+      @keyframes fadein {
+        from {opacity: 0}
+        to {opacity: 1}
+      }*/
+    }
   `}
 />
 

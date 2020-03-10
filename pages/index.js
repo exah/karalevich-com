@@ -3,6 +3,7 @@ import { Theme } from '../components/system/theme'
 import { Flex, Link } from '../components/system'
 import { Meta, Nav, Intro, SelectWork, ProjectIndex } from '../components/bridge'
 import GetProjects from '../components/GetProjects'
+import NextLink from 'next/link'
 
 export default function App(props) {
   return (

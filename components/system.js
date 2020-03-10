@@ -24,7 +24,7 @@ export const Link = forwardRef((props, ref) => {
     >
       <Text
         as='a'
-        href={props.href}
+        // href={props.href}
         {...props}
     />
     </NextLink>

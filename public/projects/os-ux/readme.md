@@ -2,7 +2,7 @@
 title: Smartphone manufacturer
 lead: Improving mobile OS experience
 role: (B-Reel)
-description: This project is under NDA.
+description: This project is under NDA. Please come back later.
 service: Product design, user flow prototyping, user interface
 info: 2019, B-Reel.
 # controls
@@ -12,4 +12,4 @@ size: sm
 position: 2
 ---
 
-This project is under NDA. Come back later.
+This project is under NDA. Please come back later.

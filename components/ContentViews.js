@@ -12,7 +12,7 @@ export const Row = props => {
 		>
 			<Text
 				gridColumn={{min: '1/-2', sm: '1/5'}}
-				pb={{min: 2, md: 0}}
+				pb={{min: 1, md: 0}}
 				pl={{min: 1, sm: 2}}
 				variant='x'
 				color={props.color}
@@ -21,7 +21,7 @@ export const Row = props => {
 			</Text>
 			<Text
 				gridColumn={{min: '1/-2', sm: '5/10'}}
-				pb={{min: 2, md: 0}}
+				pb={{min: 1, md: 0}}
 				pl={{min: 1, sm: 2}}
 				variant='x'
 			>
@@ -29,7 +29,7 @@ export const Row = props => {
 			</Text>
 			<Text
 				gridColumn={{min: '1/-2', sm: '10/-1'}}
-				pb={{min: 2, md: 0}}
+				pb={{min: 1, md: 0}}
 				pl={{min: 1, sm: 2}}
 				variant='c'
 			>
@@ -59,16 +59,7 @@ export const Card = props => {
 	}
 	
 	return (
-		<Link
-			href={`/${slug}`}
-			gridRow={data.position}
-			gridColumn='1/-1'
-			px={{min: 1, sm: 0}}
-			sx={{
-				display: 'grid',
-				gridTemplateColumns: 'repeat(12, 1fr)',
-			}}
-		>
+		<Layout gridColumn='1/-1' px={{min: 1, sm: 0}}>
 
 			<Flex
 				gridColumn={{min: '1/-1', sm: '2/-2'}}
@@ -102,6 +93,6 @@ export const Card = props => {
 						/>
 				}
 
-		</Link>
+		</Layout>
 	)
 }

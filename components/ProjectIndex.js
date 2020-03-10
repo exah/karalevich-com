@@ -13,7 +13,8 @@ export default function ProjectIndex(props) {
 				return (
 					<Link
 						key={project.slug}
-						href={`/${project.slug}`}
+						href='/[projectSlug]'
+						nextAs={`/${project.slug}`}
 						gridRow={data.position}
 						gridColumn='1/-1'
 					>
@@ -32,7 +33,8 @@ export default function ProjectIndex(props) {
 				return (
 					<Link
 						key={project.slug}
-						href={`/${project.slug}`}
+						href='/[projectSlug]'
+						nextAs={`/${project.slug}`}
 						gridRow={data.position + 1}
 						gridColumn='1/-1'
 					>

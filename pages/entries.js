@@ -5,6 +5,23 @@ import { Meta, Nav, Intro, Layout, GlobalBg } from '../components/bridge'
 import { Row } from '../components/ContentViews'
 
 export default function Entries(props) {
+
+
+	const List = props.entries.map(entry => {
+		const meta = entry.document.data
+		console.log(meta)
+		return (
+		<Row
+			key={meta.title}
+			title={meta.title}
+			desc={props.content}
+			tag={meta.tags}
+			color={meta.color}
+		/>
+		)
+	})
+
+
   return (
     <Theme theme='white'>
     	<Meta title='Maksim (Entries)' />
@@ -17,19 +34,7 @@ export default function Entries(props) {
 					<Row title='Title' desc='Body' tag='Tags' />
 				</Layout>
 
-				<Row
-					title={props.data.title}
-					desc={props.content}
-					tag={props.data.tags}
-					color={props.data.color}
-				/>
-
-				<Row
-					title='Separation of information and its architecture from information visualisation for social platforms on examples of development frameworks and markdown'
-					desc='In this early period, due to the need to use a foreign language most of the time, the immigrant begins to think in two languages ​​in turn or mixed. If the knowledge of the language is significantly lower than the native, a person during the thought process uses simplified alternatives, which subsequently lead either to a longer logical conclusion, or begin to lead him on a false trail.'
-					tag='Note'
-					color='blue'
-				/>
+				{List}				
 
 			</Flex>
     
@@ -38,10 +43,24 @@ export default function Entries(props) {
 }
 
 Entries.getInitialProps = async () => {
-	const content = await import(`../public/entries/my-note.md`)
-	const data = matter(content.default)
+  const entries = (context => {
+    const keys = context.keys()
+    const values = keys.map(context)
 
-	return {
-		...data,
-	}
+
+    
+    const data = keys.map((key, index) => {
+      const slug = key.split('/')[1]
+      const value = values[index]
+      const document = matter(value.default)
+
+      return {
+        document,
+        slug,
+      }
+    })
+    return data
+  })(require.context('../public/entries', true, /\.md$/))
+
+  return { entries }
 }

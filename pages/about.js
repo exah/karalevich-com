@@ -36,7 +36,7 @@ export default function About(props) {
 						pt={{min: 1, sm: 5}}
 						pl={{min: 1, sm: 2}}
 					>
-						<Text as='span' variant='x' color='tinted' pr={2}>(Focus & Experience)</Text>
+						<Text as='span' variant='x' color='tinted' pr={{min: 1, sm: 2}}>(Focus & Experience)</Text>
 						10 years of multidisciplinary experience in design with primary focus on digital interactions. My interests lie in the intersection between environment, systems, and education. I prototype using Figma, After Effects, Cinema 4D, React.
 					</Text>
 			

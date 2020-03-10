@@ -9,11 +9,18 @@ export default function SelectWork(props) {
 
 		if (data.archived === undefined) {
 			return (
-				<Card
+				<Link
 					key={project.slug}
-					slug={project.slug}
-					data={project.document.data}
-				/>
+					href='/[projectSlug]'
+					nextAs={`/${project.slug}`}
+					gridRow={data.position}
+					gridColumn='1/-1'
+				>
+					<Card
+						slug={project.slug}
+						data={project.document.data}
+					/>
+				</Link>
 			)
 		}
 		else return null
