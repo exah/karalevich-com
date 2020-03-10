@@ -1,13 +1,14 @@
 import matter from 'gray-matter'
 import { Theme } from '../components/system/theme'
 import { Flex, Link } from '../components/system'
-import { Meta, Nav, Intro, SelectWork, ProjectIndex } from '../components/bridge'
+import { GlobalBg, Meta, Nav, Intro, SelectWork, ProjectIndex } from '../components/bridge'
 import GetProjects from '../components/GetProjects'
 
 export default function App(props) {
   return (
     <Theme theme='white'>
       <Meta title='Maksim (Work)'/>
+      <GlobalBg bg='white' />
       <Nav />
       <Intro />
       <SelectWork data={props.projects} />
