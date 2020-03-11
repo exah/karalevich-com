@@ -81,7 +81,7 @@ const text = {
 		fontSize: [0, null, null, null, 1],
 		lineHeight: lineHeights,
 		color: 'text',
-		textIndent: ['.75rem', null, '1rem'],
+		textIndent: ['0rem', null, '1rem'],
 		pb: 1,
 	},
 	c: {
