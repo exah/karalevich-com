@@ -27,7 +27,7 @@ export default function About(props) {
 						pl={{min: 1, sm: 2}}
 					>
 						<Text as='span' variant='x' color='tinted' pr={2}>(Contact)</Text>
-						m@karalevich.com, twitter, arena, github, linkedIn, Los Angeles, California
+						<Link href='mailto:m@karalevich.com' nextAs=''>m@karalevich.com</Link>, <Link href='https://twitter.com/mkaralevich' nextAs=''>twitter</Link>, <Link href='https://www.are.na/maksim-karalevich/index' nextAs=''>arena</Link>, <Link href='https://github.com/mkaralevich/' nextAs=''>github</Link>, <Link href='https://www.linkedin.com/in/maksimkaralevich/' nextAs=''>linkedin</Link>. Los Angeles, California
 					</Text>
 				
 					<Text
@@ -47,83 +47,68 @@ export default function About(props) {
 
 					<Row
 						href='#'
-						title='Subject'
-						desc='Press'
-						tag='Type'
+						title='Where'
+						desc='What'
+						tag='When'
 					/>
 
 				</Layout>
-				<Layout gridColumn='1/-1' mb={{min: 4, sm: 6}}>
+				<Layout as='ul' gridColumn='1/-1' mb={{min: 4, sm: 6}}>
 
 				<Row
-					href='#'
-					title='The New Normal'
-					desc='SiteInspire, Hover States'
-					tag='Feature'
+					title='B-Reel (LA)'
+					desc='Sr. Designer'
+					tag='2019–present'
 				/>
 
 				<Row
-					href='#'
-					title='Hybrid Urbanism'
-					desc='SiteInspire, Hover States'
-					tag='Feature'
+					title='Rill—Common Connections'
+					desc='Everything'
+					tag='2019–present'
 				/>
 
 				<Row
-					href='#'
-					title='Hybrid Urbanism: Final Projects'
-					desc='SiteInspire'
-					tag='Feature'
+					title='Four Flowers School'
+					desc='Design'
+					tag='2019–present'
 				/>
 
 				<Row
-					href='#'
-					title='Advanced Urban Design'
-					desc='SiteInspire, MinimalMonday'
-					tag='Feature'
+					title='Perfect Number'
+					desc='Consultant'
+					tag='2019'
 				/>
 
 				<Row
-					href='#'
-					title='Disrupt the(m)all'
-					desc='Hallointer, Hover States'
-					tag='Feature'
+					title='Xsolla'
+					desc='Consultant'
+					tag='2019'
 				/>
 
 				<Row
-					href='#'
-					title='On and On'
-					desc='Calvert Journal'
-					tag='Feature'
+					title='Strelka Institute'
+					desc='Digital Art Director'
+					tag='2015–2018'
 				/>
 
 				<Row
-					href='#'
-					title='Apply to Strelka'
-					desc='SiteInspire, HoverStates'
-					tag='Feature'
+					title='ONY Agency'
+					desc='Digital Designer'
+					tag='2014'
 				/>
 
 				<Row
-					href='#'
-					title='Strelka Summer 2016'
-					desc='European Design'
-					tag='Award'
+					title='Agente Studio'
+					desc='UX/UI Designer'
+					tag='2013'
 				/>
 
 				<Row
-					href='#'
-					title='Norilsk Film'
-					desc='Awwwards Site of the Day, Red Dot Award'
-					tag='Award'
+					title='Freelance'
+					desc='Design'
+					tag='2010–present'
 				/>
 
-				<Row
-					href='#'
-					title='Me'
-					desc='Spotlight: Maksim Karalevich, HOW Design, The New Normal Design, Strelka Magazine, Lecturer at Design Madison' 
-					tag='Interview'
-				/>
 			</Layout>
 			
 			</Flex>

@@ -11,19 +11,21 @@ export default function ProjectIndex(props) {
 		if (props.archived === 'yes') {
 			if (data.archived === 'yes') {
 				return (
-					<Link
-						key={project.slug}
-						href='/[projectSlug]'
-						nextAs={`/${project.slug}`}
-						gridRow={data.position}
-						gridColumn='1/-1'
-					>
-						<Row
-							title={data.title}
-							desc={data.lead}
-							tag={data.role}
-						/>
-					</Link>
+					<Layout as='li' gridColumn='1/-1'>
+						<Link
+							key={project.slug}
+							href='/[projectSlug]'
+							nextAs={`/${project.slug}`}
+							gridRow={data.position}
+							gridColumn='1/-1'
+						>
+							<Row
+								title={data.title}
+								desc={data.lead}
+								tag={data.role}
+							/>
+						</Link>
+					</Layout>
 				)
 			}
 			else return null
@@ -31,19 +33,21 @@ export default function ProjectIndex(props) {
 		else {
 			if (data.archived === undefined) {
 				return (
-					<Link
-						key={project.slug}
-						href='/[projectSlug]'
-						nextAs={`/${project.slug}`}
-						gridRow={data.position + 1}
-						gridColumn='1/-1'
-					>
-						<Row
-							title={data.title}
-							desc={data.lead}
-							tag={data.role}
-						/>
-					</Link>
+					<Layout as='li' gridColumn='1/-1'>
+						<Link
+							key={project.slug}
+							href='/[projectSlug]'
+							nextAs={`/${project.slug}`}
+							gridRow={data.position}
+							gridColumn='1/-1'
+						>
+							<Row
+								title={data.title}
+								desc={data.lead}
+								tag={data.role}
+							/>
+						</Link>
+					</Layout>
 				)
 			}
 			else return null
@@ -52,8 +56,10 @@ export default function ProjectIndex(props) {
 	})
 	
 	return (
-		<Layout pt='56vh' pb={{min: 4, sm: 6}}>
+		<>
 			<Text
+				as='h3'
+				pt='56vh'
 				variant='x'
 				gridColumn='1/-1'
 				gridRow='1'
@@ -62,7 +68,9 @@ export default function ProjectIndex(props) {
 			>
 				{props.archived ? 'Archived' : 'Select work'}
 			</Text>
+		<Layout as='ul' pb={{min: 4, sm: 6}}>
 			{List}
 		</Layout>
+		</>
 	)
 }

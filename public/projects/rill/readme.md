@@ -1,7 +1,7 @@
 ---
 title: Rill—Common Connections
 lead: Platform for environmental changes
-role: (Founder)
+role: (Everything)
 description: Open platform that helps interconnect environmental events and track updates.
 service: everything
 info: 2020

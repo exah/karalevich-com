@@ -1,7 +1,7 @@
 ---
 title: Four Flowers School · Family Education
 lead: Platform for self-directed education
-role: (Co-Founder)
+role: (Design)
 description: A personalised learning resource for self‑directed learners.
 service: Identity, user experience, user interface
 info: 2020—ongoing
