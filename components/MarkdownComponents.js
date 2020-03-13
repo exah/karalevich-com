@@ -22,7 +22,6 @@ const setCaptionSize = ({layout}) => {
 // Fix caption paddings
 const setCaptionOffset = ({layout}) => {
 	if (layout === 'isLarge') return {min: '0', sm: 'calc(36.36% + 16px)'}
-	else if (layout === 'isSmall') return {min: '0', sm: '33.33%'}
 	else return '0'
 }
 

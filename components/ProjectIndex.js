@@ -11,9 +11,8 @@ export default function ProjectIndex(props) {
 		if (props.archived === 'yes') {
 			if (data.archived === 'yes') {
 				return (
-					<Layout as='li' gridColumn='1/-1'>
+					<Layout as='li' gridColumn='1/-1' key={project.slug}>
 						<Link
-							key={project.slug}
 							href='/[projectSlug]'
 							nextAs={`/${project.slug}`}
 							gridRow={data.position}
@@ -33,9 +32,8 @@ export default function ProjectIndex(props) {
 		else {
 			if (data.archived === undefined) {
 				return (
-					<Layout as='li' gridColumn='1/-1'>
+					<Layout as='li' gridColumn='1/-1' key={project.slug}>
 						<Link
-							key={project.slug}
 							href='/[projectSlug]'
 							nextAs={`/${project.slug}`}
 							gridRow={data.position}
@@ -60,7 +58,7 @@ export default function ProjectIndex(props) {
 			<Text
 				as='h3'
 				pt='56vh'
-				variant='x'
+				variant='h'
 				gridColumn='1/-1'
 				gridRow='1'
 				textAlign='center'

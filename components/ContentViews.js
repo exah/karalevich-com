@@ -7,12 +7,13 @@ export const Row = props => {
 	return (
 		<Layout
 			gridColumn='1/-1'
-			py={1}
+			pb={{min: 2, sm: 1}}
 			sx={{ ':hover': {opacity: '.64'} }}
+			{...props}
 		>
 			<Text
 				gridColumn={{min: '1/-2', sm: '1/5'}}
-				pb={{min: 1, md: 0}}
+				pb={{min: '4px', md: 0}}
 				pl={{min: 1, sm: 2}}
 				variant='x'
 				color={props.color}
@@ -21,7 +22,7 @@ export const Row = props => {
 			</Text>
 			<Text
 				gridColumn={{min: '1/-2', sm: '5/10'}}
-				pb={{min: 1, md: 0}}
+				pb={{min: '4px', md: 0}}
 				pl={{min: 1, sm: 2}}
 				variant='x'
 			>
@@ -29,7 +30,6 @@ export const Row = props => {
 			</Text>
 			<Text
 				gridColumn={{min: '1/-2', sm: '10/-1'}}
-				pb={{min: 1, md: 0}}
 				pl={{min: 1, sm: 2}}
 				variant='c'
 			>
@@ -66,9 +66,9 @@ export const Card = props => {
 				pb={2}
 				flexes={{min: 'css', sm: 'rss'}}
 			>
-				<Text width={{min: 1, sm: 1/3}} variant='x'>{data.title}</Text>
-				<Text width={{min: 1, sm: 1/3}} variant='x'>{data.lead}</Text>
-				<Text width={{min: 1, sm: 1/3}} variant='x'>{data.role}</Text>
+				<Text width={{min: 1, sm: 1/3}} pb={{min: '4px', md: 0}} variant='x'>{data.title}</Text>
+				<Text width={{min: 1, sm: 1/3}} pb={{min: '4px', md: 0}} variant='x'>{data.lead}</Text>
+				<Text width={{min: 1, sm: 1/3}} pb={{min: '4px', md: 0}} variant='x' color='tinted'>{data.role}</Text>
 			</Flex>
 
 				{isImage

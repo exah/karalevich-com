@@ -68,36 +68,36 @@ const colors = {
 }
 
 const fonts = 'Helvetica Neue, -system, Sans-Serif'
-const fontSizes = ['1rem', '1.25rem']
-const lineHeights = '1.15'
+const fontSizes = ['1rem', '1.5rem']
+const lineHeights = '1.25'
 
 const text = {
 	x: {
-		fontSize: [0, null, null, null, 1],
+		fontSize: ['1rem', null, null, null, '1.5rem'],
 		lineHeight: lineHeights,
 		color: 'text',
 	},
 	p: {
-		fontSize: [0, null, null, null, 1],
+		fontSize: ['1rem', null, null, null, '1.5rem'],
 		lineHeight: lineHeights,
 		color: 'text',
 		textIndent: ['0rem', null, '1rem'],
 		pb: 1,
 	},
 	c: {
-		fontSize: [0, null, null, null, 1],
+		fontSize: ['1rem', null, null, null, '1.5rem'],
 		lineHeight: lineHeights,
 		color: 'tinted',
 	},
 	h: {
-		fontSize: [0, null, null, null, 0],
+		fontSize: ['.85rem', null, null, null, '1rem'],
 		letterSpacing: '.025rem',
 		lineHeight: lineHeights,
 		color: 'text',
 		textTransform: 'uppercase',
 	},
 	a: {
-		fontSize: [0, null, null, null, 1],
+		fontSize: ['1rem', null, null, null, '1.5rem'],
 		lineHeight: lineHeights,
 		color: '#FFF',
 	},

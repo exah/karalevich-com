@@ -14,7 +14,7 @@ export default function() {
 		>
 			<Flex
 				gridColumn={{min: '1/-2', sm: '1/5'}}
-				pt={{min: 4, sm: 5}}
+				pt={5}
 			>
 				<Text variant='p'>
 					Hey, thanks for visiting. I work at B-Reel (LA, CA) where I help make products & experiences. Before that, I led development of digital products at Strelka Institute (MSK, RU).

@@ -1,7 +1,7 @@
 import matter from 'gray-matter'
 import { Theme } from '../components/system/theme'
 import { Flex, Link } from '../components/system'
-import { GlobalBg, Meta, Nav, Intro, SelectWork, ProjectIndex } from '../components/bridge'
+import { HelperLayout, GlobalBg, Meta, Nav, Intro, SelectWork, ProjectIndex } from '../components/bridge'
 import GetProjects from '../components/GetProjects'
 import NextLink from 'next/link'
 

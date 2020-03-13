@@ -28,10 +28,10 @@ export default function SelectWork(props) {
 
 	return (
 		<Flex width='100%' flexes='ccc'>
-			<Layout pt='56vh' px={2}>
+			<Layout pt={{min: '80vh', sm: '64vh'}} px={2}>
 				
 				<Text
-					variant='x'
+					variant='h'
 					pb={{min: 4, sm: 6}}
 					sx={{
 						position: 'absolute',
@@ -42,7 +42,7 @@ export default function SelectWork(props) {
 						textAlign: 'center',
 					}}
 				>
-					Select work (7)
+					Select work · 7
 				</Text>
 				
 			</Layout>
