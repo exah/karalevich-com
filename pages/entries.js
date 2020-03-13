@@ -28,7 +28,7 @@ export default function Entries(props) {
     	<GlobalBg bg='white' />
       <Nav />
 
-			<Flex as='ul' pt='56vh' pb={{min: 4, sm: 6}} width='100%'>
+			<Flex as='ul' pt={{min: '80vh', sm: '64vh'}} pb={{min: 4, sm: 6}} width='100%'>
 			
 				<Layout gridColumn='1/-1' mb={6}>
 					<Row title='Title' desc='Body' tag='Tags' />
