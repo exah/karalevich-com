@@ -36,12 +36,12 @@ export default function Project(props) {
 			<Layout px={{min: 1, sm: 2}} sx={{ position: 'absolute', top: 0, left: 0 }} >
 
 				<Flex gridColumn={{min: '1/-2', sm: '1/5'}} pt={5}>
-					<Text variant='p'>{meta.description}</Text>
+					<Text variant='x'>{meta.description}</Text>
 				</Flex>
 			
 			</Layout>
 
-			<Grid as='article' bg='bg' pt='56vh' gridTemplateColumns='repeat(12, 1fr)'>
+			<Grid as='article' bg='bg' pt={{min: '80vh', sm: '64vh'}} gridTemplateColumns='repeat(12, 1fr)'>
  			
 	 			<Flex
 	 				gridColumn={{min: '1/-1', sm: '2/-2'}}

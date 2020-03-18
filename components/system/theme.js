@@ -73,19 +73,19 @@ const lineHeights = '1.25'
 
 const text = {
 	x: {
-		fontSize: ['1rem', null, null, null, '1.5rem'],
+		fontSize: ['1rem', null, null, null, '1.25rem'],
 		lineHeight: lineHeights,
 		color: 'text',
 	},
 	p: {
-		fontSize: ['1rem', null, null, null, '1.5rem'],
+		fontSize: ['1rem', null, null, null, '1.25rem'],
 		lineHeight: lineHeights,
 		color: 'text',
 		textIndent: ['0rem', null, '1rem'],
 		pb: 1,
 	},
 	c: {
-		fontSize: ['1rem', null, null, null, '1.5rem'],
+		fontSize: ['1rem', null, null, null, '1.25rem'],
 		lineHeight: lineHeights,
 		color: 'tinted',
 	},
@@ -97,7 +97,7 @@ const text = {
 		textTransform: 'uppercase',
 	},
 	a: {
-		fontSize: ['1rem', null, null, null, '1.5rem'],
+		fontSize: ['1rem', null, null, null, '1.25rem'],
 		lineHeight: lineHeights,
 		color: '#FFF',
 	},
@@ -189,13 +189,17 @@ const Global = injectGlobal`
 
 	h1, h2, h3, h4, p, a, span {
 		font-family: inherit;
-		font-weight: normal;
-		font-size: inherit;
 		font-weight: inherit;
+		font-size: inherit;
 	}
 
 	li {
 		list-style: none;
+	}
+
+	strong, i {
+		font-size: inherit;
+		color: inherit;
 	}
 `
 

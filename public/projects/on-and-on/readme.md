@@ -1,6 +1,6 @@
 ---
 title: On and On
-lead: 3D-animated journey for a musician
+lead: 3D-animated journey for musician
 role: (Artist)
 description: Music video for musician & singer Jekka
 service: Directing, CGI, motion design

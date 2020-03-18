@@ -4,7 +4,7 @@ lead: Platform for environmental changes
 role: (Everything)
 description: Open platform that helps interconnect environmental events and track updates.
 service: everything
-info: 2020
+info: 2020—ongoing
 # controls
 theme: white
 thumb: thumb.png
