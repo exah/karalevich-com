@@ -4,12 +4,11 @@
 - add 'playsinline' 'muted' 'loop' options for videos via url prefixes
 */
 
-import matter from 'gray-matter'
 import { useRouter } from 'next/router'
-
+import { getProject, getAllProjects } from '../api/projects'
 import { Theme } from '../components/system/theme'
 import { Flex, Grid, Text, Image, Video } from '../components/system'
-import { Meta, Nav, Layout, GlobalBg, HelperLayout, ProjectIndex } from '../components/bridge'
+import { Meta, Nav, Layout, GlobalBg, ProjectIndex } from '../components/bridge'
 import { ReactMarkdownContainer } from '../components/MarkdownRenderers'
 
 export default function Project(props) {
@@ -109,28 +108,12 @@ export default function Project(props) {
 }
 
 Project.getInitialProps = async ctx => {
-	const { projectSlug } = ctx.query
-	const content = await import(`../public/projects/${projectSlug}/readme.md`)
-	const data = matter(content.default)
-
-	const projects = (context => {
-    const keys = context.keys()
-    const values = keys.map(context)
-    
-    const data = keys.map((key, index) => {
-      const slug = key.split('/')[1]
-      const value = values[index]
-      const document = matter(value.default)
-      return {
-        document,
-        slug,
-      }
-    })
-    return data
-  })(require.context('../public/projects', true, /\.md$/))
+    const projects = await getAllProjects()
+    const { content, data } = await getProject(ctx.query.projectSlug)
 
 	return {
-		...data,
-		projects
+        data,
+        content,
+        projects,
 	}
 }
